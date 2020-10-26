@@ -19,11 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added register">
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="fixxed login and register">
+      <change afterPath="$PROJECT_DIR$/routes/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/profile-page.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +37,7 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -55,6 +55,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -99,7 +100,8 @@
       <workItem from="1603736868638" duration="78000" />
       <workItem from="1603737455382" duration="388000" />
       <workItem from="1603738291154" duration="44000" />
-      <workItem from="1603741608297" duration="4366000" />
+      <workItem from="1603741608297" duration="4519000" />
+      <workItem from="1603748244701" duration="489000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -129,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603745492474</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixxed login and register">
+      <created>1603746029253</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603746029253</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,13 +154,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added login page design" />
     <MESSAGE value="fixxed that u will redirect to home if u try to login again after session.loggedin is true" />
     <MESSAGE value="added index page. for now. will change it later" />
     <MESSAGE value="added register" />
-    <option name="LAST_COMMIT_MESSAGE" value="added register" />
+    <MESSAGE value="fixxed login and register" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixxed login and register" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="539" key="#SQL_Dialects" timestamp="1603742177043">
@@ -174,26 +185,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="272" key="GridCell.Tab.0.bottom" timestamp="1603745960453">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom" timestamp="1603746154074">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
-    <state width="2517" height="272" key="GridCell.Tab.0.center" timestamp="1603745960453">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603746154074" />
+    <state width="2517" height="272" key="GridCell.Tab.0.center" timestamp="1603746154074">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
-    <state width="2517" height="272" key="GridCell.Tab.0.left" timestamp="1603745960453">
+    <state width="2517" height="272" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603746154074" />
+    <state width="2517" height="272" key="GridCell.Tab.0.left" timestamp="1603746154074">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
-    <state width="2517" height="272" key="GridCell.Tab.0.right" timestamp="1603745960453">
+    <state width="2517" height="272" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603746154074" />
+    <state width="2517" height="272" key="GridCell.Tab.0.right" timestamp="1603746154074">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603745493453">
+    <state width="2517" height="272" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603746154074" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603746030189">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745493453" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603746030189" />
     <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603742421080">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
