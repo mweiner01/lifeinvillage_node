@@ -8,17 +8,6 @@ const md5 = require('md5');
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "portfolio"
-});
-
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-});
 
 
 router.get('/', function(req, res, next) {

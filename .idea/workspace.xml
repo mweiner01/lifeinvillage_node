@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="fixxed that u will redirect to home if u try to login again after session.loggedin is true">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added index page. for now. will change it later">
+      <change afterPath="$PROJECT_DIR$/routes/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/register-success.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/register.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -29,7 +49,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1jOd81D8Q8g3oQkL3KMaB9wYm73" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,7 +64,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -56,13 +78,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views" />
+      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views\css" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views\partials" />
-      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
     </key>
   </component>
@@ -76,7 +99,11 @@
       <updated>1603678909108</updated>
       <workItem from="1603678910165" duration="168000" />
       <workItem from="1603723148270" duration="2673000" />
-      <workItem from="1603725848171" duration="8772000" />
+      <workItem from="1603725848171" duration="8938000" />
+      <workItem from="1603736868638" duration="78000" />
+      <workItem from="1603737455382" duration="388000" />
+      <workItem from="1603738291154" duration="44000" />
+      <workItem from="1603741608297" duration="3815000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -92,22 +119,41 @@
       <option name="project" value="LOCAL" />
       <updated>1603733436201</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added index page. for now. will change it later">
+      <created>1603734716970</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603734716970</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added login page design" />
     <MESSAGE value="fixxed that u will redirect to home if u try to login again after session.loggedin is true" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixxed that u will redirect to home if u try to login again after session.loggedin is true" />
+    <MESSAGE value="added index page. for now. will change it later" />
+    <option name="LAST_COMMIT_MESSAGE" value="added index page. for now. will change it later" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="108" y="539" key="#SQL_Dialects" timestamp="1603727389649">
+    <state x="108" y="539" key="#SQL_Dialects" timestamp="1603742177043">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="108" y="539" key="#SQL_Dialects/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603727389649" />
+    <state x="108" y="539" key="#SQL_Dialects/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603742177043" />
     <state x="324" y="361" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603727437573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -124,25 +170,29 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="272" key="GridCell.Tab.0.bottom" timestamp="1603734604724">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom" timestamp="1603745423768">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
-    <state width="2517" height="272" key="GridCell.Tab.0.center" timestamp="1603734604724">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
+    <state width="2517" height="272" key="GridCell.Tab.0.center" timestamp="1603745423768">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
-    <state width="2517" height="272" key="GridCell.Tab.0.left" timestamp="1603734604724">
+    <state width="2517" height="272" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
+    <state width="2517" height="272" key="GridCell.Tab.0.left" timestamp="1603745423768">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
-    <state width="2517" height="272" key="GridCell.Tab.0.right" timestamp="1603734604724">
+    <state width="2517" height="272" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
+    <state width="2517" height="272" key="GridCell.Tab.0.right" timestamp="1603745423768">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603733437051">
+    <state width="2517" height="272" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603734718359">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733437051" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734718359" />
+    <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603742421080">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603742421080" />
   </component>
 </project>
