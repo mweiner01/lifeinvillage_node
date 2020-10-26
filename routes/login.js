@@ -60,6 +60,9 @@ router.post('/', urlencodedParser, function (req, res) {
                     console.log(err);
                 }
             });
+    } else {
+        // redirect home if u try to login again / refresh page
+        res.redirect('/');
     }
 });
 

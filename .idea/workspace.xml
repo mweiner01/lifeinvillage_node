@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="">
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added login page design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -36,6 +38,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/routes/views" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,12 +51,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views\css" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views\partials" />
+      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
     </key>
   </component>
@@ -67,12 +71,24 @@
       <updated>1603678909108</updated>
       <workItem from="1603678910165" duration="168000" />
       <workItem from="1603723148270" duration="2673000" />
-      <workItem from="1603725848171" duration="6712000" />
+      <workItem from="1603725848171" duration="7538000" />
     </task>
+    <task id="LOCAL-00001" summary="added login page design">
+      <created>1603732614917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603732614917</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added login page design" />
+    <option name="LAST_COMMIT_MESSAGE" value="added login page design" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="539" key="#SQL_Dialects" timestamp="1603727389649">
@@ -95,21 +111,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="394" key="GridCell.Tab.0.bottom" timestamp="1603732573378">
+    <state width="2517" height="394" key="GridCell.Tab.0.bottom" timestamp="1603733382729">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732573378" />
-    <state width="2517" height="394" key="GridCell.Tab.0.center" timestamp="1603732573378">
+    <state width="2517" height="394" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
+    <state width="2517" height="394" key="GridCell.Tab.0.center" timestamp="1603733382729">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732573378" />
-    <state width="2517" height="394" key="GridCell.Tab.0.left" timestamp="1603732573378">
+    <state width="2517" height="394" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
+    <state width="2517" height="394" key="GridCell.Tab.0.left" timestamp="1603733382729">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732573378" />
-    <state width="2517" height="394" key="GridCell.Tab.0.right" timestamp="1603732573378">
+    <state width="2517" height="394" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
+    <state width="2517" height="394" key="GridCell.Tab.0.right" timestamp="1603733382729">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732573378" />
+    <state width="2517" height="394" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603732618316">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732618316" />
   </component>
 </project>
