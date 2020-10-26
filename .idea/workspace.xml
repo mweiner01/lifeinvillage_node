@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added login page design">
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="fixxed that u will redirect to home if u try to login again after session.loggedin is true">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +35,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.19.1" />
@@ -71,7 +76,7 @@
       <updated>1603678909108</updated>
       <workItem from="1603678910165" duration="168000" />
       <workItem from="1603723148270" duration="2673000" />
-      <workItem from="1603725848171" duration="7538000" />
+      <workItem from="1603725848171" duration="8772000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -80,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603732614917</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixxed that u will redirect to home if u try to login again after session.loggedin is true">
+      <created>1603733436201</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603733436201</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,7 +100,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added login page design" />
-    <option name="LAST_COMMIT_MESSAGE" value="added login page design" />
+    <MESSAGE value="fixxed that u will redirect to home if u try to login again after session.loggedin is true" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixxed that u will redirect to home if u try to login again after session.loggedin is true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="539" key="#SQL_Dialects" timestamp="1603727389649">
@@ -111,25 +124,25 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="394" key="GridCell.Tab.0.bottom" timestamp="1603733382729">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom" timestamp="1603734604724">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
-    <state width="2517" height="394" key="GridCell.Tab.0.center" timestamp="1603733382729">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
+    <state width="2517" height="272" key="GridCell.Tab.0.center" timestamp="1603734604724">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
-    <state width="2517" height="394" key="GridCell.Tab.0.left" timestamp="1603733382729">
+    <state width="2517" height="272" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
+    <state width="2517" height="272" key="GridCell.Tab.0.left" timestamp="1603734604724">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
-    <state width="2517" height="394" key="GridCell.Tab.0.right" timestamp="1603733382729">
+    <state width="2517" height="272" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
+    <state width="2517" height="272" key="GridCell.Tab.0.right" timestamp="1603734604724">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="394" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733382729" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603732618316">
+    <state width="2517" height="272" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734604724" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603733437051">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732618316" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603733437051" />
   </component>
 </project>

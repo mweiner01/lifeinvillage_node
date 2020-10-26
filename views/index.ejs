@@ -21,10 +21,14 @@
 </head>
 <body>
 <section class="mx-auto p-12">
+    <% if(data.username) { %>
+        <h1 class="text-3xl">Willkommen auf der Life in Village Webseite <%= data.username %></h1>
+    <% } else { %>
     <h1 class="text-3xl">Willkommen auf der Life in Village Webseite</h1>
-    <div class="mt-2">
-        <a href="/login" class="py-2 px-2 bg-blue-400 hover:bg-blue-600 text-white font-semibold">Logge dich ein</a>
-    </div>
+     <div class="mt-2">
+         <a href="/login" class="py-2 px-2 bg-blue-400 hover:bg-blue-600 text-white font-semibold">Logge dich ein</a>
+     </div>
+    <% } %>
 </section>
 </body>
 </html>
