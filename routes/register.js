@@ -31,7 +31,7 @@ router.get('/', function (req, res, next) {
     if (req.session.loggedin === true) {
         res.redirect('/');
     } else {
-        res.render('register');
+        res.render('register', { data: req.session });
     }
 });
 
@@ -39,7 +39,7 @@ router.get('/', function (req, res, next) {
 router.post('/', urlencodedParser, function (req, res) {
     // get username and password from post request
     username = req.body.username;
-    password = md5(req.body.password);
+    password = md5(req.body.password + "makkusanstinkt");
     console.log("Test")
 
     let sql2 = mysql.format("SELECT * FROM accounts WHERE username=?", [username]);

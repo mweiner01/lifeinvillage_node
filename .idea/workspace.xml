@@ -19,15 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added index page. for now. will change it later">
-      <change afterPath="$PROJECT_DIR$/routes/register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/register-success.ejs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/register.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added register">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +99,7 @@
       <workItem from="1603736868638" duration="78000" />
       <workItem from="1603737455382" duration="388000" />
       <workItem from="1603738291154" duration="44000" />
-      <workItem from="1603741608297" duration="3815000" />
+      <workItem from="1603741608297" duration="4366000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -126,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603734716970</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added register">
+      <created>1603745492474</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1603745492474</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,7 +150,8 @@
     <MESSAGE value="added login page design" />
     <MESSAGE value="fixxed that u will redirect to home if u try to login again after session.loggedin is true" />
     <MESSAGE value="added index page. for now. will change it later" />
-    <option name="LAST_COMMIT_MESSAGE" value="added index page. for now. will change it later" />
+    <MESSAGE value="added register" />
+    <option name="LAST_COMMIT_MESSAGE" value="added register" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="539" key="#SQL_Dialects" timestamp="1603742177043">
@@ -170,26 +174,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="272" key="GridCell.Tab.0.bottom" timestamp="1603745423768">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom" timestamp="1603745960453">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
-    <state width="2517" height="272" key="GridCell.Tab.0.center" timestamp="1603745423768">
+    <state width="2517" height="272" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
+    <state width="2517" height="272" key="GridCell.Tab.0.center" timestamp="1603745960453">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
-    <state width="2517" height="272" key="GridCell.Tab.0.left" timestamp="1603745423768">
+    <state width="2517" height="272" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
+    <state width="2517" height="272" key="GridCell.Tab.0.left" timestamp="1603745960453">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
-    <state width="2517" height="272" key="GridCell.Tab.0.right" timestamp="1603745423768">
+    <state width="2517" height="272" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
+    <state width="2517" height="272" key="GridCell.Tab.0.right" timestamp="1603745960453">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="272" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745423768" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603734718359">
+    <state width="2517" height="272" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745960453" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1603745493453">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603734718359" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603745493453" />
     <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603742421080">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

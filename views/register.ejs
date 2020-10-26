@@ -42,10 +42,13 @@
                                 <input type="password" class="border-b-2 border-green-200 text-green-400 focus:border-green-400 placeholder-gray-300 focus:border-green-400 py-2 px-16" name="password" placeholder="Passwort">
                             </div>
                             <div class="mt-2">
+                                <% if(data.usernameNotAvailable) { %>
+                                <p class='text-semibold bg-red-400 text-white text-sm rounded m-auto max-w-sm px-2 py-1 mt-2 mb-2'><i class='fas fa-user mr-2'></i> Der Benutzername ist leider schon vergeben</p>
+                                <% } %>
                             </div>
                         </div>
                         <div class="mt-2">
-                            <input type="submit" class="bg-green-400 hover:bg-green-500 text-white font-semibold py-2 px-16 cursor-pointer" name="register" value="Einloggen">
+                            <input type="submit" class="bg-green-400 hover:bg-green-500 text-white font-semibold py-2 px-16 cursor-pointer" name="register" value="Registriere dich">
                         </div>
                     </form>
                 </div>
