@@ -8,12 +8,12 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "portfolio"
+    database: "liv7"
 });
 
 /* GET profile-list page. */
 router.get('/', function(req, res, next) {
-    res.render('profile-list', { data: req.body });
+    res.render('profile-list', { data: req.session });
 });
 
 /* GET profile-page of a user with given userID
@@ -23,7 +23,11 @@ router.get('/user/:userID', function (req, res, next) {
 
     let sql = mysql.format("SELECT * FROM accounts WHERE id=?", [param]);
     con.query(sql, (err, rows, next) => {
-        res.render('profile-page', { data: rows[0] })
+        if(!err) {
+            res.render('profile-page', {data: rows[0]})
+        } else {
+            res.render('error')
+        }
     });
 });
 

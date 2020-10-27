@@ -13,7 +13,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "portfolio"
+    database: "liv7"
 });
 
 con.connect(function (err) {
@@ -50,9 +50,10 @@ router.post('/', urlencodedParser, function (req, res) {
                         // set session varibales for user
                         req.session.loggedin = true;
                         req.session.username = req.body.username;
+                        req.session.userID = rows[0].id;
 
                         console.log("The user " + req.body.username + " could login!");
-                        res.render('login-success', {data: req.session })
+                        res.render('login-success', { data: req.session })
                     } else {
                         const date = new Date()
                         console.log(dateFormat(date, "dddd, mmmm dS, yyyy, h:MM:ss TT") + ":\nA user couldnt login with following name:\n" +

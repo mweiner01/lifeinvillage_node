@@ -23,6 +23,9 @@
 <section class="mx-auto p-12">
     <% if(data.username) { %>
         <h1 class="text-3xl">Willkommen auf der Life in Village Webseite <%= data.username %></h1>
+        <div class="mt-4">
+            <a href="/profiles/user/<%= data.userID %>" class="py-2 px-2 bg-blue-400 hover:bg-blue-600 text-white font-semibold">Besuche dein Profil</a>
+        </div>
     <% } else { %>
     <h1 class="text-3xl">Willkommen auf der Life in Village Webseite</h1>
      <div class="mt-2">

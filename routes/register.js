@@ -13,17 +13,8 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "portfolio"
+    database: "liv7"
 });
-
-con.connect(function (err) {
-    if (err) throw err;
-    console.log("Connected!");
-});
-
-function getUsernameCount(username) {
-
-}
 
 
 router.get('/', function (req, res, next) {
@@ -52,7 +43,7 @@ router.post('/', urlencodedParser, function (req, res) {
                 req.session.username = req.body.username;
                 req.session.loggedin = true;
 
-                res.render('register-success', {data: req.session})
+                res.render('register-success', { data: req.session })
             });
         } else {
             req.session.usernameNotAvailable = true;

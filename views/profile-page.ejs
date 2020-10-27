@@ -9,7 +9,7 @@
     <!-- Linking Fontawesome -->
     <script crossorigin="anonymous" src="https://kit.fontawesome.com/4d53e5f024.js"></script>
 
-    <title><% data.username %> - Life in Village</title>
+    <title><%= data.username %> - Life in Village</title>
 
     <!-- Linking CSS -->
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
@@ -20,6 +20,8 @@
 <section class="p-12">
     <div class="container">
         <h1 class="text-xl font-semibold text-gray-900">Willkommen auf der Profile Page Seite, <%= data.username %> </h1>
+        <h1 class="text-xl font-semibold text-gray-900">Dein Minecraftname ist: <%= data.minecraft_name %> </h1>
+        <h1 class="text-xl font-semibold text-gray-900">Deine Spielzeit: <%= data.playtime_hours%>h <%= data.playtime_minutes %>m <%= data.playtime_seconds %>s</h1>
     </div>
 </section>
 </body>
