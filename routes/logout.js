@@ -4,8 +4,12 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  req.session.current_url = '/';
-  res.render('index', { data: req.session });
+    if(req.session.loggedin && req.session.loggedin === true) {
+        req.session.destroy();
+        res.redirect('/');
+    } else {
+        res.redirect(req.session.current_url)
+    }
 });
 
 

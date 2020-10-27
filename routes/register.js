@@ -22,6 +22,7 @@ router.get('/', function (req, res, next) {
     if (req.session.loggedin === true) {
         res.redirect('/');
     } else {
+        req.session.current_url = '/register';
         res.render('register', { data: req.session });
     }
 });

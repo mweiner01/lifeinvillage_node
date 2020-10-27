@@ -13,17 +13,19 @@ var con = mysql.createConnection({
 
 /* GET profile-list page. */
 router.get('/', function(req, res, next) {
+    req.session.current_url = '/profiles';
     res.render('profile-list', { data: req.session });
 });
 
 /* GET profile-page of a user with given userID
 *  STILL IN WORK! */
-router.get('/user/:userID', function (req, res, next) {
-    param = req.params.userID;
+router.get('/:username', function (req, res, next) {
+    param = req.params.username;
 
-    let sql = mysql.format("SELECT * FROM accounts WHERE id=?", [param]);
+    let sql = mysql.format("SELECT * FROM accounts WHERE username=?", [param]);
     con.query(sql, (err, rows, next) => {
         if(!err) {
+            req.session.current_url = '/profiles/'+req.params.username;
             res.render('profile-page', {data: rows[0]})
         } else {
             res.render('error')
