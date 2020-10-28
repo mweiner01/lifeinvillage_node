@@ -70,9 +70,9 @@
                     <div class="ml-3 relative">
                         <div class="flex">
                             <% if(data.loggedin && data.loggedin === true) { %>
-                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-white font-semibold mr-2"><%= mysql.minecraft_name %></p>
-                                <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110" id="user-menu-button" aria-label="User menu" aria-haspopup="true">
-                                    <img class="h-8 w-8 rounded-full" src="<%= mysql.profile_picture %>" alt="">
+                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-white font-semibold mr-2"><%= data.minecraft_name %></p>
+                                <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110 focus:outline-none" id="user-menu-button" aria-label="User menu" aria-haspopup="true">
+                                    <img class="h-8 w-8 rounded-full" src="https://minotar.net/helm/<%= data.minecraft_name %>/100.png" alt="">
                                 </button>
                             <% } else { %>
                                 <a href="/login" class="lg:block hidden mr-4 text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110" aria-label="User menu" aria-haspopup="true">
@@ -112,9 +112,11 @@
     </nav>
 </main>
 <section>
-<div class="bg-green-400 py-32"></div>
+<div class="bg-green-400 py-32">
+
+</div>
     <div class="text-center">
-        <img src="<%= mysql.profile_picture %>" class="rounded-full border mx-auto -my-16 border-gray-200 h-32 w-32" alt="">
+        <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png" class="rounded-full border mx-auto -my-16 border-gray-200 h-32 w-32" alt="">
         <div class="text-center mt-16">
             <div class="">
                 <h1 class="text-3xl text-gray-900 font-semibold"><%= mysql.minecraft_name %></h1>
@@ -122,8 +124,11 @@
             <div class="">
                 <h3 class="text-gray-400 text-xl">@<%= mysql.username %></h3>
             </div>
+            <div class="text-center mx-auto max-w-lg p-4">
+                <h3 class="text-gray-900 font-medium">Ich bin der der größte Zwerg von allen Zwergen in meinem Dorf. Legt euch nicht mit mir an</h3>
+            </div>
         </div>
-        <div class="flex items-center p-4">
+        <div class="flex items-center p-4 border-b border-gray-300">
             <div class="mx-auto flex items-center">
                 <div class="text-center px-8">
                 <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.silver_amount %></h1>
@@ -137,6 +142,27 @@
                     <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.general_level_number %></h1>
                     <h1 class="text-lg text-gray-600">Level</h1>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-4">
+        <div class="border border-gray-300 rounded shadow-lg p-4 max-w-3xl">
+            <div class="flex items-center">
+                <div class="mr-4">
+                    <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png" class="rounded-full h-12 w-12" alt="">
+                </div>
+                <div class="p-2 w-full">
+                    <div class="flex">
+                        <h1 class="text-gray-900 text-lg font-semibold"><%= mysql.minecraft_name %></h1>
+                        <h1 class="ml-auto text-sm text-gray-300">2 minutes ago</h1>
+                    </div>
+                    <div>
+                        <h1 class="text-sm text-gray-200">@<%= mysql.username %></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-2">
+                <p class="text-gray-800">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus adipisci aliquid assumenda, at consequatur dignissimos dolor doloribus id, ipsam laborum maiores optio, praesentium qui quo rem repellendus vel veritatis?</p>
             </div>
         </div>
     </div>
