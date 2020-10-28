@@ -24,7 +24,7 @@
       Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
       Read the documentation to get started: https://tailwindui.com/documentation
     -->
-    <nav class="bg-gray-800">
+    <nav class="bg-green-400">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -52,37 +52,41 @@
                 </div>
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex-shrink-0">
-                        <img class="block lg:hidden h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg" alt="Workflow logo">
-                        <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-on-dark.svg" alt="Workflow logo">
+                        <p class="block lg:hidden h-8 w-auto font-semibold text-white text-2xl">Life in Village</p>
+                        <p class="hidden lg:block h-8 w-auto font-semibold text-white text-2xl">Life in Village</p>
                     </div>
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex">
-                            <a href="#" class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Home</a>
-                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Lorem ipsum.</a>
-                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Lorem.</a>
-                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Lorem ipsum.</a>
+                            <a href="/" class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Home</a>
+                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem ipsum.</a>
+                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
+                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem ipsum.</a>
                         </div>
                     </div>
                 </div>
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out" aria-label="Notifications">
-                        <!-- Heroicon name: bell -->
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                        </svg>
-                    </button>
 
                     <!-- Profile dropdown -->
                     <div class="ml-3 relative">
-                        <div>
-                            <button class="flex text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110" id="user-menu-button" aria-label="User menu" aria-haspopup="true">
-                                <img class="h-8 w-8 rounded-full" src="<%= data.profile_picture %>" alt="">
-                            </button>
+                        <div class="flex">
+                            <% if(data.loggedin && data.loggedin === true) { %>
+                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-white font-semibold mr-2"><%= mysql.minecraft_name %></p>
+                                <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110" id="user-menu-button" aria-label="User menu" aria-haspopup="true">
+                                    <img class="h-8 w-8 rounded-full" src="<%= mysql.profile_picture %>" alt="">
+                                </button>
+                            <% } else { %>
+                                <a href="/login" class="lg:block hidden mr-4 text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110" aria-label="User menu" aria-haspopup="true">
+                                    Logge dich ein
+                                </a>
+                                <a href="/register" class="lg:block hidden text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110" aria-label="User menu" aria-haspopup="true">
+                                    Registriere dich
+                                </a>
+                            <% } %>
                         </div>
 
                         <div class="origin-top-right absolute right-0 mt-2 w-48 shadow-lg rounded-md hidden" id="user-menu">
                             <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-                                <a href="#" class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" role="menuitem">Dein Profil</a>
+                                <a href="/profiles/<%= data.username %>" class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" role="menuitem">Dein Profil</a>
                                 <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" role="menuitem">Einstellungen</a>
                                 <a href="/logout" class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" role="menuitem">Ausloggen</a>
                             </div>
@@ -107,11 +111,34 @@
         </div>
     </nav>
 </main>
-<section class="p-12">
-    <div class="container">
-        <h1 class="text-xl font-semibold text-gray-900">Willkommen auf der Profile Page Seite, <%= data.username %> </h1>
-        <h1 class="text-xl font-semibold text-gray-900">Dein Minecraftname ist: <%= data.minecraft_name %> </h1>
-        <h1 class="text-xl font-semibold text-gray-900">Deine Spielzeit: <%= data.playtime_hours%>h <%= data.playtime_minutes %>m <%= data.playtime_seconds %>s</h1>
+<section>
+<div class="bg-green-400 py-32"></div>
+    <div class="text-center">
+        <img src="<%= mysql.profile_picture %>" class="rounded-full border mx-auto -my-16 border-gray-200 h-32 w-32" alt="">
+        <div class="text-center mt-16">
+            <div class="">
+                <h1 class="text-3xl text-gray-900 font-semibold"><%= mysql.minecraft_name %></h1>
+            </div>
+            <div class="">
+                <h3 class="text-gray-400 text-xl">@<%= mysql.username %></h3>
+            </div>
+        </div>
+        <div class="flex items-center p-4">
+            <div class="mx-auto flex items-center">
+                <div class="text-center px-8">
+                <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.silver_amount %></h1>
+                <h1 class="text-lg text-gray-600">Silber</h1>
+                </div>
+                <div class="text-center px-8 border-r border-l border-gray-300">
+                    <h1 class="text-xl text-green-800 font-bold leading-none"><%= mysql.playtime_hours %>h</h1>
+                    <h1 class="text-lg text-gray-600">Spielzeit</h1>
+                </div>
+                <div class="text-center px-8">
+                    <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.general_level_number %></h1>
+                    <h1 class="text-lg text-gray-600">Level</h1>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 </body>

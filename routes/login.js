@@ -52,6 +52,7 @@ router.post('/', urlencodedParser, function (req, res) {
                         req.session.loggedin = true;
                         req.session.username = req.body.username;
                         req.session.userID = rows[0].id;
+                        req.session.profile_picture = rows[0].profile_picture;
 
                         console.log("The user " + req.body.username + " could login!");
                         res.render('login-success', { data: req.session })

@@ -26,7 +26,7 @@ router.get('/:username', function (req, res, next) {
     con.query(sql, (err, rows, next) => {
         if(!err) {
             req.session.current_url = '/profiles/'+req.params.username;
-            res.render('profile-page', {data: rows[0]})
+            res.render('profile-page', { data: req.session, mysql: rows[0] })
         } else {
             res.render('error')
         }
