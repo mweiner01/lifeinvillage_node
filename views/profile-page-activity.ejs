@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css" rel="stylesheet">
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
 </head>
-<body class="">
+<body>
 <main>
     <!--
       Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
@@ -112,9 +112,9 @@
     </nav>
 </main>
 <section>
-<div class="bg-green-400 py-32">
+    <div class="bg-green-400 py-32">
 
-</div>
+    </div>
     <div class="text-center">
         <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png" class="rounded-full border mx-auto -my-16 border-gray-200 h-32 w-32" alt="">
         <div class="text-center mt-16">
@@ -146,41 +146,47 @@
         </div>
     </div>
     <div class="flex items-center justify-center bg-green-400">
-            <div class="text-white font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
-                <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
-            </div>
-        <div class="text-white font-semibold md:text-lg text-sm hover:text-green-600 p-4 border-b-2 border-transparent border-green-600 md:px-8 px-4">
-            <a id="posts" class="focus:outline-none text-green-600 font-semibold">Posts</a>
+        <div class="text-white font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
         </div>
-        <div class="text-white font-semibold md:text-lg text-sm p-4 border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
-            <a href="/profiles/<%= mysql.username %>/activity">Letzte Aktivitäten</a>
+        <div class="text-white font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/posts" class="">Posts</a>
+        </div>
+        <div class="text-white font-semibold md:text-lg text-sm hover:text-green-600 p-4 border-b-2 border-transparent border-green-600 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/activity" class="focus:outline-none text-green-600 font-semibold">Letzte Aktivitäten</a>
         </div>
     </div>
     <div class="p-4">
         <div class="my-4 mx-auto max-w-3xl text-left">
-            <h1 class="text-center font-bold text-gray-900 md:text-5xl text-3xl"><%= mysql.minecraft_name %>'s Communitybeiträge</h1>
+            <h1 class="text-center font-bold text-gray-900 md:text-5xl text-3xl"><%= mysql.minecraft_name %>'s Aktivitäten</h1>
         </div>
-        <% posts.forEach((post) => { %>
-            <div class="border mx-auto border-gray-300 rounded p-4 md:max-w-4xl max-w-2xl mb-2">
-                <div class="flex items-center">
-                    <div class="mr-4">
-                        <img src="https://minotar.net/helm/<%= post.post_minecraft_name %>/100.png" class="rounded-full h-auto w-12" alt="">
+        <% activity.forEach((transaction) => { %>
+            <% if(transaction.transaction_to === mysql.minecraft_name) { %>
+
+                <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl">Heute</h1>
+                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                    <div class="flex items-center">
+                            <img src="https://minotar.net/helm/<%= transaction.transaction_from %>/100.png" alt="" class="rounded-full h-auto w-12">
+                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span class="font-bold"><%= transaction.transaction_from %></span> hat <span class="font-bold"><%= transaction.transaction_to %></span> Silber gesendet</h1>
+                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span class="font-bold"><%= transaction.transaction_from %></span></h1>
+
+
+                            <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">+<%= transaction.transaction_amount %> Silber</h1>
                     </div>
-                    <div class="p-2 w-full">
-                        <div class="flex">
-                            <h1 class="text-gray-900 text-lg font-semibold"><%= post.post_minecraft_name %></h1>
-                            <h1 class="ml-auto text-sm text-gray-300"><%= post.post_date %></h1>
-                        </div>
-                        <div>
-                            <h1 class="text-sm text-gray-200"><a href="/<% post.post_username %>" class="hover:underline">@<%= post.post_username %></a></h1>
+
+                </div>
+            <% } else { %>
+                    <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                        <div class="flex items-center">
+                            <img src="https://minotar.net/helm/<%= transaction.transaction_from %>/100.png" alt="" class="rounded-full h-auto w-12">
+                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span class="font-bold"><%= transaction.transaction_from %></span> hat <span class="font-bold"><%= transaction.transaction_to %></span> Silber gesendet</h1>
+                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span class="font-bold"><%= transaction.transaction_from %></span></h1>
+
+                            <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">-<%= transaction.transaction_amount %> Silber</h1>
                         </div>
                     </div>
-                </div>
-                <div class="mt-2">
-                    <p class="text-gray-800"><%= post.post_content %></p>
-                </div>
-            </div>
-        <% }) %>
+            <% }%>
+        <% }); %>
     </div>
 </section>
 </body>
