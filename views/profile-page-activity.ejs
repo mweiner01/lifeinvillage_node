@@ -160,33 +160,48 @@
         <div class="my-4 mx-auto max-w-3xl text-left">
             <h1 class="text-center font-bold text-gray-900 md:text-5xl text-3xl"><%= mysql.minecraft_name %>'s Aktivitäten</h1>
         </div>
-        <% activity.forEach((transaction) => { %>
-            <% if(transaction.transaction_to === mysql.minecraft_name) { %>
-
-                <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl">Heute</h1>
-                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
-                    <div class="flex items-center">
-                            <img src="https://minotar.net/helm/<%= transaction.transaction_from %>/100.png" alt="" class="rounded-full h-auto w-12">
-                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span class="font-bold"><%= transaction.transaction_from %></span> hat <span class="font-bold"><%= transaction.transaction_to %></span> Silber gesendet</h1>
-                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span class="font-bold"><%= transaction.transaction_from %></span></h1>
-
-
-                            <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">+<%= transaction.transaction_amount %> Silber</h1>
-                    </div>
-
-                </div>
+        <% list = []; %>
+        <% activity.forEach((dates) => { %>
+            <% if(list.includes(dates.transaction_date)) { %>
+                <% console.log(list) %>
             <% } else { %>
-                    <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
-                        <div class="flex items-center">
-                            <img src="https://minotar.net/helm/<%= transaction.transaction_from %>/100.png" alt="" class="rounded-full h-auto w-12">
-                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span class="font-bold"><%= transaction.transaction_from %></span> hat <span class="font-bold"><%= transaction.transaction_to %></span> Silber gesendet</h1>
-                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span class="font-bold"><%= transaction.transaction_from %></span></h1>
+                <% list.push(dates.transaction_date) %>
+                <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl"><%= dates.transaction_date %></h1>
+                    <% activity.forEach((transaction) => { %>
+                    <% if(transaction.transaction_date === dates.transaction_date) { %>
+                        <% if(transaction.transaction_to === mysql.minecraft_name) { %>
 
-                            <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">-<%= transaction.transaction_amount %> Silber</h1>
-                        </div>
-                    </div>
+                            <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                                <div class="flex items-center">
+                                    <img src="https://minotar.net/helm/<%= transaction.transaction_from %>/100.png" alt="" class="rounded-full h-auto w-12">
+                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span class="font-bold"><%= transaction.transaction_from %></span> hat <span class="font-bold"><%= transaction.transaction_to %></span> Silber gesendet</h1>
+                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span class="font-bold"><%= transaction.transaction_from %></span></h1>
+
+
+                                    <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">+<%= transaction.transaction_amount %> Silber</h1>
+                                </div>
+
+                            </div>
+                        <% } else { %>
+                            <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                                <div class="flex items-center">
+                                    <img src="https://minotar.net/helm/<%= transaction.transaction_from %>/100.png" alt="" class="rounded-full h-auto w-12">
+                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span class="font-bold"><%= transaction.transaction_from %></span> hat <span class="font-bold"><%= transaction.transaction_to %></span> Silber gesendet</h1>
+                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span class="font-bold"><%= transaction.transaction_from %></span></h1>
+
+                                    <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">-<%= transaction.transaction_amount %> Silber</h1>
+                                </div>
+                            </div>
+                        <% }%>
+                        <% }%>
+                    <% }); %>
             <% }%>
         <% }); %>
+
+
+
+
+
     </div>
 </section>
 </body>
