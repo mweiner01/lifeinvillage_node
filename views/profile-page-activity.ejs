@@ -146,7 +146,7 @@
     </div>
     <div class="text-center">
         <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png"
-             class="rounded-full border mx-auto -my-16 border-gray-200 h-32 w-32" alt="">
+             class="rounded-full mx-auto -my-16 h-32 w-32" alt="">
         <div class="text-center mt-16">
             <div class="">
                 <h1 class="text-3xl text-gray-900 leading-1 font-semibold"><%= mysql.minecraft_name %></h1>
@@ -234,7 +234,7 @@
                         <% if(activity.activity_date === today) { %>
                             <% if(activity.transaction_to === mysql.minecraft_name) { %>
 
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -252,7 +252,7 @@
 
                                 </div>
                             <% } else { %>
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -271,7 +271,7 @@
                         <% } %>
                     <% } else if(activity.event_number === 1) { %>
                         <% if(activity.activity_date === today) { %>
-                            <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                            <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-yellow-200 max-w-2xl mb-2">
                                 <div class="flex items-center">
                                     <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png" alt=""
                                          class="rounded-full h-auto w-12">
@@ -298,7 +298,7 @@
                         <% if(activity.activity_date === date) { %>
                             <% if(activity.transaction_to === mysql.minecraft_name) { %>
 
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -314,7 +314,7 @@
                                     </div>
                                 </div>
                             <% } else { %>
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -334,7 +334,7 @@
                         <% } %>
                     <% } else if(activity.event_number === 1) { %>
                             <% if(activity.activity_date === date) { %>
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl bg-yellow-200 mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
