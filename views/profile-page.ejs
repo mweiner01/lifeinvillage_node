@@ -17,6 +17,8 @@
             crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css" rel="stylesheet">
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+
 </head>
 <body class="">
 <main>
@@ -24,20 +26,23 @@
       Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
       Read the documentation to get started: https://tailwindui.com/documentation
     -->
-    <nav class="bg-green-400">
+    <nav class="bg-white">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <!-- Mobile menu button-->
-                    <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
+                    <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
+                            aria-label="Main menu" aria-expanded="false">
                         <!-- Icon when menu is closed. -->
                         <!--
                           Heroicon name: menu
 
                           Menu open: "hidden", Menu closed: "block"
                         -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
                         <!-- Icon when menu is open. -->
                         <!--
@@ -45,22 +50,30 @@
 
                           Menu open: "block", Menu closed: "hidden"
                         -->
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M6 18L18 6M6 6l12 12"/>
                         </svg>
                     </button>
                 </div>
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex-shrink-0">
-                        <p class="block lg:hidden h-8 w-auto font-semibold text-white text-2xl">Life in Village</p>
-                        <p class="hidden lg:block h-8 w-auto font-semibold text-white text-2xl">Life in Village</p>
+                        <p class="block lg:hidden h-8 w-auto font-semibold text-gray-900 text-2xl">Life in Village</p>
+                        <p class="hidden lg:block h-8 w-auto font-semibold text-gray-900 text-2xl">Life in Village</p>
                     </div>
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex">
-                            <a href="/" class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Home</a>
-                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem ipsum.</a>
-                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
-                            <a href="#" class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem ipsum.</a>
+                            <a href="/"
+                               class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Home</a>
+                            <a href="#"
+                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
+                                ipsum.</a>
+                            <a href="#"
+                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
+                            <a href="#"
+                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
+                                ipsum.</a>
                         </div>
                     </div>
                 </div>
@@ -70,25 +83,39 @@
                     <div class="ml-3 relative">
                         <div class="flex">
                             <% if(data.loggedin && data.loggedin === true) { %>
-                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-white font-semibold mr-2"><%= data.minecraft_name %></p>
-                                <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110 focus:outline-none" id="user-menu-button" aria-label="User menu" aria-haspopup="true">
-                                    <img class="h-8 w-8 rounded-full" src="https://minotar.net/helm/<%= data.minecraft_name %>/100.png" alt="">
+                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-gray-900 font-semibold mr-2"><%= data.minecraft_name %></p>
+                                <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
+                                        id="user-menu-button" aria-label="User menu" aria-haspopup="true">
+                                    <img class="h-8 w-8 rounded-full"
+                                         src="https://minotar.net/helm/<%= data.minecraft_name %>/100.png" alt="">
                                 </button>
                             <% } else { %>
-                                <a href="/login" class="lg:block hidden mr-4 text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110" aria-label="User menu" aria-haspopup="true">
+                                <a href="/login"
+                                   class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
+                                   aria-label="User menu" aria-haspopup="true">
                                     Logge dich ein
                                 </a>
-                                <a href="/register" class="lg:block hidden text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110" aria-label="User menu" aria-haspopup="true">
+                                <a href="/register"
+                                   class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
+                                   aria-label="User menu" aria-haspopup="true">
                                     Registriere dich
                                 </a>
                             <% } %>
                         </div>
 
-                        <div class="origin-top-right absolute right-0 mt-2 w-48 shadow-lg rounded-md hidden" id="user-menu">
-                            <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-                                <a href="/profiles/<%= data.username %>" class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" role="menuitem">Dein Profil</a>
-                                <a href="#" class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" role="menuitem">Einstellungen</a>
-                                <a href="/logout" class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" role="menuitem">Ausloggen</a>
+                        <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
+                             id="user-menu">
+                            <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
+                                 aria-labelledby="user-menu">
+                                <a href="/profiles/<%= data.username %>"
+                                   class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                   role="menuitem">Dein Profil</a>
+                                <a href="#"
+                                   class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                   role="menuitem">Einstellungen</a>
+                                <a href="/logout"
+                                   class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                   role="menuitem">Ausloggen</a>
                             </div>
                         </div>
                     </div>
@@ -103,20 +130,26 @@
         -->
         <div class="hidden sm:hidden">
             <div class="px-2 pt-2 pb-3">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
-                <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
-                <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-                <a href="#" class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
+                <a href="#"
+                   class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
+                <a href="#"
+                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
+                <a href="#"
+                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
+                <a href="#"
+                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
             </div>
         </div>
     </nav>
 </main>
 <section>
-<div class="bg-green-400 py-32">
+    <div class="py-48 bg-center bg-cover"  style="background-image: url('/images/profile_background.png')">
 
-</div>
-    <div class="text-center">
-        <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png" class="rounded-full border mx-auto -my-16 border-gray-200 h-32 w-32" alt="">
+    </div>
+    <div class="border-b border-gray-300 text-center">
+        <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png" class="rounded-full mx-auto -my-16 h-32 w-32" alt="">
+
+        <!-- Profil name, description -->
         <div class="text-center mt-16">
             <div class="">
                 <h1 class="text-3xl text-gray-900 leading-1 font-semibold"><%= mysql.minecraft_name %></h1>
@@ -128,10 +161,13 @@
                 <h3 class="text-gray-900 font-medium"><%= mysql.account_description %></h3>
             </div>
         </div>
+        <!-- Profil name, desc end -->
+
+        <!-- Profil information like silver, playtime and level -->
         <div class="flex items-center p-4">
             <div class="mx-auto flex items-center">
                 <div class="text-center px-8">
-                    <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.silver_amount %></h1>
+                    <h1 class="text-lg text-green-800 font-bold leading-none" id="silvercount"><%= mysql.silver_amount %></h1>
                     <h1 class="text-lg text-gray-600">Silber</h1>
                 </div>
                 <div class="text-center px-8 border-r border-l border-gray-300">
@@ -144,43 +180,67 @@
                 </div>
             </div>
         </div>
+        <!-- Profil information END -->
     </div>
-    <div class="flex items-center justify-center bg-green-400">
-            <div class="text-white font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
-                <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
-            </div>
-        <div class="text-white font-semibold md:text-lg text-sm hover:text-green-600 p-4 border-b-2 border-transparent border-green-600 md:px-8 px-4">
-            <a id="posts" class="focus:outline-none text-green-600 font-semibold">Posts</a>
+    <!-- Profil Navigation if the device is smaller then md -->
+    <div class="mt-4 flex justify-center md:hidden block">
+        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
         </div>
-        <div class="text-white font-semibold md:text-lg text-sm p-4 border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
-            <a href="/profiles/<%= mysql.username %>/activity">Letzte Aktivitäten</a>
+        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent border-gray-900 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/posts" class="">Posts</a>
+        </div>
+        <div class="text-gray-900 font-semibold md:text-lg text-sm p-4 border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/activity" class="focus:outline-none font-semibold">Letzte
+                Aktivitäten</a>
         </div>
     </div>
-    <div class="p-4">
-        <div class="my-4 mx-auto max-w-3xl text-left">
-            <h1 class="text-center font-bold text-gray-900 md:text-5xl text-3xl"><%= mysql.minecraft_name %>'s Communitybeiträge</h1>
-        </div>
-        <% posts.forEach((post) => { %>
-            <div class="border mx-auto border-gray-300 rounded p-4 md:max-w-4xl max-w-2xl mb-2">
-                <div class="flex items-center">
-                    <div class="mr-4">
-                        <img src="https://minotar.net/helm/<%= post.post_minecraft_name %>/100.png" class="rounded-full h-auto w-12" alt="">
+    <!-- Profil Navigation if the device is greater then md -->
+    <div class="grid grid-flow-row justify-center gap-y-8 gap-x-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 xl:px-24 p-4">
+        <div class="md:block hidden mx-auto">
+            <div class="p-4">
+                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded p-4">
+                    <div class="mb-8">
+                        <h1 class="text-xl font-semibold text-gray-900">Profil Navigation</h1>
                     </div>
-                    <div class="p-2 w-full">
-                        <div class="flex">
-                            <h1 class="text-gray-900 text-lg font-semibold"><%= post.post_minecraft_name %></h1>
-                            <h1 class="ml-auto text-sm text-gray-300"><%= post.post_date %></h1>
+                    <div class="text-lg font-semibold text-gray-900">
+                        <div class="border-r border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
+                            <a href="/profiles/<%= mysql.username %>/achievements" class=""><i class="lni lni-tag"></i> Achievements</a>
                         </div>
-                        <div>
-                            <h1 class="text-sm text-gray-200"><a href="/<% post.post_username %>" class="hover:underline">@<%= post.post_username %></a></h1>
+                        <div class="text-gray-800 border-l-4 border-green-400 border border-gray-400 py-2 pl-2 pr-16">
+                            <a href="/profiles/<%= mysql.username %>/posts"><i class="lni lni-postcard text-green-400"></i> Posts</a>
+                        </div>
+                        <div class="border-r border-b border-gray-300 py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
+                            <a href="/profiles/<%= mysql.username %>/activity"><i class="lni lni-inbox hover:text-green-400"></i> Letzte Aktivitäten</a>
                         </div>
                     </div>
                 </div>
-                <div class="mt-2">
-                    <p class="text-gray-800"><%= post.post_content %></p>
-                </div>
             </div>
-        <% }) %>
+        </div>
+        <!-- Profil Navigation end -->
+            <div class="p-4">
+                <% posts.forEach((post) => { %>
+                    <div class="border mx-auto border-gray-300 rounded p-4 md:max-w-4xl max-w-2xl mb-2">
+                        <div class="flex items-center">
+                            <div class="mr-4">
+                                <img src="https://minotar.net/helm/<%= post.post_minecraft_name %>/100.png" class="rounded-full h-auto w-12" alt="">
+                            </div>
+                            <div class="p-2 w-full">
+                                <div class="flex">
+                                    <h1 class="text-gray-900 text-lg font-semibold"><%= post.post_minecraft_name %></h1>
+                                    <h1 class="ml-auto text-sm text-gray-300"><%= post.post_date %></h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-sm text-gray-200"><a href="/<% post.post_username %>" class="hover:underline">@<%= post.post_username %></a></h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <p class="text-gray-800"><%= post.post_content %></p>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
     </div>
 </section>
 </body>
@@ -211,5 +271,21 @@
             alert("Du bist nun offline");
         });
     }
+
+
+
+    setInterval(updateTicker, 2000);
+
+
+    function updateTicker(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            myObj = JSON.parse(this.responseText);
+            document.getElementById("silvercount").innerHTML = myObj[0].silver_amount;
+        };
+        xmlhttp.open("GET", "/api/v1/users/Max", true);
+        xmlhttp.send();
+    }
+
 </script>
 </html>

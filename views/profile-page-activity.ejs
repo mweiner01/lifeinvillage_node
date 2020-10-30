@@ -17,6 +17,7 @@
             crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css" rel="stylesheet">
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 </head>
 <body>
 <main>
@@ -24,7 +25,7 @@
       Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
       Read the documentation to get started: https://tailwindui.com/documentation
     -->
-    <nav class="bg-green-400">
+    <nav class="bg-white">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -57,20 +58,20 @@
                 </div>
                 <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="flex-shrink-0">
-                        <p class="block lg:hidden h-8 w-auto font-semibold text-white text-2xl">Life in Village</p>
-                        <p class="hidden lg:block h-8 w-auto font-semibold text-white text-2xl">Life in Village</p>
+                        <p class="block lg:hidden h-8 w-auto font-semibold text-gray-900 text-2xl">Life in Village</p>
+                        <p class="hidden lg:block h-8 w-auto font-semibold text-gray-900 text-2xl">Life in Village</p>
                     </div>
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex">
                             <a href="/"
-                               class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Home</a>
+                               class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Home</a>
                             <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem
+                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
                                 ipsum.</a>
                             <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
+                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
                             <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-white hover:text-green-600 hover:bg-white focus:outline-none transition duration-150 ease-in-out">Lorem
+                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
                                 ipsum.</a>
                         </div>
                     </div>
@@ -81,7 +82,7 @@
                     <div class="ml-3 relative">
                         <div class="flex">
                             <% if(data.loggedin && data.loggedin === true) { %>
-                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-white font-semibold mr-2"><%= data.minecraft_name %></p>
+                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-gray-900 font-semibold mr-2"><%= data.minecraft_name %></p>
                                 <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
                                         id="user-menu-button" aria-label="User menu" aria-haspopup="true">
                                     <img class="h-8 w-8 rounded-full"
@@ -89,12 +90,12 @@
                                 </button>
                             <% } else { %>
                                 <a href="/login"
-                                   class="lg:block hidden mr-4 text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
+                                   class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
                                    aria-label="User menu" aria-haspopup="true">
                                     Logge dich ein
                                 </a>
                                 <a href="/register"
-                                   class="lg:block hidden text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
+                                   class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
                                    aria-label="User menu" aria-haspopup="true">
                                     Registriere dich
                                 </a>
@@ -141,10 +142,10 @@
     </nav>
 </main>
 <section>
-    <div class="bg-green-400 py-32">
+    <div class="py-48 bg-center bg-cover" style="background-image: url('/images/profile_background.png')">
 
     </div>
-    <div class="text-center">
+    <div class="border-b border-gray-300 text-center">
         <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png"
              class="rounded-full mx-auto -my-16 h-32 w-32" alt="">
         <div class="text-center mt-16">
@@ -161,7 +162,7 @@
         <div class="flex items-center p-4">
             <div class="mx-auto flex items-center">
                 <div class="text-center px-8">
-                    <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.silver_amount %></h1>
+                    <h1 class="text-lg text-green-800 font-bold leading-none" id="silvercount"><%= mysql.silver_amount %></h1>
                     <h1 class="text-lg text-gray-600">Silber</h1>
                 </div>
                 <div class="text-center px-8 border-r border-l border-gray-300">
@@ -175,23 +176,43 @@
             </div>
         </div>
     </div>
-    <div class="flex items-center justify-center bg-green-400">
-        <div class="text-white font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
+    <!-- Profil Navigation if the device is smaller then md -->
+    <div class="mt-4 flex justify-center md:hidden block">
+        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
             <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
         </div>
-        <div class="text-white font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
+        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
             <a href="/profiles/<%= mysql.username %>/posts" class="">Posts</a>
         </div>
-        <div class="text-white font-semibold md:text-lg text-sm hover:text-green-600 p-4 border-b-2 border-transparent border-green-600 md:px-8 px-4">
-            <a href="/profiles/<%= mysql.username %>/activity" class="focus:outline-none text-green-600 font-semibold">Letzte
+        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent border-gray-900 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/activity" class="focus:outline-none font-semibold">Letzte
                 Aktivitäten</a>
         </div>
     </div>
-    <div class="p-4">
-        <div class="my-4 mx-auto max-w-3xl text-left">
-            <h1 class="text-center font-bold text-gray-900 md:text-5xl text-3xl"><%= mysql.minecraft_name %>'s
-                Aktivitäten</h1>
+    <!-- Profil Navigation if the device is greater then md -->
+    <div class="grid grid-flow-row justify-center gap-y-8 gap-x-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 xl:px-24 p-4">
+        <div class="md:block hidden mx-auto">
+            <div class="p-4">
+                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded p-4">
+                    <div class="mb-8">
+                        <h1 class="text-xl font-semibold text-gray-900">Profil Navigation</h1>
+                    </div>
+                    <div class="text-lg font-semibold text-gray-900">
+                        <div class="border-r border-b border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
+                            <a href="/profiles/<%= mysql.username %>/achievements" class=""><i class="lni lni-tag"></i> Achievements</a>
+                        </div>
+                        <div class="border-r border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
+                            <a href="/profiles/<%= mysql.username %>/posts"><i class="lni lni-postcard hover:text-green-400"></i> Posts</a>
+                        </div>
+                        <div class="text-gray-800 border-l-4 border-green-400 border border-gray-400 py-2 pl-2 pr-16">
+                            <a href="/profiles/<%= mysql.username %>/activity"><i class="lni lni-inbox text-green-400"></i> Letzte Aktivitäten</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- Profil Navigation end -->
+    <div class="p-4">
         <%
         var list = [];
         const now = new Date();
@@ -228,13 +249,13 @@
 
         <% list.forEach((date) => { %>
             <% if(date === today) { %>
-                <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl">Heute</h1>
+                <h1 class="mx-auto text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-4xl">Heute</h1>
                 <% activity.forEach((activity) => { %>
                     <% if(activity.event_number === 0) { %>
                         <% if(activity.activity_date === today) { %>
                             <% if(activity.transaction_to === mysql.minecraft_name) { %>
 
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -252,7 +273,7 @@
 
                                 </div>
                             <% } else { %>
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -271,7 +292,7 @@
                         <% } %>
                     <% } else if(activity.event_number === 1) { %>
                         <% if(activity.activity_date === today) { %>
-                            <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-yellow-200 max-w-2xl mb-2">
+                            <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-yellow-200 max-w-2xl mb-2">
                                 <div class="flex items-center">
                                     <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png" alt=""
                                          class="rounded-full h-auto w-12">
@@ -298,7 +319,7 @@
                         <% if(activity.activity_date === date) { %>
                             <% if(activity.transaction_to === mysql.minecraft_name) { %>
 
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -314,7 +335,7 @@
                                     </div>
                                 </div>
                             <% } else { %>
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
+                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -334,7 +355,7 @@
                         <% } %>
                     <% } else if(activity.event_number === 1) { %>
                             <% if(activity.activity_date === date) { %>
-                                <div class="mx-auto rounded-md border border-gray-300 p-4 md:max-w-4xl max-w-2xl bg-yellow-200 mb-2">
+                                <div class="mx-auto rounded-md p-4 md:max-w-4xl max-w-2xl bg-yellow-200 mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
@@ -385,5 +406,19 @@
             alert("Du bist nun offline");
         });
     }
+
+    setInterval(updateTicker, 2000);
+
+
+    function updateTicker(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            myObj = JSON.parse(this.responseText);
+            document.getElementById("silvercount").innerHTML = myObj[0].silver_amount;
+        };
+        xmlhttp.open("GET", "/api/v1/users/Max", true);
+        xmlhttp.send();
+    }
+
 </script>
 </html>

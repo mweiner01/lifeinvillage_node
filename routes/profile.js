@@ -48,7 +48,7 @@ router.get('/:username/activity', (req, res, next) => {
 
     con.query(sql, (err, rows) => {
         if(!err) {
-            let sql2 = mysql.format("SELECT * FROM silver_transactions WHERE transaction_from=? OR transaction_to=? OR minecraft_name=? ORDER BY DATE(activity_date)=DATE(NOW())", [rows[0].minecraft_name, rows[0].minecraft_name, rows[0].minecraft_name]);
+            let sql2 = mysql.format("SELECT * FROM silver_transactions WHERE transaction_from=? OR transaction_to=? OR minecraft_name=? ORDER BY DATE(activity_date)=DATE(NOW() AND id)", [rows[0].minecraft_name, rows[0].minecraft_name, rows[0].minecraft_name]);
             con.query(sql2, (err2, rows2) => {
                 res.render('profile-page-activity', {
                     data: req.session,

@@ -112,7 +112,7 @@
     </nav>
 </main>
 <section>
-    <div class="bg-green-400 py-32">
+    <div class="py-48 bg-center bg-cover" style="background-image: url(https://wallup.net/wp-content/uploads/2019/09/07/259680-sunrise-minecraft.jpg)">
 
     </div>
     <div class="text-center">
@@ -145,15 +145,16 @@
             </div>
         </div>
     </div>
-    <div class="flex items-center justify-center bg-green-400">
-        <div class="text-white font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
+    <div class="mt-4 flex justify-center">
+        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
             <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
         </div>
-        <div class="text-white font-semibold md:text-lg text-sm hover:text-green-600 p-4 border-b-2 border-transparent border-green-600 md:px-8 px-4">
-            <a id="posts" class="focus:outline-none text-green-600 font-semibold">Posts</a>
+        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/posts" class="">Posts</a>
         </div>
-        <div class="text-white font-semibold md:text-lg text-sm p-4 border-b-2 border-transparent hover:bg-green-600 md:px-8 px-4">
-            <a href="/profiles/<%= mysql.username %>/activity">Letzte Aktivitäten</a>
+        <div class="text-gray-900 font-semibold md:text-lg text-sm p-4 border-b-2 border-transparent border-gray-900 md:px-8 px-4">
+            <a href="/profiles/<%= mysql.username %>/activity" class="focus:outline-none font-semibold">Letzte
+                Aktivitäten</a>
         </div>
     </div>
     <div class="p-4">

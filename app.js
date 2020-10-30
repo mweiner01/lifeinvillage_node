@@ -12,6 +12,7 @@ var registerRouter = require('./routes/register');
 var profileRouter = require('./routes/profile');
 var logoutRouter = require('./routes/logout');
 var postsRouter = require('./routes/posts');
+var apiRouter = require('./routes/api-v1');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger(`dev`));
 app.use(express.json());
+app.use( express.static( "public" ) );
 app.use(session({secret: 'secret-key',saveUninitialized: true, resave: true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -33,6 +35,7 @@ app.use('/users', usersRouter);
 app.use('/profiles', profileRouter);
 app.use('/logout', logoutRouter);
 app.use('/posts', postsRouter);
+app.use('/api/v1', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

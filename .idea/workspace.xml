@@ -19,9 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="finally fixxed activity and added level activity">
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added color to cards">
+      <change afterPath="$PROJECT_DIR$/routes/api-v1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page-achievements.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page-achievements.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/profile-page-activity.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page-activity.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,14 +81,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views" />
-      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\public\images" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views\css" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views\partials" />
+      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\views" />
       <recent name="C:\Users\Max\PhpstormProjects\lifeinvillage\routes\views" />
     </key>
   </component>
@@ -113,7 +121,12 @@
       <workItem from="1603965205231" duration="25000" />
       <workItem from="1603982952962" duration="11365000" />
       <workItem from="1604001873964" duration="112000" />
-      <workItem from="1604010456519" duration="7243000" />
+      <workItem from="1604010456519" duration="7328000" />
+      <workItem from="1604064262014" duration="615000" />
+      <workItem from="1604066697233" duration="9538000" />
+      <workItem from="1604082206622" duration="126000" />
+      <workItem from="1604082359241" duration="470000" />
+      <workItem from="1604087972549" duration="1374000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -220,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604017163102</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added color to cards">
+      <created>1604017821349</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1604017821349</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,13 +274,14 @@
     <MESSAGE value="added activity sort by date" />
     <MESSAGE value="added sorted activity" />
     <MESSAGE value="finally fixxed activity and added level activity" />
-    <option name="LAST_COMMIT_MESSAGE" value="finally fixxed activity and added level activity" />
+    <MESSAGE value="added color to cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="added color to cards" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="108" y="539" key="#SQL_Dialects" timestamp="1603888810661">
+    <state x="108" y="539" key="#SQL_Dialects" timestamp="1604088180378">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="108" y="539" key="#SQL_Dialects/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603888810661" />
+    <state x="108" y="539" key="#SQL_Dialects/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604088180378" />
     <state x="324" y="361" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603727437573">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -277,26 +298,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="182" key="GridCell.Tab.0.bottom" timestamp="1604016130654">
+    <state width="2517" height="182" key="GridCell.Tab.0.bottom" timestamp="1604089177725">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
-    <state width="2517" height="182" key="GridCell.Tab.0.center" timestamp="1604016130654">
+    <state width="2517" height="182" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604089177725" />
+    <state width="2517" height="182" key="GridCell.Tab.0.center" timestamp="1604089177725">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
-    <state width="2517" height="182" key="GridCell.Tab.0.left" timestamp="1604016130654">
+    <state width="2517" height="182" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604089177725" />
+    <state width="2517" height="182" key="GridCell.Tab.0.left" timestamp="1604089177725">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
-    <state width="2517" height="182" key="GridCell.Tab.0.right" timestamp="1604016130654">
+    <state width="2517" height="182" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604089177725" />
+    <state width="2517" height="182" key="GridCell.Tab.0.right" timestamp="1604089177725">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604017163978">
+    <state width="2517" height="182" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604089177725" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604017822204">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604017163978" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604017822204" />
     <state x="1174" y="631" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603756677837">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
