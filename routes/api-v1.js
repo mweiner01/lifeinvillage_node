@@ -28,8 +28,7 @@ router.get('/users/:username', (req, res, next) => {
     con.query(sql, (err, rows) => {
         if(!err) {
             if(rows.length > 0) {
-                res.send(JSON.stringify(rows[0], null, 4));
-                console.log(JSON.stringify(rows[0], null, 4))
+                res.send(JSON.stringify(rows, null, 4));
             } else {
                 data = { "error_id": 1, "error_message": "User not found" }
                 res.send(JSON.stringify(data, null, 4));

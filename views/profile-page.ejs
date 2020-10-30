@@ -245,6 +245,7 @@
 </section>
 </body>
 <script>
+    var username = <%- JSON.stringify(mysql.username) %>
     onlineStatus = 0;
     let btn = document.getElementById('user-menu-button');
     let menu = document.getElementById('user-menu');
@@ -283,7 +284,8 @@
             myObj = JSON.parse(this.responseText);
             document.getElementById("silvercount").innerHTML = myObj[0].silver_amount;
         };
-        xmlhttp.open("GET", "/api/v1/users/Max", true);
+        xmlhttp.open("GET", "/api/v1/users/" + username, true);
+        console.log(xmlhttp.responseText)
         xmlhttp.send();
     }
 

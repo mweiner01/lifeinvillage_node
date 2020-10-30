@@ -162,7 +162,8 @@
         <div class="flex items-center p-4">
             <div class="mx-auto flex items-center">
                 <div class="text-center px-8">
-                    <h1 class="text-lg text-green-800 font-bold leading-none" id="silvercount"><%= mysql.silver_amount %></h1>
+                    <h1 class="text-lg text-green-800 font-bold leading-none"
+                        id="silvercount"><%= mysql.silver_amount %></h1>
                     <h1 class="text-lg text-gray-600">Silber</h1>
                 </div>
                 <div class="text-center px-8 border-r border-l border-gray-300">
@@ -199,168 +200,176 @@
                     </div>
                     <div class="text-lg font-semibold text-gray-900">
                         <div class="border-r border-b border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
-                            <a href="/profiles/<%= mysql.username %>/achievements" class=""><i class="lni lni-tag"></i> Achievements</a>
+                            <a href="/profiles/<%= mysql.username %>/achievements" class=""><i class="lni lni-tag"></i>
+                                Achievements</a>
                         </div>
                         <div class="border-r border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
-                            <a href="/profiles/<%= mysql.username %>/posts"><i class="lni lni-postcard hover:text-green-400"></i> Posts</a>
+                            <a href="/profiles/<%= mysql.username %>/posts"><i
+                                        class="lni lni-postcard hover:text-green-400"></i> Posts</a>
                         </div>
                         <div class="text-gray-800 border-l-4 border-green-400 border border-gray-400 py-2 pl-2 pr-16">
-                            <a href="/profiles/<%= mysql.username %>/activity"><i class="lni lni-inbox text-green-400"></i> Letzte Aktivitäten</a>
+                            <a href="/profiles/<%= mysql.username %>/activity"><i
+                                        class="lni lni-inbox text-green-400"></i> Letzte Aktivitäten</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Profil Navigation end -->
-    <div class="p-4">
-        <%
-        var list = [];
-        const now = new Date();
-        activity.forEach((dates) => {
-            if (list.includes(dates.activity_date)) {
+        <div class="p-4">
+            <%
+            var list = [];
+            const now = new Date();
+            activity.forEach((dates) => {
+                if (list.includes(dates.activity_date)) {
 
+                } else {
+                    list.push(dates.activity_date);
+                }
+            });
+
+            list.sort(function (a, b) {
+                a = a.split('.').reverse().join('');
+                b = b.split('.').reverse().join('');
+
+                return a < b ? a : a > b ? -1 : 0;
+            });
+            var plusMonth = now.getMonth() + 1;
+            if (now.getDate() < 10) {
+                var day = '0' + now.getDate();
             } else {
-                list.push(dates.activity_date);
+                var day = now.getDate();
             }
-        });
+            if (plusMonth < 10) {
+                var month = '0' + plusMonth
+            } else {
+                var month = plusMonth
+            }
 
-        list.sort(function (a, b) {
-            a = a.split('.').reverse().join('');
-            b = b.split('.').reverse().join('');
+            var today = day + '.' + month + '.' + now.getFullYear();
+            var yesterday = day - 1 + '.' + month + '.' + now.getFullYear();
+            console.log(yesterday)
+            %>
 
-            return a < b ? a : a > b ? -1 : 0;
-        });
-        var plusMonth = now.getMonth() + 1;
-        if (now.getDate() < 10) {
-            var day = '0' + now.getDate();
-        } else {
-            var day = now.getDate();
-        }
-        if (plusMonth < 10) {
-            var month = '0' + plusMonth
-        } else {
-            var month = plusMonth
-        }
+            <% list.forEach((date) => { %>
+                <% if(date === today) { %>
+                    <h1 class="mx-auto text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-4xl">Heute</h1>
+                    <% activity.forEach((activity) => { %>
+                        <% if(activity.event_number === 0) { %>
+                            <% if(activity.activity_date === today) { %>
+                                <% if(activity.transaction_to === mysql.minecraft_name) { %>
 
-        var today = day + '.' + month + '.' + now.getFullYear();
-        var yesterday = day - 1 + '.' + month + '.' + now.getFullYear();
-        console.log(yesterday)
-        %>
+                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
+                                        <div class="flex items-center">
+                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                 alt="" class="rounded-full h-auto w-12">
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span> hat
+                                                <span
+                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
+                                                gesendet</h1>
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
 
-        <% list.forEach((date) => { %>
-            <% if(date === today) { %>
-                <h1 class="mx-auto text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-4xl">Heute</h1>
-                <% activity.forEach((activity) => { %>
-                    <% if(activity.event_number === 0) { %>
-                        <% if(activity.activity_date === today) { %>
-                            <% if(activity.transaction_to === mysql.minecraft_name) { %>
 
-                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
+                                            <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                +<%= activity.transaction_amount %> Silber</h1>
+                                        </div>
+
+                                    </div>
+                                <% } else { %>
+                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
+                                        <div class="flex items-center">
+                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                 alt="" class="rounded-full h-auto w-12">
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span> hat
+                                                <span
+                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
+                                                gesendet</h1>
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
+
+                                            <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                -<%= activity.transaction_amount %> Silber</h1>
+                                        </div>
+                                    </div>
+                                <% } %>
+                            <% } %>
+                        <% } else if(activity.event_number === 1) { %>
+                            <% if(activity.activity_date === today) { %>
+                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-yellow-200 max-w-2xl mb-2">
                                     <div class="flex items-center">
-                                        <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                             alt="" class="rounded-full h-auto w-12">
+                                        <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
+                                             alt=""
+                                             class="rounded-full h-auto w-12">
                                         <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span> hat <span
-                                                    class="font-bold"><%= activity.transaction_to %></span> Silber
-                                            gesendet</h1>
+                                                    class="font-bold"><%= activity.minecraft_name %></span> ist nun
+                                            Level
+                                            <span
+                                                    class="font-bold"><%= activity.new_level %></span></h1>
                                         <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span></h1>
+                                                    class="font-bold"><%= activity.minecraft_name %></span></h1>
 
 
-                                        <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                            +<%= activity.transaction_amount %> Silber</h1>
+                                        <h1 class="ml-auto text-white text-lg bg-yellow-400 py-1 px-4 rounded-md font-semibold max-w-xs"><%= activity.new_level - 1 %>
+                                            -> <%= activity.new_level %></h1>
                                     </div>
 
-                                </div>
-                            <% } else { %>
-                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
-                                    <div class="flex items-center">
-                                        <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                             alt="" class="rounded-full h-auto w-12">
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span> hat <span
-                                                    class="font-bold"><%= activity.transaction_to %></span> Silber
-                                            gesendet</h1>
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span></h1>
-
-                                        <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                            -<%= activity.transaction_amount %> Silber</h1>
-                                    </div>
                                 </div>
                             <% } %>
                         <% } %>
-                    <% } else if(activity.event_number === 1) { %>
-                        <% if(activity.activity_date === today) { %>
-                            <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-yellow-200 max-w-2xl mb-2">
-                                <div class="flex items-center">
-                                    <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png" alt=""
-                                         class="rounded-full h-auto w-12">
-                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                class="font-bold"><%= activity.minecraft_name %></span> ist nun Level
-                                        <span
-                                                class="font-bold"><%= activity.new_level %></span></h1>
-                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                class="font-bold"><%= activity.minecraft_name %></span></h1>
+                    <% }); %>
+                <% } else { %>
+                    <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl"><%= date %></h1>
+                    <% activity.forEach((activity) => { %>
+                        <% if(activity.event_number === 0) { %>
+                            <% if(activity.activity_date === date) { %>
+                                <% if(activity.transaction_to === mysql.minecraft_name) { %>
 
-
-                                    <h1 class="ml-auto text-white text-lg bg-yellow-400 py-1 px-4 rounded-md font-semibold max-w-xs"><%= activity.new_level - 1 %>
-                                        -> <%= activity.new_level %></h1>
-                                </div>
-
-                            </div>
-                        <% } %>
-                    <% } %>
-                <% }); %>
-            <% } else { %>
-                <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl"><%= date %></h1>
-                <% activity.forEach((activity) => { %>
-                    <% if(activity.event_number === 0) { %>
-                        <% if(activity.activity_date === date) { %>
-                            <% if(activity.transaction_to === mysql.minecraft_name) { %>
-
-                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
-                                    <div class="flex items-center">
-                                        <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                             alt="" class="rounded-full h-auto w-12">
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span> hat
-                                            <span
-                                                    class="font-bold"><%= activity.transaction_to %></span> Silber
-                                            gesendet</h1>
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span></h1>
-                                        <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                            +<%= activity.transaction_amount %> Silber</h1>
+                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
+                                        <div class="flex items-center">
+                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                 alt="" class="rounded-full h-auto w-12">
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span> hat
+                                                <span
+                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
+                                                gesendet</h1>
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
+                                            <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                +<%= activity.transaction_amount %> Silber</h1>
+                                        </div>
                                     </div>
-                                </div>
-                            <% } else { %>
-                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
-                                    <div class="flex items-center">
-                                        <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                             alt="" class="rounded-full h-auto w-12">
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span> hat
-                                            <span
-                                                    class="font-bold"><%= activity.transaction_to %></span> Silber
-                                            gesendet</h1>
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                    class="font-bold"><%= activity.transaction_from %></span></h1>
+                                <% } else { %>
+                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
+                                        <div class="flex items-center">
+                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                 alt="" class="rounded-full h-auto w-12">
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span> hat
+                                                <span
+                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
+                                                gesendet</h1>
+                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
 
-                                        <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                            -<%= activity.transaction_amount %> Silber</h1>
+                                            <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                -<%= activity.transaction_amount %> Silber</h1>
+                                        </div>
                                     </div>
-                                </div>
+                                <% } %>
                             <% } %>
-                        <% } %>
-                    <% } else if(activity.event_number === 1) { %>
+                        <% } else if(activity.event_number === 1) { %>
                             <% if(activity.activity_date === date) { %>
                                 <div class="mx-auto rounded-md p-4 md:max-w-4xl max-w-2xl bg-yellow-200 mb-2">
                                     <div class="flex items-center">
                                         <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
                                              alt="" class="rounded-full h-auto w-12">
                                         <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                    class="font-bold"><%= activity.minecraft_name %></span> ist nun Level <span class="font-bold"><%= activity.new_level %></span></h1>
+                                                    class="font-bold"><%= activity.minecraft_name %></span> ist nun
+                                            Level <span class="font-bold"><%= activity.new_level %></span></h1>
                                         <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
                                                     class="font-bold"><%= activity.minecraft_name %></span></h1>
 
@@ -371,15 +380,17 @@
 
                                 </div>
                             <% } %>
-                    <% } %>
-                <% }); %>
-            <% } %>
-        <% }); %>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+            <% }); %>
 
+        </div>
     </div>
 </section>
 </body>
 <script>
+    var username = <%- JSON.stringify(mysql.username) %>
     onlineStatus = 0;
     let btn = document.getElementById('user-menu-button');
     let menu = document.getElementById('user-menu');
@@ -387,7 +398,6 @@
         if (btn) {
             btn.addEventListener('click', function () {
                 menu.classList.toggle('hidden');
-                console.log("Test")
             });
         }
 
@@ -416,7 +426,8 @@
             myObj = JSON.parse(this.responseText);
             document.getElementById("silvercount").innerHTML = myObj[0].silver_amount;
         };
-        xmlhttp.open("GET", "/api/v1/users/Max", true);
+        xmlhttp.open("GET", "/api/v1/users/" + username, true);
+        console.log(xmlhttp.responseText)
         xmlhttp.send();
     }
 

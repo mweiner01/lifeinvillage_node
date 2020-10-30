@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="changed design and stuff like that">
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added api route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api-v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api-v1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page-activity.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page-activity.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,7 @@
       <workItem from="1604066697233" duration="9538000" />
       <workItem from="1604082206622" duration="126000" />
       <workItem from="1604082359241" duration="470000" />
-      <workItem from="1604087972549" duration="2659000" />
+      <workItem from="1604087972549" duration="7499000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -240,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604089485528</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added api route">
+      <created>1604090669018</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604090669018</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +285,8 @@
     <MESSAGE value="finally fixxed activity and added level activity" />
     <MESSAGE value="added color to cards" />
     <MESSAGE value="changed design and stuff like that" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed design and stuff like that" />
+    <MESSAGE value="added api route" />
+    <option name="LAST_COMMIT_MESSAGE" value="added api route" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="539" key="#SQL_Dialects" timestamp="1604088180378">
@@ -299,26 +309,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="1234" height="182" key="GridCell.Tab.0.bottom" timestamp="1604090294079">
+    <state width="1436" height="182" key="GridCell.Tab.0.bottom" timestamp="1604095187671">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="182" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604090294079" />
-    <state width="1234" height="182" key="GridCell.Tab.0.center" timestamp="1604090294079">
+    <state width="1436" height="182" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604095187671" />
+    <state width="1436" height="182" key="GridCell.Tab.0.center" timestamp="1604095187671">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="182" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604090294079" />
-    <state width="1234" height="182" key="GridCell.Tab.0.left" timestamp="1604090294079">
+    <state width="1436" height="182" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604095187671" />
+    <state width="1436" height="182" key="GridCell.Tab.0.left" timestamp="1604095187671">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="182" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604090294079" />
-    <state width="1234" height="182" key="GridCell.Tab.0.right" timestamp="1604090294079">
+    <state width="1436" height="182" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604095187671" />
+    <state width="1436" height="182" key="GridCell.Tab.0.right" timestamp="1604095187671">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1234" height="182" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604090294079" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604089486953">
+    <state width="1436" height="182" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604095187671" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604090669961">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604089486953" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604090669961" />
     <state x="1174" y="631" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603756677837">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
