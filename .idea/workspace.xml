@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added activity sort by date">
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added sorted activity">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/profile-page-activity.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page-activity.ejs" afterDir="false" />
@@ -114,7 +114,7 @@
       <workItem from="1603965205231" duration="25000" />
       <workItem from="1603982952962" duration="11365000" />
       <workItem from="1604001873964" duration="112000" />
-      <workItem from="1604010456519" duration="4691000" />
+      <workItem from="1604010456519" duration="6648000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -207,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604011628175</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added sorted activity">
+      <created>1604015196914</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1604015196914</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +246,8 @@
     <MESSAGE value="added first design of post" />
     <MESSAGE value="added post and activity page for profiles" />
     <MESSAGE value="added activity sort by date" />
-    <option name="LAST_COMMIT_MESSAGE" value="added activity sort by date" />
+    <MESSAGE value="added sorted activity" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sorted activity" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="539" key="#SQL_Dialects" timestamp="1603888810661">
@@ -262,34 +270,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="182" key="GridCell.Tab.0.bottom" timestamp="1604012824517">
+    <state width="2517" height="182" key="GridCell.Tab.0.bottom" timestamp="1604016130654">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604012824517" />
-    <state width="2517" height="182" key="GridCell.Tab.0.center" timestamp="1604012824517">
+    <state width="2517" height="182" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
+    <state width="2517" height="182" key="GridCell.Tab.0.center" timestamp="1604016130654">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604012824517" />
-    <state width="2517" height="182" key="GridCell.Tab.0.left" timestamp="1604012824517">
+    <state width="2517" height="182" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
+    <state width="2517" height="182" key="GridCell.Tab.0.left" timestamp="1604016130654">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604012824517" />
-    <state width="2517" height="182" key="GridCell.Tab.0.right" timestamp="1604012824517">
+    <state width="2517" height="182" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
+    <state width="2517" height="182" key="GridCell.Tab.0.right" timestamp="1604016130654">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="182" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604012824517" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604011629561">
+    <state width="2517" height="182" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604016130654" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604015197868">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604011629561" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604015197868" />
     <state x="1174" y="631" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603756677837">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1174" y="631" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603756677837" />
-    <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603913924745">
+    <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604015182868">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603913924745" />
+    <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604015182868" />
     <state x="2512" y="-15" width="1936" height="948" maximized="true" key="dock-window-1" timestamp="1603893294299">
       <screen x="2560" y="0" width="1920" height="1080" />
     </state>
