@@ -20,12 +20,20 @@ router.get('/', function(req, res, next) {
 
 router.get('/users/:username', (req, res, next) => {
     param = req.params.username;
+    api_key = req.body.api_key;
 
-    let sql = mysql.format("SELECT * FROM accounts WHERE username=?", [param]);
+    res.setHeader('Content-Type', 'application/json');
+    let sql = mysql.format("SELECT id, username, account_description, minecraft_name, profile_picture, playtime_seconds, playtime_minutes, playtime_hours, silver_amount, general_level_number, general_level_xp, magic_level_number, magic_level_xp, forge_level_number, forge_level_xp FROM accounts WHERE username=?", [param]);
 
     con.query(sql, (err, rows) => {
         if(!err) {
-            res.send(rows);
+            if(rows.length > 0) {
+                res.send(JSON.stringify(rows[0], null, 4));
+                console.log(JSON.stringify(rows[0], null, 4))
+            } else {
+                data = { "error_id": 1, "error_message": "User not found" }
+                res.send(JSON.stringify(data, null, 4));
+            }
         } else {
             res.render('error')
         }
