@@ -205,20 +205,28 @@
                                 <a href="/profiles/<%= mysql.username %>/posts" class="">Post</a>
                             </div>
                         </div>
-                        <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
+                        <div class="flex rounded-full py-1 px-2 mb-2">
                             <div class="pr-2">
                                 <i class="lni lni-postcard text-green-400"></i>
                             </div>
-                            <div class="hover:text-green-400">
-                                <a href="/profiles/<%= mysql.username %>/achievements" class="">Achievements</a>
+                            <div class="">
+                                <p href="/profiles/<%= mysql.username %>/achievements" class="cursor-not-allowed">Achievements</p>
                             </div>
                         </div>
-                        <div class="flex rounded-full bg-green-200 py-1 px-2">
+                        <div class="flex rounded-full bg-green-200 py-1 px-2 mb-2">
                             <div class="pr-2">
                                 <i class="lni lni-inbox text-green-400"></i>
                             </div>
                             <div class="text-green-400">
                                 <a href="/profiles/<%= mysql.username %>/activity" class="">Letzte Aktivitäten</a>
+                            </div>
+                        </div>
+                        <div class="flex rounded-full py-1 px-2">
+                            <div class="pr-2">
+                                <i class="lni lni-stats-up text-green-400"></i>
+                            </div>
+                            <div class="">
+                                <p href="/profiles/<%= mysql.username %>/stats" class="cursor-not-allowed">Statistiken</p>
                             </div>
                         </div>
                         <% if(mysql.username === data.username) { %>
@@ -447,6 +455,7 @@
             document.getElementById("silvercount").innerHTML = myObj[0].silver_amount;
         };
         xmlhttp.open("GET", "/api/v1/users/" + username, true);
+        xmlhttp.setRequestHeader('Api-key', '293127512391')
         console.log(xmlhttp.responseText)
         xmlhttp.send();
     }

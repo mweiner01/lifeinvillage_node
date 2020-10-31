@@ -21,7 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added new version of navigation for profile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api-v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api-v1.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/profile-page-activity.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page-activity.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/profile-page.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +123,8 @@
       <workItem from="1604082206622" duration="126000" />
       <workItem from="1604082359241" duration="470000" />
       <workItem from="1604087972549" duration="10069000" />
-      <workItem from="1604106148841" duration="6283000" />
+      <workItem from="1604106148841" duration="6799000" />
+      <workItem from="1604155137149" duration="2094000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -270,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604111431530</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added new version of navigation for profile">
+      <created>1604112604573</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1604112604573</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,30 +342,34 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="180" key="GridCell.Tab.0.bottom" timestamp="1604111272234">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1234" height="183" key="GridCell.Tab.0.bottom" timestamp="1604157300120">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="180" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604111272234" />
-    <state width="2517" height="180" key="GridCell.Tab.0.center" timestamp="1604111272234">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1234" height="180" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="1234" height="183" key="GridCell.Tab.0.bottom/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604157300120" />
+    <state width="1234" height="183" key="GridCell.Tab.0.center" timestamp="1604157300120">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="180" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604111272234" />
-    <state width="2517" height="180" key="GridCell.Tab.0.left" timestamp="1604111272234">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1234" height="180" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="1234" height="183" key="GridCell.Tab.0.center/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604157300120" />
+    <state width="1234" height="183" key="GridCell.Tab.0.left" timestamp="1604157300120">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="180" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604111272234" />
-    <state width="2517" height="180" key="GridCell.Tab.0.right" timestamp="1604111272234">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1234" height="180" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="1234" height="183" key="GridCell.Tab.0.left/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604157300120" />
+    <state width="1234" height="183" key="GridCell.Tab.0.right" timestamp="1604157300120">
+      <screen x="0" y="0" width="2560" height="1410" />
     </state>
-    <state width="2517" height="180" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604111272234" />
+    <state width="1234" height="180" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="1234" height="183" key="GridCell.Tab.0.right/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604157300120" />
     <state x="1421" y="348" key="SettingsEditor" timestamp="1604107121090">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1421" y="348" key="SettingsEditor/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604107121090" />
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604111432470">
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2" timestamp="1604112607155">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604111432470" />
+    <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604112607155" />
     <state x="1174" y="631" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603756677837">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
