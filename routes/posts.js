@@ -10,7 +10,12 @@ var con = mysql.createConnection({
     database: "liv7"
 });
 
-/* GET home page. */
+/*
+* This will be the post router
+* You will get the opportunity to actually get posts at a single page
+* to write comments better or have a larger view
+*
+* */
 router.get('/', function(req, res, next) {
     res.render('posts');
 });
