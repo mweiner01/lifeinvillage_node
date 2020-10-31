@@ -102,7 +102,7 @@
                             <% } %>
                         </div>
 
-                        <div class="origin-top-right absolute right-0 mt-2 w-48 shadow-lg rounded-md hidden"
+                        <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
                              id="user-menu">
                             <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
                                  aria-labelledby="user-menu">
@@ -191,26 +191,41 @@
         </div>
     </div>
     <!-- Profil Navigation if the device is greater then md -->
-    <div class="grid grid-flow-row justify-center gap-y-8 gap-x-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 xl:px-24 p-4">
-        <div class="md:block hidden mx-auto">
-            <div class="p-4">
-                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded p-4">
-                    <div class="mb-8">
-                        <h1 class="text-xl font-semibold text-gray-900">Profil Navigation</h1>
-                    </div>
+    <div class="grid grid-flow-row justify-center gap-y-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 p-6">
+        <div class="md:block hidden mx-auto xl:px-24">
+            <div class="py-6">
+                <h1 class="uppercase absolute -my-6 ml-2 font-semibold tracking-tight leading-none">Navigation</h1>
+                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded-md shadow-lg p-6">
                     <div class="text-lg font-semibold text-gray-900">
-                        <div class="border-r border-b border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
-                            <a href="/profiles/<%= mysql.username %>/achievements" class=""><i class="lni lni-tag"></i>
-                                Achievements</a>
+                        <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
+                            <div class="pr-2">
+                                <i class="lni lni-tag text-green-400"></i>
+                            </div>
+                            <div class="hover:text-green-400">
+                                <a href="/profiles/<%= mysql.username %>/posts" class="">Post</a>
+                            </div>
                         </div>
-                        <div class="border-r border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
-                            <a href="/profiles/<%= mysql.username %>/posts"><i
-                                        class="lni lni-postcard hover:text-green-400"></i> Posts</a>
+                        <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
+                            <div class="pr-2">
+                                <i class="lni lni-postcard text-green-400"></i>
+                            </div>
+                            <div class="hover:text-green-400">
+                                <a href="/profiles/<%= mysql.username %>/achievements" class="">Achievements</a>
+                            </div>
                         </div>
-                        <div class="text-gray-800 border-l-4 border-green-400 border border-gray-400 py-2 pl-2 pr-16">
-                            <a href="/profiles/<%= mysql.username %>/activity"><i
-                                        class="lni lni-inbox text-green-400"></i> Letzte Aktivitäten</a>
+                        <div class="flex rounded-full bg-green-200 py-1 px-2">
+                            <div class="pr-2">
+                                <i class="lni lni-inbox text-green-400"></i>
+                            </div>
+                            <div class="text-green-400">
+                                <a href="/profiles/<%= mysql.username %>/activity" class="">Letzte Aktivitäten</a>
+                            </div>
                         </div>
+                        <% if(mysql.username === data.username) { %>
+                            <div class="text-center pt-12">
+                                <a href="/posts/create" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post erstellen</a>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>
@@ -254,7 +269,7 @@
 
             <% list.forEach((date) => { %>
                 <% if(date === today) { %>
-                    <h1 class="mx-auto text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-5xl">Heute</h1>
+                    <h1 class="text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-5xl">Heute</h1>
                     <% activity.forEach((activity) => { %>
                         <% if(activity.event_number === 0) { %>
                             <% if(activity.activity_date === today) { %>
@@ -394,7 +409,7 @@
 
 </script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
+<script>
     var username = <%- JSON.stringify(mysql.username) %>
     onlineStatus = 0;
     let btn = document.getElementById('user-menu-button');

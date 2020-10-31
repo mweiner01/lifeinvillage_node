@@ -11,10 +11,10 @@
 
     <title><%= data.username %> - Life in Village</title>
 
-    <!-- Linking CSS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
             integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
             crossorigin="anonymous"></script>
+    <!-- Linking CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css" rel="stylesheet">
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
@@ -22,10 +22,6 @@
 </head>
 <body class="">
 <main>
-    <!--
-      Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
-      Read the documentation to get started: https://tailwindui.com/documentation
-    -->
     <nav class="bg-white">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
             <div class="relative flex items-center justify-between h-16">
@@ -198,18 +194,18 @@
         </div>
     </div>
     <!-- Profil Navigation if the device is greater then md -->
-    <div class="grid grid-flow-row justify-center gap-y-8 gap-x-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 xl:px-24 p-4">
-        <div class="md:block hidden mx-auto">
+    <div class="grid grid-flow-row justify-center gap-y-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 p-6">
+        <div class="md:block hidden mx-auto xl:px-24">
             <div class="py-6">
                 <h1 class="uppercase absolute -my-6 ml-2 font-semibold tracking-tight leading-none">Navigation</h1>
                 <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded-md shadow-lg p-6">
                     <div class="text-lg font-semibold text-gray-900">
-                            <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
+                            <div class="flex rounded-full bg-green-200 py-1 px-2 mb-2">
                                 <div class="pr-2">
                                     <i class="lni lni-tag text-green-400"></i>
                                 </div>
-                                <div class="hover:text-green-400">
-                                    <a href="/profiles/<%= mysql.username %>/achievements" class="">Post</a>
+                                <div class="text-green-400">
+                                    <a href="/profiles/<%= mysql.username %>/posts" class="">Post</a>
                                 </div>
                             </div>
                         <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
@@ -225,12 +221,12 @@
                                 <i class="lni lni-inbox text-green-400"></i>
                             </div>
                             <div class="hover:text-green-400">
-                                <a href="/profiles/<%= mysql.username %>/achievements" class="">Letzte Aktivitäten</a>
+                                <a href="/profiles/<%= mysql.username %>/activity" class="">Letzte Aktivitäten</a>
                             </div>
                         </div>
                         <% if(mysql.username === data.username) { %>
                         <div class="text-center pt-12">
-                            <a href="" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post erstellen</a>
+                            <a href="/posts/create" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post erstellen</a>
                         </div>
                         <% } %>
                     </div>
@@ -269,14 +265,13 @@
 </body>
 <script>
     var username = <%- JSON.stringify(mysql.username) %>
-        onlineStatus = 0;
+    onlineStatus = 0;
     let btn = document.getElementById('user-menu-button');
     let menu = document.getElementById('user-menu');
     window.onload = function () {
         if (btn) {
             btn.addEventListener('click', function () {
                 menu.classList.toggle('hidden');
-                console.log("Test")
             });
         }
 
