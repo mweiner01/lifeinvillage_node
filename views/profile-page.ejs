@@ -200,20 +200,21 @@
                 <h1 class="uppercase absolute -my-6 ml-2 font-semibold tracking-tight leading-none">Navigation</h1>
                 <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded-md shadow-lg p-6">
                     <div class="text-lg font-semibold text-gray-900">
-                            <div class="flex rounded-full bg-green-200 py-1 px-2 mb-2">
-                                <div class="pr-2">
-                                    <i class="lni lni-tag text-green-400"></i>
-                                </div>
-                                <div class="text-green-400">
-                                    <a href="/profiles/<%= mysql.username %>/posts" class="">Post</a>
-                                </div>
+                        <div class="flex rounded-full bg-green-200 py-1 px-2 mb-2">
+                            <div class="pr-2">
+                                <i class="lni lni-tag text-green-400"></i>
                             </div>
+                            <div class="text-green-400">
+                                <a href="/profiles/<%= mysql.username %>/posts" class="">Post</a>
+                            </div>
+                        </div>
                         <div class="flex rounded-full py-1 px-2 mb-2">
                             <div class="pr-2">
                                 <i class="lni lni-postcard text-green-400"></i>
                             </div>
                             <div class="">
-                                <p href="/profiles/<%= mysql.username %>/achievements" class="cursor-not-allowed">Achievements</p>
+                                <p href="/profiles/<%= mysql.username %>/achievements" class="cursor-not-allowed">
+                                    Achievements</p>
                             </div>
                         </div>
                         <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
@@ -229,13 +230,15 @@
                                 <i class="lni lni-stats-up text-green-400"></i>
                             </div>
                             <div class="">
-                                <p href="/profiles/<%= mysql.username %>/stats" class="cursor-not-allowed">Statistiken</p>
+                                <p href="/profiles/<%= mysql.username %>/stats" class="cursor-not-allowed">
+                                    Statistiken</p>
                             </div>
                         </div>
                         <% if(mysql.username === data.username) { %>
-                        <div class="text-center pt-12">
-                            <a href="/posts/create" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post erstellen</a>
-                        </div>
+                            <div class="text-center pt-12">
+                                <a href="/posts/create" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post
+                                    erstellen</a>
+                            </div>
                         <% } %>
                     </div>
                 </div>
@@ -271,48 +274,7 @@
     </div>
 </section>
 </body>
-<script>
-    var username = <%- JSON.stringify(mysql.username) %>
-    onlineStatus = 0;
-    let btn = document.getElementById('user-menu-button');
-    let menu = document.getElementById('user-menu');
-    window.onload = function () {
-        if (btn) {
-            btn.addEventListener('click', function () {
-                menu.classList.toggle('hidden');
-            });
-        }
 
-        addEventListener('resize', function () {
-            menu.classList.add("hidden");
-        });
-
-        addEventListener('online', function () {
-            if (onlineStatus === 0) {
-                alert("Du bist nun wieder online");
-                onlineStatus = 1;
-            }
-        });
-        addEventListener('offline', function () {
-            onlineStatus = 0;
-            alert("Du bist nun offline");
-        });
-    }
-
-
-    setInterval(updateTicker, 2000);
-
-
-    function updateTicker() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            myObj = JSON.parse(this.responseText);
-            document.getElementById("silvercount").innerHTML = myObj[0].silver_amount;
-        };
-        xmlhttp.open("GET", "/api/v1/users/" + username, true);
-        console.log(xmlhttp.responseText)
-        xmlhttp.send();
-    }
-
-</script>
+<!-- Script to enable profile dropdown -->
+<script src="/javascripts/user-menu.js"></script>
 </html>

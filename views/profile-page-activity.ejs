@@ -20,445 +20,422 @@
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 </head>
 <body>
-<main>
-    <!--
-      Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
-      Read the documentation to get started: https://tailwindui.com/documentation
-    -->
-    <nav class="bg-white">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <!-- Mobile menu button-->
-                    <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
-                            aria-label="Main menu" aria-expanded="false">
-                        <!-- Icon when menu is closed. -->
-                        <!--
-                          Heroicon name: menu
-
-                          Menu open: "hidden", Menu closed: "block"
-                        -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                        <!-- Icon when menu is open. -->
-                        <!--
-                          Heroicon name: x
-
-                          Menu open: "block", Menu closed: "hidden"
-                        -->
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="flex-shrink-0">
-                        <p class="block lg:hidden h-8 w-auto font-semibold text-gray-900 text-2xl">Life in Village</p>
-                        <p class="hidden lg:block h-8 w-auto font-semibold text-gray-900 text-2xl">Life in Village</p>
-                    </div>
-                    <div class="hidden sm:block sm:ml-6">
-                        <div class="flex">
-                            <a href="/"
-                               class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Home</a>
-                            <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
-                                ipsum.</a>
-                            <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
-                            <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
-                                ipsum.</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-                    <!-- Profile dropdown -->
-                    <div class="ml-3 relative">
-                        <div class="flex">
-                            <% if(data.loggedin && data.loggedin === true) { %>
-                                <p class="flex lg:block hidden  mt-3 px-3 text-md text-gray-900 font-semibold mr-2"><%= data.minecraft_name %></p>
-                                <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
-                                        id="user-menu-button" aria-label="User menu" aria-haspopup="true">
-                                    <img class="h-8 w-8 rounded-full"
-                                         src="https://minotar.net/helm/<%= data.minecraft_name %>/100.png" alt="">
-                                </button>
-                            <% } else { %>
-                                <a href="/login"
-                                   class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
-                                   aria-label="User menu" aria-haspopup="true">
-                                    Logge dich ein
-                                </a>
-                                <a href="/register"
-                                   class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
-                                   aria-label="User menu" aria-haspopup="true">
-                                    Registriere dich
-                                </a>
-                            <% } %>
-                        </div>
-
-                        <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
-                             id="user-menu">
-                            <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
-                                 aria-labelledby="user-menu">
-                                <a href="/profiles/<%= data.username %>"
-                                   class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                   role="menuitem">Dein Profil</a>
-                                <a href="#"
-                                   class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                   role="menuitem">Einstellungen</a>
-                                <a href="/logout"
-                                   class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                   role="menuitem">Ausloggen</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <main>
         <!--
-          Mobile menu, toggle classes based on menu state.
-
-          Menu open: "block", Menu closed: "hidden"
+          Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
+          Read the documentation to get started: https://tailwindui.com/documentation
         -->
-        <div class="hidden sm:hidden">
-            <div class="px-2 pt-2 pb-3">
-                <a href="#"
-                   class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
-                <a href="#"
-                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
-                <a href="#"
-                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-                <a href="#"
-                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
-            </div>
-        </div>
-    </nav>
-</main>
-<section>
-    <div class="py-48 bg-center bg-cover" style="background-image: url('/images/profile_background.png')">
+        <nav class="bg-white">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+                <div class="relative flex items-center justify-between h-16">
+                    <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                        <!-- Mobile menu button-->
+                        <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
+                                aria-label="Main menu" aria-expanded="false">
+                            <!-- Icon when menu is closed. -->
+                            <!--
+                              Heroicon name: menu
 
-    </div>
-    <div class="border-b border-gray-300 text-center">
-        <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png"
-             class="rounded-full mx-auto -my-16 h-32 w-32" alt="">
-        <div class="text-center mt-16">
-            <div class="">
-                <h1 class="text-3xl text-gray-900 leading-1 font-semibold"><%= mysql.minecraft_name %></h1>
-            </div>
-            <div class="">
-                <h3 class="text-gray-400 leading-none text-xl">@<%= mysql.username %></h3>
-            </div>
-            <div class="text-center mx-auto max-w-lg p-4">
-                <h3 class="text-gray-900 font-medium"><%= mysql.account_description %></h3>
-            </div>
-        </div>
-        <div class="flex items-center p-4">
-            <div class="mx-auto flex items-center">
-                <div class="text-center px-8">
+                              Menu open: "hidden", Menu closed: "block"
+                            -->
+                            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M4 6h16M4 12h16M4 18h16"/>
+                            </svg>
+                            <!-- Icon when menu is open. -->
+                            <!--
+                              Heroicon name: x
 
-                    <h1 class="text-lg text-green-800 font-bold leading-none" id="silvercount"><%= mysql.silver_amount %></h1>
-                    <h1 class="text-lg text-gray-600">Silber</h1>
-                </div>
-                <div class="text-center px-8 border-r border-l border-gray-300">
-                    <h1 class="text-xl text-green-800 font-bold leading-none"><%= mysql.playtime_hours %>h</h1>
-                    <h1 class="text-lg text-gray-600">Spielzeit</h1>
-                </div>
-                <div class="text-center px-8">
-                    <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.general_level_number %></h1>
-                    <h1 class="text-lg text-gray-600">Level</h1>
+                              Menu open: "block", Menu closed: "hidden"
+                            -->
+                            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                        <div class="flex-shrink-0">
+                            <p class="block lg:hidden h-8 w-auto font-semibold text-gray-900 text-2xl">Life in
+                                Village</p>
+                            <p class="hidden lg:block h-8 w-auto font-semibold text-gray-900 text-2xl">Life in
+                                Village</p>
+                        </div>
+                        <div class="hidden sm:block sm:ml-6">
+                            <div class="flex">
+                                <a href="/"
+                                   class="px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Home</a>
+                                <a href="#"
+                                   class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
+                                    ipsum.</a>
+                                <a href="#"
+                                   class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
+                                <a href="#"
+                                   class="ml-4 px-3 py-2 rounded-md text-sm font-medium leading-5 text-gray-900 border border-transparent hover:border-gray-900 focus:outline-none transition duration-150 ease-in-out">Lorem
+                                    ipsum.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+                        <!-- Profile dropdown -->
+                        <div class="ml-3 relative">
+                            <div class="flex">
+                                <% if(data.loggedin && data.loggedin === true) { %>
+                                    <p class="flex lg:block hidden  mt-3 px-3 text-md text-gray-900 font-semibold mr-2"><%= data.minecraft_name %></p>
+                                    <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
+                                            id="user-menu-button" aria-label="User menu" aria-haspopup="true">
+                                        <img class="h-8 w-8 rounded-full"
+                                             src="https://minotar.net/helm/<%= data.minecraft_name %>/100.png" alt="">
+                                    </button>
+                                <% } else { %>
+                                    <a href="/login"
+                                       class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
+                                       aria-label="User menu" aria-haspopup="true">
+                                        Logge dich ein
+                                    </a>
+                                    <a href="/register"
+                                       class="lg:block hidden mr-4 text-md rounded text-gray-900 bg-transparent hover:border-green-400 hover:text-green-400 border-2 border-gray-900 font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
+                                       aria-label="User menu" aria-haspopup="true">
+                                        Registriere dich
+                                    </a>
+                                <% } %>
+                            </div>
+
+                            <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
+                                 id="user-menu">
+                                <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
+                                     aria-labelledby="user-menu">
+                                    <a href="/profiles/<%= data.username %>"
+                                       class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                       role="menuitem">Dein Profil</a>
+                                    <a href="#"
+                                       class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                       role="menuitem">Einstellungen</a>
+                                    <a href="/logout"
+                                       class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                       role="menuitem">Ausloggen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!--
+              Mobile menu, toggle classes based on menu state.
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <div class="hidden sm:hidden">
+                <div class="px-2 pt-2 pb-3">
+                    <a href="#"
+                       class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
+                    <a href="#"
+                       class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
+                    <a href="#"
+                       class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
+                    <a href="#"
+                       class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
+                </div>
+            </div>
+        </nav>
+    </main>
+    <section>
+        <div class="py-48 bg-center bg-cover" style="background-image: url('/images/profile_background.png')">
+
         </div>
-    </div>
-    <!-- Profil Navigation if the device is smaller then md -->
-    <div class="mt-4 flex justify-center md:hidden block">
-        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
-            <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
-        </div>
-        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
-            <a href="/profiles/<%= mysql.username %>/posts" class="">Posts</a>
-        </div>
-        <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent border-gray-900 md:px-8 px-4">
-            <a href="/profiles/<%= mysql.username %>/activity" class="focus:outline-none font-semibold">Letzte
-                Aktivitäten</a>
-        </div>
-    </div>
-    <!-- Profil Navigation if the device is greater then md -->
-    <div class="grid grid-flow-row justify-center gap-y-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 p-6">
-        <div class="md:block hidden mx-auto xl:px-24">
-            <div class="py-6">
-                <h1 class="uppercase absolute -my-6 ml-2 font-semibold tracking-tight leading-none">Navigation</h1>
-                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded-md shadow-lg p-6">
-                    <div class="text-lg font-semibold text-gray-900">
-                        <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
-                            <div class="pr-2">
-                                <i class="lni lni-tag text-green-400"></i>
-                            </div>
-                            <div class="hover:text-green-400">
-                                <a href="/profiles/<%= mysql.username %>/posts" class="">Post</a>
-                            </div>
-                        </div>
-                        <div class="flex rounded-full py-1 px-2 mb-2">
-                            <div class="pr-2">
-                                <i class="lni lni-postcard text-green-400"></i>
-                            </div>
-                            <div class="">
-                                <p href="/profiles/<%= mysql.username %>/achievements" class="cursor-not-allowed">Achievements</p>
-                            </div>
-                        </div>
-                        <div class="flex rounded-full bg-green-200 py-1 px-2 mb-2">
-                            <div class="pr-2">
-                                <i class="lni lni-inbox text-green-400"></i>
-                            </div>
-                            <div class="text-green-400">
-                                <a href="/profiles/<%= mysql.username %>/activity" class="">Letzte Aktivitäten</a>
-                            </div>
-                        </div>
-                        <div class="flex rounded-full py-1 px-2">
-                            <div class="pr-2">
-                                <i class="lni lni-stats-up text-green-400"></i>
-                            </div>
-                            <div class="">
-                                <p href="/profiles/<%= mysql.username %>/stats" class="cursor-not-allowed">Statistiken</p>
-                            </div>
-                        </div>
-                        <% if(mysql.username === data.username) { %>
-                            <div class="text-center pt-12">
-                                <a href="/posts/create" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post erstellen</a>
-                            </div>
-                        <% } %>
+        <div class="border-b border-gray-300 text-center">
+            <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png"
+                 class="rounded-full mx-auto -my-16 h-32 w-32" alt="">
+            <div class="text-center mt-16">
+                <div class="">
+                    <h1 class="text-3xl text-gray-900 leading-1 font-semibold"><%= mysql.minecraft_name %></h1>
+                </div>
+                <div class="">
+                    <h3 class="text-gray-400 leading-none text-xl">@<%= mysql.username %></h3>
+                </div>
+                <div class="text-center mx-auto max-w-lg p-4">
+                    <h3 class="text-gray-900 font-medium"><%= mysql.account_description %></h3>
+                </div>
+            </div>
+            <div class="flex items-center p-4">
+                <div class="mx-auto flex items-center">
+                    <div class="text-center px-8">
+
+                        <h1 class="text-lg text-green-800 font-bold leading-none"
+                            id="silvercount"><%= mysql.silver_amount %></h1>
+                        <h1 class="text-lg text-gray-600">Silber</h1>
+                    </div>
+                    <div class="text-center px-8 border-r border-l border-gray-300">
+                        <h1 class="text-xl text-green-800 font-bold leading-none"><%= mysql.playtime_hours %>h</h1>
+                        <h1 class="text-lg text-gray-600">Spielzeit</h1>
+                    </div>
+                    <div class="text-center px-8">
+                        <h1 class="text-lg text-green-800 font-bold leading-none"><%= mysql.general_level_number %></h1>
+                        <h1 class="text-lg text-gray-600">Level</h1>
                     </div>
                 </div>
             </div>
         </div>
-    <div class="">
-        <!-- Profil Navigation end -->
-        <div class="p-4">
-            <%
-            var list = [];
-            const now = new Date();
-            activity.forEach((dates) => {
-                if (list.includes(dates.activity_date)) {
-
-                } else {
-                    list.push(dates.activity_date);
-                }
-            });
-
-            list.sort(function (a, b) {
-                a = a.split('.').reverse().join('');
-                b = b.split('.').reverse().join('');
-
-                return a < b ? a : a > b ? -1 : 0;
-            });
-            var plusMonth = now.getMonth() + 1;
-            if (now.getDate() < 10) {
-                var day = '0' + now.getDate();
-            } else {
-                var day = now.getDate();
-            }
-            if (plusMonth < 10) {
-                var month = '0' + plusMonth
-            } else {
-                var month = plusMonth
-            }
-
-            var today = day + '.' + month + '.' + now.getFullYear();
-            var yesterday = day - 1 + '.' + month + '.' + now.getFullYear();
-            console.log(yesterday)
-            %>
-
-            <% list.forEach((date) => { %>
-                <% if(date === today) { %>
-                    <h1 class="text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-5xl">Heute</h1>
-                    <% activity.forEach((activity) => { %>
-                        <% if(activity.event_number === 0) { %>
-                            <% if(activity.activity_date === today) { %>
-                                <% if(activity.transaction_to === mysql.minecraft_name) { %>
-
-                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
-                                        <div class="flex items-center">
-                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                                 alt="" class="rounded-full h-auto w-12">
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span> hat
-                                                <span
-                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
-                                                gesendet</h1>
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
-
-
-                                            <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                                +<%= activity.transaction_amount %> Silber</h1>
-                                        </div>
-
-                                    </div>
-                                <% } else { %>
-                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
-                                        <div class="flex items-center">
-                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                                 alt="" class="rounded-full h-auto w-12">
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span> hat
-                                                <span
-                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
-                                                gesendet</h1>
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
-
-                                            <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                                -<%= activity.transaction_amount %> Silber</h1>
-                                        </div>
-                                    </div>
-                                <% } %>
-                            <% } %>
-                        <% } else if(activity.event_number === 1) { %>
-                            <% if(activity.activity_date === today) { %>
-                                <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-yellow-200 max-w-2xl mb-2">
-                                    <div class="flex items-center">
-                                        <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
-                                             alt=""
-                                             class="rounded-full h-auto w-12">
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                    class="font-bold"><%= activity.minecraft_name %></span> ist nun
-                                            Level
-                                            <span
-                                                    class="font-bold"><%= activity.new_level %></span></h1>
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                    class="font-bold"><%= activity.minecraft_name %></span></h1>
-
-
-                                        <h1 class="ml-auto text-white text-lg bg-yellow-400 py-1 px-4 rounded-md font-semibold max-w-xs"><%= activity.new_level - 1 %>
-                                            -> <%= activity.new_level %></h1>
-                                    </div>
-
-                                </div>
-                            <% } %>
-                        <% } %>
-                    <% }); %>
-                <% } else { %>
-                    <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl"><%= date %></h1>
-                    <% activity.forEach((activity) => { %>
-                        <% if(activity.event_number === 0) { %>
-                            <% if(activity.activity_date === date) { %>
-                                <% if(activity.transaction_to === mysql.minecraft_name) { %>
-
-                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
-                                        <div class="flex items-center">
-                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                                 alt="" class="rounded-full h-auto w-12">
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span> hat
-                                                <span
-                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
-                                                gesendet</h1>
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
-                                            <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                                +<%= activity.transaction_amount %> Silber</h1>
-                                        </div>
-                                    </div>
-                                <% } else { %>
-                                    <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
-                                        <div class="flex items-center">
-                                            <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
-                                                 alt="" class="rounded-full h-auto w-12">
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span> hat
-                                                <span
-                                                        class="font-bold"><%= activity.transaction_to %></span> Silber
-                                                gesendet</h1>
-                                            <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                        class="font-bold"><%= activity.transaction_from %></span></h1>
-
-                                            <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                                -<%= activity.transaction_amount %> Silber</h1>
-                                        </div>
-                                    </div>
-                                <% } %>
-                            <% } %>
-                        <% } else if(activity.event_number === 1) { %>
-                            <% if(activity.activity_date === date) { %>
-                                <div class="mx-auto rounded-md p-4 md:max-w-4xl max-w-2xl bg-yellow-200 mb-2">
-                                    <div class="flex items-center">
-                                        <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
-                                             alt="" class="rounded-full h-auto w-12">
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
-                                                    class="font-bold"><%= activity.minecraft_name %></span> ist nun
-                                            Level <span class="font-bold"><%= activity.new_level %></span></h1>
-                                        <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
-                                                    class="font-bold"><%= activity.minecraft_name %></span></h1>
-
-
-                                        <h1 class="ml-auto text-white text-lg bg-yellow-400 py-1 px-4 rounded-md font-semibold max-w-xs">
-                                            <%= activity.new_level - 1 %> -> <%= activity.new_level %></h1>
-                                    </div>
-
-                                </div>
-                            <% } %>
-                        <% } %>
-                    <% }); %>
-                <% } %>
-            <% }); %>
-
+        <!-- Profil Navigation if the device is smaller then md -->
+        <div class="mt-4 flex justify-center md:hidden block">
+            <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
+                <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
+            </div>
+            <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
+                <a href="/profiles/<%= mysql.username %>/posts" class="">Posts</a>
+            </div>
+            <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent border-gray-900 md:px-8 px-4">
+                <a href="/profiles/<%= mysql.username %>/activity" class="focus:outline-none font-semibold">Letzte
+                    Aktivitäten</a>
+            </div>
         </div>
-    </div>
-</section>
+        <!-- Profil Navigation if the device is greater then md -->
+        <div class="grid grid-flow-row justify-center gap-y-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 p-6">
+            <div class="md:block hidden mx-auto xl:px-24">
+                <div class="py-6">
+                    <h1 class="uppercase absolute -my-6 ml-2 font-semibold tracking-tight leading-none">Navigation</h1>
+                    <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded-md shadow-lg p-6">
+                        <div class="text-lg font-semibold text-gray-900">
+                            <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
+                                <div class="pr-2">
+                                    <i class="lni lni-tag text-green-400"></i>
+                                </div>
+                                <div class="hover:text-green-400">
+                                    <a href="/profiles/<%= mysql.username %>/posts" class="">Post</a>
+                                </div>
+                            </div>
+                            <div class="flex rounded-full py-1 px-2 mb-2">
+                                <div class="pr-2">
+                                    <i class="lni lni-postcard text-green-400"></i>
+                                </div>
+                                <div class="">
+                                    <p href="/profiles/<%= mysql.username %>/achievements" class="cursor-not-allowed">
+                                        Achievements</p>
+                                </div>
+                            </div>
+                            <div class="flex rounded-full bg-green-200 py-1 px-2 mb-2">
+                                <div class="pr-2">
+                                    <i class="lni lni-inbox text-green-400"></i>
+                                </div>
+                                <div class="text-green-400">
+                                    <a href="/profiles/<%= mysql.username %>/activity" class="">Letzte Aktivitäten</a>
+                                </div>
+                            </div>
+                            <div class="flex rounded-full py-1 px-2">
+                                <div class="pr-2">
+                                    <i class="lni lni-stats-up text-green-400"></i>
+                                </div>
+                                <div class="">
+                                    <p href="/profiles/<%= mysql.username %>/stats" class="cursor-not-allowed">
+                                        Statistiken</p>
+                                </div>
+                            </div>
+                            <% if(mysql.username === data.username) { %>
+                                <div class="text-center pt-12">
+                                    <a href="/posts/create" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post
+                                        erstellen</a>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <!-- Profil Navigation end -->
+                <div class="p-4">
+                    <%
+                    var list = [];
+                    const now = new Date();
+                    activity.forEach((dates) => {
+                        if (list.includes(dates.activity_date)) {
+
+                        } else {
+                            list.push(dates.activity_date);
+                        }
+                    });
+
+                    list.sort(function (a, b) {
+                        a = a.split('.').reverse().join('');
+                        b = b.split('.').reverse().join('');
+
+                        return a < b ? a : a > b ? -1 : 0;
+                    });
+
+                    var plusMonth = now.getMonth() + 1;
+                    if (now.getDate() < 10) {
+                        var day = '0' + now.getDate();
+                    } else {
+                        var day = now.getDate();
+                    }
+                    if (plusMonth < 10) {
+                        var month = '0' + plusMonth
+                    } else {
+                        var month = plusMonth
+                    }
+
+                    var today = day + '.' + month + '.' + now.getFullYear();
+                    var yesterday = day - 1 + '.' + month + '.' + now.getFullYear();
+                    console.log(yesterday)
+                    %>
+
+                    <% list.forEach((date) => { %>
+                        <% if(date === today) { %>
+                            <h1 class="text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-5xl">Heute</h1>
+                            <% activity.forEach((activity) => { %>
+                                <% if(activity.event_number === 0) { %>
+                                    <% if(activity.activity_date === today) { %>
+                                        <% if(activity.transaction_to === mysql.minecraft_name) { %>
+
+                                            <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
+                                                <div class="flex items-center">
+                                                    <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                         alt="" class="rounded-full h-auto w-12">
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                        hat
+                                                        <span
+                                                                class="font-bold"><%= activity.transaction_to %></span>
+                                                        Silber
+                                                        gesendet</h1>
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                    </h1>
+
+
+                                                    <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                        +<%= activity.transaction_amount %> Silber</h1>
+                                                </div>
+
+                                            </div>
+                                        <% } else { %>
+                                            <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
+                                                <div class="flex items-center">
+                                                    <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                         alt="" class="rounded-full h-auto w-12">
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                        hat
+                                                        <span
+                                                                class="font-bold"><%= activity.transaction_to %></span>
+                                                        Silber
+                                                        gesendet</h1>
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                    </h1>
+
+                                                    <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                        -<%= activity.transaction_amount %> Silber</h1>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
+                                <% } else if(activity.event_number === 1) { %>
+                                    <% if(activity.activity_date === today) { %>
+                                        <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-yellow-200 max-w-2xl mb-2">
+                                            <div class="flex items-center">
+                                                <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
+                                                     alt=""
+                                                     class="rounded-full h-auto w-12">
+                                                <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                            class="font-bold"><%= activity.minecraft_name %></span> ist
+                                                    nun
+                                                    Level
+                                                    <span
+                                                            class="font-bold"><%= activity.new_level %></span></h1>
+                                                <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                            class="font-bold"><%= activity.minecraft_name %></span></h1>
+
+
+                                                <h1 class="ml-auto text-white text-lg bg-yellow-400 py-1 px-4 rounded-md font-semibold max-w-xs"><%= activity.new_level - 1 %>
+                                                    -> <%= activity.new_level %></h1>
+                                            </div>
+
+                                        </div>
+                                    <% } %>
+                                <% } %>
+                            <% }); %>
+                        <% } else { %>
+                            <h1 class="mx-auto text-left p-2 text-lg text-gray-900 font-semibold max-w-4xl"><%= date %></h1>
+                            <% activity.forEach((activity) => { %>
+                                <% if(activity.event_number === 0) { %>
+                                    <% if(activity.activity_date === date) { %>
+                                        <% if(activity.transaction_to === mysql.minecraft_name) { %>
+
+                                            <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-green-200 max-w-2xl mb-2">
+                                                <div class="flex items-center">
+                                                    <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                         alt="" class="rounded-full h-auto w-12">
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                        hat
+                                                        <span
+                                                                class="font-bold"><%= activity.transaction_to %></span>
+                                                        Silber
+                                                        gesendet</h1>
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                    </h1>
+                                                    <h1 class="ml-auto text-white text-lg bg-green-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                        +<%= activity.transaction_amount %> Silber</h1>
+                                                </div>
+                                            </div>
+                                        <% } else { %>
+                                            <div class="mx-auto rounded-md p-4 md:max-w-4xl bg-red-200 max-w-2xl mb-2">
+                                                <div class="flex items-center">
+                                                    <img src="https://minotar.net/helm/<%= activity.transaction_from %>/100.png"
+                                                         alt="" class="rounded-full h-auto w-12">
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                        hat
+                                                        <span
+                                                                class="font-bold"><%= activity.transaction_to %></span>
+                                                        Silber
+                                                        gesendet</h1>
+                                                    <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                                class="font-bold"><%= activity.transaction_from %></span>
+                                                    </h1>
+
+                                                    <h1 class="ml-auto text-white text-lg bg-red-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                        -<%= activity.transaction_amount %> Silber</h1>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                    <% } %>
+                                <% } else if(activity.event_number === 1) { %>
+                                    <% if(activity.activity_date === date) { %>
+                                        <div class="mx-auto rounded-md p-4 md:max-w-4xl max-w-2xl bg-yellow-200 mb-2">
+                                            <div class="flex items-center">
+                                                <img src="https://minotar.net/helm/<%= activity.minecraft_name %>/100.png"
+                                                     alt="" class="rounded-full h-auto w-12">
+                                                <h1 class="text-gray-900 ml-2 text-lg font-semibold md:block hidden"><span
+                                                            class="font-bold"><%= activity.minecraft_name %></span> ist
+                                                    nun
+                                                    Level <span class="font-bold"><%= activity.new_level %></span></h1>
+                                                <h1 class="text-gray-900 ml-2 text-lg font-semibold md:hidden block"><span
+                                                            class="font-bold"><%= activity.minecraft_name %></span></h1>
+
+
+                                                <h1 class="ml-auto text-white text-lg bg-yellow-400 py-1 px-4 rounded-md font-semibold max-w-xs">
+                                                    <%= activity.new_level - 1 %> -> <%= activity.new_level %></h1>
+                                            </div>
+
+                                        </div>
+                                    <% } %>
+                                <% } %>
+                            <% }); %>
+                        <% } %>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-<script>
-
-</script>
-
-<script>
-    var username = <%- JSON.stringify(mysql.username) %>
-    onlineStatus = 0;
-    let btn = document.getElementById('user-menu-button');
-    let menu = document.getElementById('user-menu');
-    window.onload = function () {
-        if (btn) {
-            btn.addEventListener('click', function () {
-                menu.classList.toggle('hidden');
-            });
-        }
-
-        addEventListener('resize', function () {
-            menu.classList.add("hidden");
-        });
-
-        addEventListener('online', function () {
-            if (onlineStatus === 0) {
-                alert("Du bist nun wieder online");
-                onlineStatus = 1;
-            }
-        });
-        addEventListener('offline', function () {
-            onlineStatus = 0;
-            alert("Du bist nun offline");
-        });
-    }
-
-    setInterval(updateTicker, 2000);
-
-
-    function updateTicker(){
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function () {
-            myObj = JSON.parse(this.responseText);
-            document.getElementById("silvercount").innerHTML = myObj[0].silver_amount;
-        };
-        xmlhttp.open("GET", "/api/v1/users/" + username, true);
-        xmlhttp.setRequestHeader('Api-key', '293127512391')
-        console.log(xmlhttp.responseText)
-        xmlhttp.send();
-    }
-
-</script>
+<!-- Script to enable profile dropdown -->
+<script src="/javascripts/user-menu.js"></script>
 </html>

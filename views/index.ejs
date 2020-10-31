@@ -108,7 +108,7 @@
                             <% } %>
                         </div>
 
-                        <div class="origin-top-right absolute right-0 mt-2 w-48 shadow-lg rounded-md hidden"
+                        <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
                              id="user-menu">
                             <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
                                  aria-labelledby="user-menu">
@@ -209,32 +209,6 @@
     </div>
 </section>
 </body>
-<script>
-    onlineStatus = 0;
-    let btn = document.getElementById('user-menu-button');
-    let menu = document.getElementById('user-menu');
-    window.onload=function () {
-        if(btn) {
-            btn.addEventListener('click', function () {
-                menu.classList.toggle('hidden');
-                console.log("Test")
-            });
-        }
-
-        addEventListener('resize', function () {
-            menu.classList.add("hidden");
-        });
-
-        addEventListener('online', function () {
-            if(onlineStatus === 0) {
-                alert("Du bist nun wieder online");
-                onlineStatus = 1;
-            }
-        });
-        addEventListener('offline', function () {
-            onlineStatus = 0;
-            alert("Du bist nun offline");
-        });
-    }
-</script>
+<!-- Script to enable profile dropdown -->
+<script src="/javascripts/user-menu.js"></script>
 </html>
