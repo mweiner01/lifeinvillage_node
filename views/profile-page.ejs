@@ -143,11 +143,12 @@
     </nav>
 </main>
 <section>
-    <div class="py-48 bg-center bg-cover"  style="background-image: url('/images/profile_background.png')">
+    <div class="py-48 bg-center bg-cover" style="background-image: url('/images/profile_background.png')">
 
     </div>
     <div class="border-b border-gray-300 text-center">
-        <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png" class="rounded-full mx-auto -my-16 h-32 w-32" alt="">
+        <img src="https://minotar.net/helm/<%= mysql.minecraft_name %>/100.png"
+             class="rounded-full mx-auto -my-16 h-32 w-32" alt="">
 
         <!-- Profil name, description -->
         <div class="text-center mt-16">
@@ -167,7 +168,8 @@
         <div class="flex items-center p-4">
             <div class="mx-auto flex items-center">
                 <div class="text-center px-8">
-                    <h1 class="text-lg text-green-800 font-bold leading-none" id="silvercount"><%= mysql.silver_amount %></h1>
+                    <h1 class="text-lg text-green-800 font-bold leading-none"
+                        id="silvercount"><%= mysql.silver_amount %></h1>
                     <h1 class="text-lg text-gray-600">Silber</h1>
                 </div>
                 <div class="text-center px-8 border-r border-l border-gray-300">
@@ -198,59 +200,80 @@
     <!-- Profil Navigation if the device is greater then md -->
     <div class="grid grid-flow-row justify-center gap-y-8 gap-x-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 xl:px-24 p-4">
         <div class="md:block hidden mx-auto">
-            <div class="p-4">
-                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded p-4">
-                    <div class="mb-8">
-                        <h1 class="text-xl font-semibold text-gray-900">Profil Navigation</h1>
-                    </div>
+            <div class="py-6">
+                <h1 class="uppercase absolute -my-6 ml-2 font-semibold tracking-tight leading-none">Navigation</h1>
+                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded-md shadow-lg p-6">
                     <div class="text-lg font-semibold text-gray-900">
-                        <div class="border-r border-t py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
-                            <a href="/profiles/<%= mysql.username %>/achievements" class=""><i class="lni lni-tag"></i> Achievements</a>
+                            <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
+                                <div class="pr-2">
+                                    <i class="lni lni-tag text-green-400"></i>
+                                </div>
+                                <div class="hover:text-green-400">
+                                    <a href="/profiles/<%= mysql.username %>/achievements" class="">Post</a>
+                                </div>
+                            </div>
+                        <div class="flex rounded-full hover:bg-green-200 py-1 px-2 mb-2">
+                            <div class="pr-2">
+                                <i class="lni lni-postcard text-green-400"></i>
+                            </div>
+                            <div class="hover:text-green-400">
+                                <a href="/profiles/<%= mysql.username %>/achievements" class="">Achievements</a>
+                            </div>
                         </div>
-                        <div class="text-gray-800 border-l-4 border-green-400 border border-gray-400 py-2 pl-2 pr-16">
-                            <a href="/profiles/<%= mysql.username %>/posts"><i class="lni lni-postcard text-green-400"></i> Posts</a>
+                        <div class="flex rounded-full hover:bg-green-200 py-1 px-2">
+                            <div class="pr-2">
+                                <i class="lni lni-inbox text-green-400"></i>
+                            </div>
+                            <div class="hover:text-green-400">
+                                <a href="/profiles/<%= mysql.username %>/achievements" class="">Letzte Aktivitäten</a>
+                            </div>
                         </div>
-                        <div class="border-r border-b border-gray-300 py-2 pl-2 pr-16 hover:bg-green-200 hover:border-green-400 border-l-4">
-                            <a href="/profiles/<%= mysql.username %>/activity"><i class="lni lni-inbox hover:text-green-400"></i> Letzte Aktivitäten</a>
+                        <% if(mysql.username === data.username) { %>
+                        <div class="text-center pt-12">
+                            <a href="" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post erstellen</a>
                         </div>
+                        <% } %>
                     </div>
                 </div>
             </div>
         </div>
         <!-- Profil Navigation end -->
-            <div class="p-4">
-                <% posts.forEach((post) => { %>
-                    <div class="border mx-auto border-gray-300 rounded p-4 md:max-w-4xl max-w-2xl mb-2">
-                        <div class="flex items-center">
-                            <div class="mr-4">
-                                <img src="https://minotar.net/helm/<%= post.post_minecraft_name %>/100.png" class="rounded-full h-auto w-12" alt="">
-                            </div>
-                            <div class="p-2 w-full">
-                                <div class="flex">
-                                    <h1 class="text-gray-900 text-lg font-semibold"><%= post.post_minecraft_name %></h1>
-                                    <h1 class="ml-auto text-sm text-gray-300"><%= post.post_date %></h1>
-                                </div>
-                                <div>
-                                    <h1 class="text-sm text-gray-200"><a href="/<% post.post_username %>" class="hover:underline">@<%= post.post_username %></a></h1>
-                                </div>
-                            </div>
+        <div class="py-6">
+            <% posts.forEach((post) => { %>
+                <div class="border mx-auto border-gray-300 rounded p-4 md:max-w-4xl max-w-2xl mb-2">
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <img src="https://minotar.net/helm/<%= post.post_minecraft_name %>/100.png"
+                                 class="rounded-full h-auto w-12" alt="">
                         </div>
-                        <div class="mt-2">
-                            <p class="text-gray-800"><%= post.post_content %></p>
+                        <div class="p-2 w-full">
+                            <div class="flex">
+                                <h1 class="text-gray-900 text-lg font-semibold"><%= post.post_minecraft_name %></h1>
+                                <h1 class="ml-auto text-sm text-gray-300"><%= post.post_date %></h1>
+                            </div>
+                            <div>
+                                <h1 class="text-sm text-gray-200"><a href="/<% post.post_username %>"
+                                                                     class="hover:underline">@<%= post.post_username %></a>
+                                </h1>
+                            </div>
                         </div>
                     </div>
-                <% }) %>
-            </div>
+                    <div class="mt-2">
+                        <p class="text-gray-800"><%= post.post_content %></p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
     </div>
 </section>
 </body>
 <script>
     var username = <%- JSON.stringify(mysql.username) %>
-    onlineStatus = 0;
+        onlineStatus = 0;
     let btn = document.getElementById('user-menu-button');
     let menu = document.getElementById('user-menu');
-    window.onload=function () {
-        if(btn) {
+    window.onload = function () {
+        if (btn) {
             btn.addEventListener('click', function () {
                 menu.classList.toggle('hidden');
                 console.log("Test")
@@ -262,7 +285,7 @@
         });
 
         addEventListener('online', function () {
-            if(onlineStatus === 0) {
+            if (onlineStatus === 0) {
                 alert("Du bist nun wieder online");
                 onlineStatus = 1;
             }
@@ -274,11 +297,10 @@
     }
 
 
-
     setInterval(updateTicker, 2000);
 
 
-    function updateTicker(){
+    function updateTicker() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             myObj = JSON.parse(this.responseText);

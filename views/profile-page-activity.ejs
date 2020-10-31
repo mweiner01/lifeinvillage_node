@@ -162,8 +162,8 @@
         <div class="flex items-center p-4">
             <div class="mx-auto flex items-center">
                 <div class="text-center px-8">
-                    <h1 class="text-lg text-green-800 font-bold leading-none"
-                        id="silvercount"><%= mysql.silver_amount %></h1>
+
+                    <h1 class="text-lg text-green-800 font-bold leading-none" id="silvercount"><%= mysql.silver_amount %></h1>
                     <h1 class="text-lg text-gray-600">Silber</h1>
                 </div>
                 <div class="text-center px-8 border-r border-l border-gray-300">
@@ -178,7 +178,7 @@
         </div>
     </div>
     <!-- Profil Navigation if the device is smaller then md -->
-    <div class="mt-4 flex justify-center md:hidden block">
+    <div class="mt-4 flex justify-center xl:hidden block">
         <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
             <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
         </div>
@@ -215,6 +215,7 @@
                 </div>
             </div>
         </div>
+    <div class="">
         <!-- Profil Navigation end -->
         <div class="p-4">
             <%
@@ -253,7 +254,7 @@
 
             <% list.forEach((date) => { %>
                 <% if(date === today) { %>
-                    <h1 class="mx-auto text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-4xl">Heute</h1>
+                    <h1 class="mx-auto text-left pl-2 pb-2 text-lg text-gray-900 font-semibold max-w-5xl">Heute</h1>
                     <% activity.forEach((activity) => { %>
                         <% if(activity.event_number === 0) { %>
                             <% if(activity.activity_date === today) { %>
@@ -390,6 +391,10 @@
 </section>
 </body>
 <script>
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js">
     var username = <%- JSON.stringify(mysql.username) %>
     onlineStatus = 0;
     let btn = document.getElementById('user-menu-button');
