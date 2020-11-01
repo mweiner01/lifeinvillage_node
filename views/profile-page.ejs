@@ -259,17 +259,36 @@
                                 <h1 class="ml-auto text-sm text-gray-300"><%= post.post_date %></h1>
                             </div>
                             <div>
-                                <h1 class="text-sm text-gray-300"><a href="/<% post.post_username %>" class="hover:underline">@<%= post.post_username %></a></h1>
+                                <h1 class="text-sm text-gray-300"><a href="/<% post.post_username %>"
+                                                                     class="hover:underline">@<%= post.post_username %></a>
+                                </h1>
                             </div>
                         </div>
                     </div>
                     <div class="p-4">
                         <p class="text-gray-800"><%= post.post_content %></p>
                     </div>
+                    <% comments.forEach((comment) => { %>
+                        <% if(comment.post_id === post.id) { %>
+                            <div class="px-4 mb-2">
+                                <div class="text-sm text-gray-800 ">
+                                    <p class="bg-gray-200 rounded px-2 py-1"><a
+                                                href="/profiles/<%= comment.comment_from %>"
+                                                class="text-blue-500 hover:underline font-medium mr-2"><%= comment.comment_from %></a><%= comment.comment_content %>
+                                    </p>
+                                </div>
+                            </div>
+                        <% } %>
+                    <% }); %>
                     <div>
                         <form method="post" class="flex">
-                            <input type="text" class="focus:outline-none focus:bg-gray-100 border-t border-gray-200 px-4 py-2 w-full rounded-b text-gray-900 placeholder-gray-300" placeholder="Kommentar hinzufügen">
-                            <input type="submit" class="bg-transparent hover:bg-gray-100 px-8 border-t border-l border-gray-200 text-blue-500 cursor-pointer" value="Posten">
+                            <input type="text"
+                                   class="focus:outline-none focus:bg-gray-100 border-t border-gray-200 px-4 py-2 w-full rounded-b text-gray-900 placeholder-gray-300"
+                                   name="comment" placeholder="Kommentar hinzufügen">
+                            <input type="submit"
+                                   class="bg-transparent focus:outline-none hover:bg-gray-100 px-8 border-t border-l border-gray-200 text-blue-500 cursor-pointer"
+                                   value="Posten">
+                            <input type="text" class="hidden" name="id" value="<%= post.id %>">
                         </form>
                     </div>
                 </div>
