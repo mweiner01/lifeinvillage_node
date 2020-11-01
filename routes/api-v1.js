@@ -12,10 +12,12 @@ var con = mysql.createConnection({
 });
 
 /* @param
-
-1 = username not found
-2 = there is an error with your mysql query
-
+*
+* 1 = username not found
+* 2 = there is an error with your mysql query
+* 3 = No API key were given to the request
+* 4 = Wrong API Key were given to the request
+*
 * */
 
 
