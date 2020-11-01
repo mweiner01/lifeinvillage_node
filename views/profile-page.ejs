@@ -181,7 +181,7 @@
         <!-- Profil information END -->
     </div>
     <!-- Profil Navigation if the device is smaller then md -->
-    <div class="mt-4 flex justify-center md:hidden block">
+    <div class="mt-4 flex justify-center xl:hidden block">
         <div class="text-gray-900 font-semibold p-4 md:text-lg text-sm border-b-2 border-transparent hover:border-gray-900 md:px-8 px-4">
             <a href="/profiles/<%= mysql.username %>/achievements">Achievements</a>
         </div>
@@ -194,11 +194,11 @@
         </div>
     </div>
     <!-- Profil Navigation if the device is greater then md -->
-    <div class="grid grid-flow-row justify-center gap-y-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-2 grid-row-8 grid-cols-1 p-6">
-        <div class="md:block hidden mx-auto xl:px-24">
+    <div class="grid grid-flow-row justify-center gap-y-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-1 md:grid-cols-1 grid-row-8 grid-cols-1 p-6">
+        <div class="xl:block hidden mx-auto xl:px-24 max-w-5xl w-full">
             <div class="py-6">
                 <h1 class="uppercase absolute -my-6 ml-2 font-semibold tracking-tight leading-none">Navigation</h1>
-                <div class="bg-white border border-gray-300 mx-auto max-w-lg rounded-md shadow-lg p-6">
+                <div class="bg-white border border-gray-300 mx-auto rounded-md shadow-lg p-6">
                     <div class="text-lg font-semibold text-gray-900">
                         <div class="flex rounded-full bg-green-200 py-1 px-2 mb-2">
                             <div class="pr-2">
@@ -236,7 +236,7 @@
                         </div>
                         <% if(mysql.username === data.username) { %>
                             <div class="text-center pt-12">
-                                <a href="/posts/create" class="bg-green-200 rounded py-1 px-6 hover:bg-green-300">Post
+                                <a href="/posts/create" class="bg-green-200 rounded py-1 px-4 hover:bg-green-300">Post
                                     erstellen</a>
                             </div>
                         <% } %>
@@ -247,8 +247,8 @@
         <!-- Profil Navigation end -->
         <div class="py-6">
             <% posts.forEach((post) => { %>
-                <div class="border mx-auto border-gray-300 rounded p-4 md:max-w-4xl max-w-2xl mb-2">
-                    <div class="flex items-center">
+                <div class="border mx-auto border-gray-300 rounded md:max-w-4xl max-w-2xl mb-2">
+                    <div class="flex items-center px-4 pt-4">
                         <div class="mr-4">
                             <img src="https://minotar.net/helm/<%= post.post_minecraft_name %>/100.png"
                                  class="rounded-full h-auto w-12" alt="">
@@ -259,14 +259,18 @@
                                 <h1 class="ml-auto text-sm text-gray-300"><%= post.post_date %></h1>
                             </div>
                             <div>
-                                <h1 class="text-sm text-gray-200"><a href="/<% post.post_username %>"
-                                                                     class="hover:underline">@<%= post.post_username %></a>
-                                </h1>
+                                <h1 class="text-sm text-gray-300"><a href="/<% post.post_username %>" class="hover:underline">@<%= post.post_username %></a></h1>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-2">
+                    <div class="p-4">
                         <p class="text-gray-800"><%= post.post_content %></p>
+                    </div>
+                    <div>
+                        <form method="post" class="flex">
+                            <input type="text" class="focus:outline-none focus:bg-gray-100 border-t border-gray-200 px-4 py-2 w-full rounded-b text-gray-900 placeholder-gray-300" placeholder="Kommentar hinzufügen">
+                            <input type="submit" class="bg-transparent hover:bg-gray-100 px-8 border-t border-l border-gray-200 text-blue-500 cursor-pointer" value="Posten">
+                        </form>
                     </div>
                 </div>
             <% }) %>
