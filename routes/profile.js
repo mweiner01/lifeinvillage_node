@@ -66,6 +66,7 @@ router.get('/:username', function (req, res, next) {
     });
 });
 
+// post request to add a comment to a post
 router.post('/:username/posts', function (req, res, next) {
     comment = req.body.comment;
     id = req.body.id;
@@ -79,7 +80,7 @@ router.post('/:username/posts', function (req, res, next) {
             console.log(err)
         } else {
 
-            // render register-success page with session data
+            // refresh page
             res.redirect('/profiles/' + req.params.username + '/posts')
         }
     });
