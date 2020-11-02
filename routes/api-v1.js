@@ -3,6 +3,10 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
 
+const Discord = require('discord.js');
+const discordbot = require("./discord-bot");
+const client = new Discord.Client();
+
 
 var con = mysql.createConnection({
     host: "localhost",
@@ -10,6 +14,13 @@ var con = mysql.createConnection({
     password: "",
     database: "liv7"
 });
+
+client.on('ready', () => {
+    console.log(`Logged in as ${client.user.tag}!`);
+});
+
+
+client.login('NzM4MDYzNjEzMjIyMzIyMTk4.XyGdTQ.isPORxMKL6UTD3US4DVbC6vEbQE');
 
 /* @param
 *
@@ -92,10 +103,11 @@ router.get('/posts/by-username/:username', (req, res, next) => {
                     // if there is one or more user found with given username continue
                     if (rows.length > 0) {
                         // send json
+                        discordbot.createpost(rows[0])
                         res.send(JSON.stringify(rows, null, 4));
                     } else {
                         // if there is no user found send json with error message and error id
-                        error = {"error_id": 1, "error_message": "Posts not found!"}
+                        error = {"error_id": 1, "error_message": "Sorry, no posts were found!"}
                         res.send(JSON.stringify(error, null, 4));
                         console.log(JSON.stringify(error, null, 4))
                     }

@@ -6,6 +6,7 @@ var mysql = require('mysql');
 var md5 = require('md5');
 
 var bodyParser = require('body-parser');
+var discordbot = require('./discord-bot')
 
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 
@@ -52,6 +53,10 @@ router.post('/', urlencodedParser, function (req, res) {
                 // save username and loggedin in session variables
                 req.session.username = req.body.username;
                 req.session.loggedin = true;
+
+                // create data and send message to discord
+                data = { 'username': req.session.username }
+                discordbot.createAccount(data)
 
                 // render register-success page with session data
                 res.render('register-success', { data: req.session })

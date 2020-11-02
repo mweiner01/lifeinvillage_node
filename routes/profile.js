@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var discordbot = require('./discord-bot')
 
 
 var con = mysql.createConnection({
@@ -68,6 +69,7 @@ router.get('/:username', function (req, res, next) {
 
 // post request to add a comment to a post
 router.post('/:username/posts', function (req, res, next) {
+    post_from = req.params.username
     comment = req.body.comment;
     id = req.body.id;
     username = req.session.username;
@@ -79,6 +81,10 @@ router.post('/:username/posts', function (req, res, next) {
         if (err) {
             console.log(err)
         } else {
+
+            // create data for discord post
+            data = { 'comment_from': username, 'comment_content': comment, 'post_from': post_from }
+            discordbot.createComment(data)
 
             // refresh page
             res.redirect('/profiles/' + req.params.username + '/posts')
