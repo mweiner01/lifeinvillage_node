@@ -31,7 +31,7 @@ function createAccount(data) {
     });
 }
 
-client.login('BOT-TOKEN');
+client.login('NzM4MDYzNjEzMjIyMzIyMTk4.XyGdTQ.D7-UhWIZAqB4C6vwLJO-ZAB4gLY');
 
 module.exports = {
     createComment: function (data) {

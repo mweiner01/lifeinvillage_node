@@ -50,25 +50,20 @@ router.get('/users/:username', function (req, res, next) {
     }
 });
 
-// get manage profile page by: /dashboard/users/:username/manage/profile
 router.get('/users/:username/manage/profile', function (req, res, next) {
     if(req.session && req.session.loggedin) {
-        if(req.session.username && req.session.username === req.params.username) {
-            sql = mysql.format('SELECT * FROM accounts WHERE username = ?', [req.session.username]);
-            con.query(sql, (error, result) => {
-                if(error) {
-                    res.render('error');
-                } else {
-                    res.render('dashboard-page-manage-profile', { sessionData: req.session, mysqlUser: result[0] })
-                }
-            });
+        if(req.session.username === req.params.username) {
+            console.log("Test2")
+            res.render('manage-profile')
         } else {
+            console.log("test")
             res.render('error')
         }
     } else {
         res.redirect('/login')
     }
 });
+
 
 
 module.exports = router;

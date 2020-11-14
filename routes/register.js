@@ -59,7 +59,7 @@ router.post('/', urlencodedParser, function (req, res) {
                 discordbot.createAccount(data)
 
                 // render register-success page with session data
-                res.render('register-success', { data: req.session })
+                res.redirect('/dashboard/users/'+req.session.username)
             });
         } else {
             // if username is not available save it in session variable and refresh page

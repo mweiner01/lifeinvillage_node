@@ -67,7 +67,7 @@ router.post('/', urlencodedParser, function (req, res) {
 
                         // print out that the user could login and render "login-success" page with session data
                         console.log("The user " + req.body.username + " could login!");
-                        res.render('login-success', { data: req.session })
+                        res.redirect('/dashboard/users/'+req.session.username)
                     } else {
                         // get date if user could not login (numrows are 0 or greater then 1)
                         const date = new Date()
