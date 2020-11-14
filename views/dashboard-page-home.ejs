@@ -6,232 +6,241 @@
   <title>Dashboard</title>
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+
+  <style>
+    .modal {
+      transition: opacity 0.25s ease;
+    }
+    body.modal-active {
+      overflow-x: hidden;
+      overflow-y: visible !important;
+    }
+  </style>
 </head>
-<body style="min-width: 1867px" class="bg-gray-100">
-  <div class="absolute top-0 left-0 bg-blue-900 py-4 h-full w-64">
-    <div class="pt-2 pb-4 pl-4 flex">
-      <h1 class="uppercase text-blue-600 text-left text-xl leading-none">Dashboard</h1>
-      <p class="ml-2 bg-green-500 px-2 rounded-md text-white uppercase font-semibold">Beta</p>
+<body style="min-width: 1610px" class="bg-gray-200">
+  <div class="absolute shadow z-50 top-0 left-0 bg-white h-full w-64" style="min-height: 890px;">
+    <div class="pl-4 bg-white py-5 flex">
+      <h1 class="uppercase text-gray-800 text-left text-xl leading-none">Dashboard</h1>
+      <p class="ml-2 bg-purple-500 px-2 rounded-md text-white uppercase font-semibold">Beta</p>
     </div>
-    <div class="text-white border-b border-blue-800">
-      <div class="mb-3 text-gray-600 font-semibold uppercase text-sm pt-4 pl-4 flex">
-        <h1>Accounts</h1>
+    <div class="text-white px-2">
+      <div class="mb-3 pt-4 pl-2 flex">
+        <h1 class="text-green-700 text-sm font-bold uppercase">Accounts</h1>
       </div>
       <!-- when minecraft_name is same as session minecraft_name then mark as logged in to this account -->
       <% accounts.forEach((user) => { %>
         <% if(sessionData.minecraft_name === user.minecraft_name) { %>
-          <div class="text-lg font-thin bg-blue-800 pl-2 pr-12 py-2">
+          <div class="text-sm text-green-800 font-bold bg-green-200 bg-opacity-50 rounded pl-2 pr-12 py-2 mb-2">
             <div class="flex">
-              <img src="https://minotar.net/avatar/<%= user.minecraft_name %>/100" class="h-6 w-auto rounded-sm" alt="">
+              <img src="https://minotar.net/helm/<%= user.minecraft_name %>/100" class="h-6 w-auto rounded-sm" alt="">
               <a href="#" class="px-1"><%= user.minecraft_name %></a>
             </div>
           </div>
           <% } else { %>
-            <div class="text-lg font-thin hover:bg-blue-800 pl-2 pr-12 py-2">
+            <div class="text-sm font-bold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
               <div class="flex">
-                <img src="https://minotar.net/avatar/<%= user.minecraft_name %>/100" class="h-6 w-auto rounded-sm" alt="">
+                <img src="https://minotar.net/helm/<%= user.minecraft_name %>/100" class="h-6 w-auto rounded-sm" alt="">
                 <a href="#" class="px-1"><%= user.minecraft_name %></a>
               </div>
             </div>
             <% } %>
         <% }); %>
-      <div class="mb-3 font-thin pl-2 pr-12 py-2 hover:bg-blue-800">
-        <a href="#" class="text-blue-200 font-semibold hover:text-blue-600 text-lg"><i class="fas fa-plus hover:bg-blue-200 px-1 py-1 rounded-md"></i> Neuen Account</a>
+      <div class="mb-3 font-thin pl-2 pr-12 py-2 text-black hover:text-green-800 hover:bg-green-200 hover:bg-opacity-50 rounded">
+        <a href="#" class="font-semibold text-sm"><i class="fas fa-plus px-1 py-1 rounded-md"></i> Neuen Account</a>
       </div>
     </div>
-    <div class="text-white border-b border-blue-800">
-      <div class="mb-3 text-gray-600 font-semibold uppercase text-sm pt-4 pl-4 flex">
+    <div class="text-white px-2">
+      <div class="mb-3 text-green-700 font-bold uppercase text-sm pt-4 pl-2 flex">
         <h1>Manage</h1>
       </div>
-      <div class="text-md font-semibold tracking-tight hover:bg-blue-800 pl-2 pr-12 py-1">
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
         <a href="/dashboard/users/<%= mysqlUser.username %>/manage/profile" class="px-2">Profil</a>
       </div>
-      <div class="text-md font-semibold tracking-tight hover:bg-blue-800 pl-2 pr-12 py-1">
-        <a href="/dashboard/manage/privacy" class="px-2">Privatsphäre</a>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/privacy" class="px-2">Privatsphäre</a>
       </div>
-      <div class="mb-3 text-md font-semibold tracking-tight hover:bg-blue-800 pl-2 pr-12 py-1">
-        <a href="/dashboard/manage/posts" class="px-2">Community Posts</a>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/manage/posts" class="px-2">Community Posts</a>
       </div>
     </div>
-    <div class="text-white border-b border-blue-800">
-      <div class="mb-3 text-gray-600 font-semibold uppercase text-sm pt-4 pl-4 flex">
+    <div class="text-white px-2">
+      <div class="mb-3 text-green-700 font-bold uppercase text-sm pt-4 pl-2 flex">
         <h1>Insights</h1>
       </div>
-      <div class="text-md font-semibold tracking-tight bg-blue-800 pl-2 pr-12 py-1">
-        <a href="/dashboard/insights/player-stats" class="px-2">Spiel Statistiken</a>
+      <div class="text-sm font-semibold text-black bg-green-200 bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/insights/player-stats" class="px-2">Spiel Statistiken</a>
       </div>
-      <div class="text-md font-semibold tracking-tight hover:bg-blue-800 pl-2 pr-12 py-1">
-        <a href="/dashboard/insights/profile-stats" class="px-2">Profil Statistiken</a>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/insights/profile-stats" class="px-2">Profil Statistiken</a>
       </div>
-      <div class="mb-3 text-md font-semibold tracking-tight hover:bg-blue-800 pl-2 pr-12 py-1">
-        <a href="/dashboard/insights/friends-list" class="px-2">Deine Freunde</a>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/insights/friends-list" class="px-2">Deine Freunde</a>
       </div>
     </div>
-    <div class="text-white border-b border-blue-800">
-      <div class="my-3 text-md font-semibold tracking-tight pl-16 py-1">
+    <div class="text-white">
+      <div class="my-3 text-md font-semibold tracking-tight pl-16 py-1 pt-12">
         <a href="/logout" class="bg-red-400 py-1 px-4 hover:bg-red-500 rounded">Ausloggen</a>
       </div>
     </div>
   </div>
-    <div class="pl-64 absolute top-0 left-0 w-full" style="min-width: 1867px">
-      <div class="w-full border-b flex py-3">
-        <div class="ml-auto flex pr-10">
-          <div class="py-1 pr-2 border-r border-gray-300">
-            <button class="bg-green-500 py-1 px-6 font-semibold text-white rounded focus:outline-none hover:bg-green-600">Erstellen <i class="fas fa-angle-down"></i></button>
-          </div>
+    <div class="pl-64 absolute top-0 left-0 w-full z-0" style="min-width: 1610px">
+      <div class="w-full bg-white shadow flex">
+        <div class="mr-auto ">
+          <input type="text" class="pl-4 pr-12 focus:outline-none py-4" placeholder="Suche Spieler">
+        </div>
+        <div class="ml-auto flex pr-32 mt-2">
           <div class="pl-4">
-            <img src="https://minotar.net/avatar/<%= mysqlUser.minecraft_name %>/100" class="h-10 w-10 rounded-full shadow-xl" alt="">
+            <img src="https://minotar.net/helm/<%= mysqlUser.minecraft_name %>/100" class="h-10 w-10 rounded-full shadow-xl" alt="">
+          </div>
+          <div class="ml-2 text-sm mt-2 leading-none">
+            <h1 class="text-gray-600 font-semibold"><%= mysqlUser.username %>, <%= mysqlUser.minecraft_name %></h1>
+            <h1 class="text-gray-500">Fraktion: <%= mysqlUser.fraction_string %></h1>
           </div>
         </div>
       </div>
     </div>
-  <div class="pl-64 pt-16 w-full h-screen" style="min-width: 1867px">
-      <div class="w-full justify-between pt-16 pb-8 text-center">
-        <h3 class="leading-none text-gray-800 font-normal text-4xl">Deine Spiel Statistiken</h3>
-      </div>
-      <div class="flex w-full">
-        <!-- #1 card -->
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Dein Kontostand</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-3xl"><i class="fas fa-money-check text-yellow-400"></i></h1>
-            </div>
+  <div class="pl-64 pt-16 w-full h-screen" style="min-width: 1610px">
+    <div class="pt-4 max-w-5xl mx-auto">
+        <div class="pl-2 text-left">
+          <h1 class="text-gray-800 text-4xl font-extrabold">Spiel Statistiken</h1>
+        </div>
+        <div>
+          <div class="pt-8 border-b py-6 px-2">
+            <h1 class="text-gray-800 text-2xl font-medium">Account Statistiken</h1>
+            <p class="text-gray-600 font-semibold">Hier findest du deine Statistiken wie Silber Anzahl, Level etc.</p>
           </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.silver_amount %> Silber</h1>
+          <div class="px-2 py-6 grid grid-flow-cols grid-cols-3 gap-x-4 gap-y-4">
+            <!-- Start of silver -->
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.silver_amount %></h1>
+                  <h1 class="text-gray-600 font-semibold">Silber Anzahl</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-coins"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Silber Aktivitäten</a>
+              </div>
+            </div>
+            <!-- end of silver -->
+            <!-- Start of playtime -->
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.playtime_hours %>h <%= mysqlUser.playtime_minutes %>min</h1>
+                  <h1 class="text-gray-600 font-semibold">Spielzeit</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-clock"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Spielzeit Aktivitäten</a>
+              </div>
+            </div>
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.current_mana %>/<%= mysqlUser.limit_mana %></h1>
+                  <h1 class="text-gray-600 font-semibold">Mana</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-diagnoses"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Mana Aktivitäten</a>
+              </div>
+            </div>
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.general_level_number %></h1>
+                  <h1 class="text-gray-600 font-semibold">Normales Level</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-arrow-up"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Level Aktivitäten</a>
+              </div>
+            </div>
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.forge_level_number %></h1>
+                  <h1 class="text-gray-600 font-semibold">Schmiede Level</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-arrow-up"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Level Aktivitäten</a>
+              </div>
+            </div>
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.magic_level_number %></h1>
+                  <h1 class="text-gray-600 font-semibold">Magie Level</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-arrow-up"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Level Aktivitäten</a>
+              </div>
             </div>
           </div>
         </div>
-        <!-- #2 card -->
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Deine Spielzeit</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-3xl"><i class="far fa-clock text-teal-400"></i></h1>
-            </div>
-          </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.playtime_hours %>h <%= mysqlUser.playtime_minutes %>min</h1>
-            </div>
-          </div>
-        </div>
-        <!-- #3 card -->
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Dein Kontostand</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-xl"><i class="fas fa-money-check text-yellow-400"></i></h1>
-            </div>
-          </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.silver_amount %> Silber</h1>
-            </div>
-          </div>
-        </div>
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Dein Kontostand</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-xl"><i class="fas fa-money-check text-yellow-400"></i></h1>
-            </div>
-          </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.silver_amount %> Silber</h1>
-            </div>
-          </div>
-        </div>
-        <!-- #4 card -->
-      </div>
-      <div class="flex w-full py-4">
-        <!-- #1 card -->
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Dein Kontostand</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-xl"><i class="fas fa-money-check text-yellow-400"></i></h1>
-            </div>
-          </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.silver_amount %> Silber</h1>
-            </div>
-          </div>
-        </div>
-        <!-- #2 card -->
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Dein Kontostand</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-xl"><i class="fas fa-money-check text-yellow-400"></i></h1>
-            </div>
-          </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.silver_amount %> Silber</h1>
-            </div>
-          </div>
-        </div>
-        <!-- #3 card -->
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Dein Kontostand</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-xl"><i class="fas fa-money-check text-yellow-400"></i></h1>
-            </div>
-          </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.silver_amount %> Silber</h1>
-            </div>
-          </div>
-        </div>
-        <div class="shadow-md rounded-2xl p-8 bg-white w-1/4 mx-2 h-full">
-          <div class="flex text-gray-800 mb-8">
-            <div class="mr-auto">
-              <h1 class="text-3xl tracking-tight font-light">Dein Kontostand</h1>
-            </div>
-            <div class="ml-auto">
-              <h1 class="text-xl"><i class="fas fa-money-check text-yellow-400"></i></h1>
-            </div>
-          </div>
-          <div class="leading-none mt-1 flex">
-            <div class="mt-8">
-              <h3 class="text-green-400 font-semibold text-lg mb-4"><i class="fas fa-chart-line"></i> +3,12%</h3>
-              <h1 class="text-gray-900 font-bold text-3xl mr-2"><%= mysqlUser.silver_amount %> Silber</h1>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="text-center mt-2 mx-auto">
-        <a href="#" class="font-thin text-blue-500 text-xl mb-4 hover:underline"><i class="fas fa-question-circle"></i> Erfahre mehr über deine <span class="font-semibold">Profil Statistiken</span> </a>
       </div>
   </div>
+  <script>
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+    
+     
+  </script>
 </body>
 </html>
