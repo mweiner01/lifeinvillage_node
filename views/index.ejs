@@ -108,21 +108,23 @@
                             <% } %>
                         </div>
 
-                        <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
-                             id="user-menu">
-                            <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
-                                 aria-labelledby="user-menu">
-                                <a href="/profiles/<%= data.username %>"
-                                   class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                   role="menuitem">Dein Profil</a>
-                                <a href="/dashboard/users/<%= mysql.username %>"
-                                   class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                   role="menuitem">Dashboard</a>
-                                <a href="/logout"
-                                   class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                   role="menuitem">Ausloggen</a>
-                            </div>
+                        <% if(data.loggedin && data.loggedin === true) { %>
+                            <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
+                            id="user-menu">
+                           <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
+                                aria-labelledby="user-menu">
+                               <a href="/profiles/<%= data.username %>"
+                                  class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                  role="menuitem">Dein Profil</a>
+                               <a href="/dashboard/users/<%= mysql.username %>"
+                                  class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                  role="menuitem">Dashboard</a>
+                               <a href="/logout"
+                                  class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
+                                  role="menuitem">Ausloggen</a>
+                           </div>
                         </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

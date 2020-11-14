@@ -34,18 +34,14 @@ router.get('/', function(req, res, next) {
     });
   } else {
     // save current_url in session variable and render index page with session data
-    req.session.current_url = '/';
     res.render('index', { data: req.session });
   }
 });
 
 // post request for "search user" form.
 router.post('/', function (req, res, next) {
-  // get the username given in form
-  username = req.body.username;
-
-  // redirect to the user profile page. If there is no user with given name then render error page.
-  res.redirect('/profiles/'+username);
+  username = req.body.username;   // get the username given in form
+  res.redirect('/profiles/'+username);   // redirect to the user profile page. If there is no user with given name then render error page.
 });
 
 
