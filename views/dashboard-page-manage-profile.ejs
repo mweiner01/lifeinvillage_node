@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/4d53e5f024.js"></script>
+  <title>Dashboard</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+
+  <style>
+    .modal {
+      transition: opacity 0.25s ease;
+    }
+    body.modal-active {
+      overflow-x: hidden;
+      overflow-y: visible !important;
+    }
+  </style>
+</head>
+<body style="min-width: 1610px" class="bg-gray-200">
+  <div class="absolute shadow z-50 top-0 left-0 bg-white h-full w-64" style="min-height: 890px;">
+    <div class="pl-4 bg-white py-5 flex">
+      <h1 class="uppercase text-gray-800 text-left text-xl leading-none">Dashboard</h1>
+      <p class="ml-2 bg-purple-500 px-2 rounded-md text-white uppercase font-semibold">Beta</p>
+    </div>
+    <div class="text-white px-2">
+      <div class="mb-3 pt-4 pl-2 flex">
+        <h1 class="text-green-700 text-sm font-bold uppercase">Accounts</h1>
+      </div>
+      <!-- when minecraft_name is same as session minecraft_name then mark as logged in to this account -->
+      <% accounts.forEach((user) => { %>
+        <% if(sessionData.minecraft_name === user.minecraft_name) { %>
+          <div class="text-sm text-green-800 font-bold bg-green-200 bg-opacity-50 rounded pl-2 pr-12 py-2 mb-2">
+            <div class="flex">
+              <img src="https://minotar.net/helm/<%= user.minecraft_name %>/100" class="h-6 w-auto rounded-sm" alt="">
+              <a href="#" class="px-1"><%= user.minecraft_name %></a>
+            </div>
+          </div>
+          <% } else { %>
+            <div class="text-sm font-bold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+              <div class="flex">
+                <img src="https://minotar.net/helm/<%= user.minecraft_name %>/100" class="h-6 w-auto rounded-sm" alt="">
+                <a href="#" class="px-1"><%= user.minecraft_name %></a>
+              </div>
+            </div>
+            <% } %>
+        <% }); %>
+      <div class="mb-3 font-thin pl-2 pr-12 py-2 text-black hover:text-green-800 hover:bg-green-200 hover:bg-opacity-50 rounded">
+        <a href="#" class="font-semibold text-sm"><i class="fas fa-plus px-1 py-1 rounded-md"></i> Neuen Account</a>
+      </div>
+    </div>
+    <div class="text-white px-2">
+      <div class="mb-3 text-green-700 font-bold uppercase text-sm pt-4 pl-2 flex">
+        <h1>Manage</h1>
+      </div>
+      <div class="text-sm font-semibold text-black bg-green-200 bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/manage/profile" class="px-2">Profil</a>
+      </div>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/privacy" class="px-2">Privatsphäre</a>
+      </div>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/manage/posts" class="px-2">Community Posts</a>
+      </div>
+    </div>
+    <div class="text-white px-2">
+      <div class="mb-3 text-green-700 font-bold uppercase text-sm pt-4 pl-2 flex">
+        <h1>Insights</h1>
+      </div>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/insights/player-stats" class="px-2">Spiel Statistiken</a>
+      </div>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/insights/profile-stats" class="px-2">Profil Statistiken</a>
+      </div>
+      <div class="text-sm font-semibold text-black hover:bg-green-200 hover:bg-opacity-50 hover:text-green-800 rounded pl-2 pr-12 py-2 mb-2">
+        <a href="/dashboard/users/<%= mysqlUser.username %>/insights/friends-list" class="px-2">Deine Freunde</a>
+      </div>
+    </div>
+    <div class="text-white">
+      <div class="my-3 text-md font-semibold tracking-tight pl-16 py-1 pt-12">
+        <a href="/logout" class="bg-red-400 py-1 px-4 hover:bg-red-500 rounded">Ausloggen</a>
+      </div>
+    </div>
+  </div>
+    <div class="pl-64 absolute top-0 left-0 w-full z-0" style="min-width: 1610px">
+      <div class="w-full bg-white shadow flex">
+        <div class="mr-auto ">
+          <input type="text" class="pl-4 pr-12 focus:outline-none py-4" placeholder="Suche Spieler">
+        </div>
+        <div class="ml-auto flex pr-32 mt-2">
+          <div class="pl-4">
+            <img src="https://minotar.net/helm/<%= mysqlUser.minecraft_name %>/100" class="h-10 w-10 rounded-full shadow-xl" alt="">
+          </div>
+          <div class="ml-2 text-sm mt-2 leading-none">
+            <h1 class="text-gray-600 font-semibold"><%= mysqlUser.username %>, <%= mysqlUser.minecraft_name %></h1>
+            <h1 class="text-gray-500">Fraktion: <%= mysqlUser.fraction_string %></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="pl-64 pt-16 w-full h-screen" style="min-width: 1610px;">
+    <div class="pt-4 max-w-5xl mx-auto">
+        <div class="pl-2 text-left">
+          <h1 class="text-gray-800 text-4xl font-extrabold">Einstellungen</h1>
+        </div>
+          <div class="pt-4 flex border-b text-gray-600 font-semibold">
+            <div class="mr-4 px-2 py-4 border-b-2 text-green-600 border-green-600">
+              <a href="">Allgemein</a>
+            </div>
+            <div class="mx-4 px-2 py-4 border-b-2 border-transparent hover:text-green-600 hover:border-green-600">
+              <a href="">Password</a>
+            </div>
+            <div class="mx-4 px-2 py-4 border-b-2 border-transparent hover:text-green-600 hover:border-green-600">
+              <a href="">Privatsphäre</a>
+            </div>
+            <div class="mx-4 px-2 py-4 border-b-2 border-transparent hover:text-green-600 hover:border-green-600">
+              <a href="">Community Posts</a>
+            </div>
+          </div>
+        <div>
+          <div class="pt-8 border-b py-6 px-2">
+            <h1 class="text-gray-800 text-2xl font-medium">Profil</h1>
+            <p class="text-gray-600 font-semibold">Diese Informationen werden öffentlich angezeigt, sei also Vorsichtig, was du teilst.</p>
+          </div>
+          <div class="flex py-6 border-b px-2">
+            <div class="w-1/3">
+              <h1 class="text-gray-600 font-semibold">Name</h1>
+            </div>
+            <div  class="w-1/3">
+              <h1 class="text-black font-semibold"><%= mysqlUser.username %></h1>
+            </div>
+            <div class="w-1/3 text-right">
+              <button class="modal-open text-green-600 hover:text-green-700 font-semibold ml-auto focus:outline-none">Aktualisieren</button>
+            </div>
+          </div>
+
+          <!-- Model for username -->
+          <div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
+            <div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
+            
+            <div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+              
+              <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
+                <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                  <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                </svg>
+                <span class="text-sm">(Esc)</span>
+              </div>
+        
+              <!-- Add margin if you want to see some of the overlay behind the modal-->
+              <div class="modal-content py-4 text-left px-6">
+                <!--Title-->
+                <div class="flex justify-between items-center pb-3">
+                  <p class="text-2xl font-bold">Bearbeite Benutzername</p>
+                  <div class="modal-close cursor-pointer z-50">
+                    <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                      <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+                    </svg>
+                  </div>
+                </div>
+        
+                <div class="py-8">
+                  <form method="post" class="" action="profile/changeusername">
+                      <div class="inline-block mr-2">
+                        <h1 class="text-black font-semibold">Benutzername</h1>
+                      </div>
+                      <div class="inline-block">
+                        <input type="text" class="border rounded py-2 pl-4 pr-12 focus:outline-none" name="username" placeholder="Neuer Benutzername">
+                      </div>
+                      <div class="mt-8 text-center">
+                        <input type="submit" class="bg-green-400 rounded py-1 px-12 text-white cursor-pointer hover:bg-green-500 font-semibold focus:outline-none" value="Bearbeiten">
+                      </div>
+                  </form>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <!-- End of model for username -->
+
+          <div class="flex py-6 border-b px-2">
+            <div class="w-1/3">
+              <h1 class="text-gray-600 font-semibold">Minecraft Name</h1>
+            </div>
+            <div  class="w-1/3">
+              <h1 class="text-black font-semibold"><%= mysqlUser.minecraft_name %></h1>
+            </div>
+            <div class="w-1/3 text-right">
+                <a href="" class="text-green-600 hover:text-green-700 font-semibold ml-auto">Aktualisieren</a>
+            </div>
+          </div>
+          <div class="flex py-6 border-b px-2">
+            <div class="w-1/3">
+              <h1 class="text-gray-600 font-semibold">Foto</h1>
+            </div>
+            <div  class="w-1/3">
+              <img src="https://minotar.net/helm/<%= mysqlUser.minecraft_name %>/100" class="h-8 rounded-full w-auto" alt="">
+            </div>
+            <div class="w-1/3 text-right">
+              <button class="focus:outline-none text-green-600 hover:text-green-700 font-semibold ml-auto">Aktualisieren</button><span class="text-gray-400 font-bold mx-2">|</span> <button href="" class="text-green-600 hover:text-green-700 font-semibold ml-auto focus:outline-none">Entfernen</button>
+            </div>
+          </div>
+          <div class="flex py-6 border-b px-2">
+            <div class="w-1/3">
+              <h1 class="text-gray-600 font-semibold">Profil Beschreibung</h1>
+            </div>
+            <div  class="w-1/3">
+              <h1 class="text-black font-semibold"><%= mysqlUser.account_description.slice(0, 30) %>...</h1>
+            </div>
+            <div class="w-1/3 text-right">
+              <button class="focus:outline-none text-green-600 hover:text-green-700 font-semibold ml-auto">Aktualisieren</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pt-8 border-b py-6 px-2">
+            <h1 class="text-gray-800 text-2xl font-medium">Account</h1>
+            <p class="text-gray-600 font-semibold">Diese Informationen verändern deine Erfahrungen auf Life in Village</p>
+          </div>
+          <div class="flex py-6 border-b px-2">
+            <div class="w-1/3">
+              <h1 class="text-gray-600 font-semibold">Sprache</h1>
+            </div>
+            <div  class="w-1/3">
+              <h1 class="text-black font-semibold">Deutsch</h1>
+            </div>
+            <div class="w-1/3 text-right">
+              <button class="focus:outline-none text-green-600 hover:text-green-700 font-semibold ml-auto">Aktualisieren</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <script>
+    var openmodal = document.querySelectorAll('.modal-open')
+    for (var i = 0; i < openmodal.length; i++) {
+      openmodal[i].addEventListener('click', function(event){
+    	event.preventDefault()
+    	toggleModal()
+      })
+    }
+    
+    const overlay = document.querySelector('.modal-overlay')
+    overlay.addEventListener('click', toggleModal)
+    
+    var closemodal = document.querySelectorAll('.modal-close')
+    for (var i = 0; i < closemodal.length; i++) {
+      closemodal[i].addEventListener('click', toggleModal)
+    }
+    
+    document.onkeydown = function(evt) {
+      evt = evt || window.event
+      var isEscape = false
+      if ("key" in evt) {
+    	isEscape = (evt.key === "Escape" || evt.key === "Esc")
+      } else {
+    	isEscape = (evt.keyCode === 27)
+      }
+      if (isEscape && document.body.classList.contains('modal-active')) {
+    	toggleModal()
+      }
+    };
+    
+    
+    function toggleModal () {
+      const body = document.querySelector('body')
+      const modal = document.querySelector('.modal')
+      modal.classList.toggle('opacity-0')
+      modal.classList.toggle('pointer-events-none')
+      body.classList.toggle('modal-active')
+    }
+    
+     
+  </script>
+</body>
+</html>

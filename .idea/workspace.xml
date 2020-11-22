@@ -19,33 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added first things for router get dashboard">
-      <change afterPath="$PROJECT_DIR$/public/stylesheets/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/api-v1/users/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/profile_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/show-comments.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/javascripts/user-menu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api-v1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/discord-bot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/posts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/profile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dashboard-page-home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard-page-home.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layer.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login-success.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/posts.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile-page-achievements.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile-page-activity.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/profile-page.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/register-success.ejs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +141,7 @@
       <workItem from="1604846975396" duration="10000" />
       <workItem from="1605908247612" duration="168000" />
       <workItem from="1606052089889" duration="97000" />
-      <workItem from="1606056929088" duration="4980000" />
+      <workItem from="1606056929088" duration="5040000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -385,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604697223415</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added first things for router get dashboard">
+      <created>1606063239378</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1606063239378</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,6 +426,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="471" y="493" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603726590035" />
+    <state x="481" y="189" key="CommitChangelistDialog2" timestamp="1606063238861">
+      <screen x="0" y="0" width="2560" height="1410" />
+    </state>
+    <state x="481" y="189" key="CommitChangelistDialog2/0.0.2560.1410/-1360.235.1360.768/2560.99.1920.1080@0.0.2560.1410" timestamp="1606063238861" />
     <state x="92" y="92" width="2376" height="1226" key="DiffContextDialog" timestamp="1604697271005">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
@@ -497,19 +483,21 @@
     </state>
     <state x="1421" y="348" key="SettingsEditor/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604107121090" />
     <state x="1068" y="365" key="SettingsEditor/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604179942757" />
-    <state x="872" y="431" key="Vcs.Push.Dialog.v2" timestamp="1604697225074">
+    <state x="872" y="431" key="Vcs.Push.Dialog.v2" timestamp="1606063240620">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="872" y="428" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604112607155" />
+    <state x="872" y="431" key="Vcs.Push.Dialog.v2/0.0.2560.1410/-1360.235.1360.768/2560.99.1920.1080@0.0.2560.1410" timestamp="1606063240620" />
     <state x="872" y="431" key="Vcs.Push.Dialog.v2/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604697225074" />
     <state x="1174" y="631" key="com.intellij.database.run.ParametersPanel.Standalone" timestamp="1603756677837">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1174" y="631" key="com.intellij.database.run.ParametersPanel.Standalone/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603756677837" />
-    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604697264094">
+    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606063229900">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state x="1097" y="609" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604015182868" />
+    <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1410/-1360.235.1360.768/2560.99.1920.1080@0.0.2560.1410" timestamp="1606063229900" />
     <state x="1097" y="613" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604697264094" />
     <state x="2560" y="0" width="1936" height="1110" key="dock-window-1" timestamp="1604247542420">
       <screen x="2560" y="0" width="1920" height="1080" />

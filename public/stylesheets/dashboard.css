@@ -1,0 +1,11 @@
+@media only screen and (min-width: 1080px) {
+    .dashboard-content { 
+        height: 923px;
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+    .dashboard-content { 
+        height: 1309px;
+    }
+}
