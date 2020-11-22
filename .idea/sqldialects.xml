@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/routes/api-v1.js" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/routes/index.js" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/routes/login.js" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/routes/profile.js" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/routes/register.js" dialect="GenericSQL" />
   </component>
 </project>

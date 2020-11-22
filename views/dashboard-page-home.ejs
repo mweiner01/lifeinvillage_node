@@ -6,7 +6,7 @@
   <title>Dashboard</title>
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="stylesheets/tailwind.css">
   <style>
     .modal {
       transition: opacity 0.25s ease;
@@ -17,8 +17,8 @@
     }
   </style>
 </head>
-<body style="min-width: 1610px" class="bg-gray-200">
-  <div class="absolute shadow z-50 top-0 left-0 bg-white h-full w-64" style="min-height: 890px;">
+<body style="min-width: 1610px; font-family: Arial, Helvetica, sans-serif" class="bg-gray-200">
+  <div class="absolute shadow z-50 top-0 left-0 bg-white h-screen w-64" style="min-height: 890px;">
     <div class="pl-4 bg-white py-5 flex">
       <h1 class="uppercase text-gray-800 text-left text-xl leading-none">Dashboard</h1>
       <p class="ml-2 bg-purple-500 px-2 rounded-md text-white uppercase font-semibold">Beta</p>
@@ -99,14 +99,14 @@
         </div>
       </div>
     </div>
-  <div class="pl-64 pt-16 w-full h-screen" style="min-width: 1610px">
+  <div class="pl-64 pt-16 w-full max-w-5xl mx-auto h-screen dashboard-content overflow-auto" style="min-width: 1610px;">
     <div class="pt-4 max-w-5xl mx-auto">
         <div class="pl-2 text-left">
           <h1 class="text-gray-800 text-4xl font-extrabold">Spiel Statistiken</h1>
         </div>
         <div>
           <div class="pt-8 border-b py-6 px-2">
-            <h1 class="text-gray-800 text-2xl font-medium">Account Statistiken</h1>
+            <h1 class="text-gray-800 text-2xl font-medium">Allgemeine Statistiken</h1>
             <p class="text-gray-600 font-semibold">Hier findest du deine Statistiken wie Silber Anzahl, Level etc.</p>
           </div>
           <div class="px-2 py-6 grid grid-flow-cols grid-cols-3 gap-x-4 gap-y-4">
@@ -195,6 +195,73 @@
               </div>
               <div class="w-full bg-gray-300 bg-opacity-25 p-2">
                 <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Level Aktivitäten</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pt-8 border-b py-6 px-2">
+            <h1 class="text-gray-800 text-2xl font-medium">Interessante Statistiken</h1>
+            <p class="text-gray-600 font-semibold">Hier findest du Statistiken wie Kills, Tode, abgebaute Blöcke etc.</p>
+          </div>
+          <div class="px-2 py-6 grid grid-flow-cols grid-cols-3 gap-x-4 gap-y-4">
+            <!-- Start of silver -->
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.kills_amount %></h1>
+                  <h1 class="text-gray-600 font-semibold">Kills Anzahl</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-skull-crossbones"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Kill Aktivitäten</a>
+              </div>
+            </div>
+            <!-- end of silver -->
+            <!-- Start of playtime -->
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.deaths_amount %></h1>
+                  <h1 class="text-gray-600 font-semibold">Todes Anzahl</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-skull"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Todes Aktivitäten</a>
+              </div>
+            </div>
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.destroyed_blocks_amount %></h1>
+                  <h1 class="text-gray-600 font-semibold">Abgebaute Blöcke</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-cube"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Block Aktivitäten</a>
+              </div>
+            </div>
+            <div class="bg-gray-100 rounded-xl shadow-md max-w-sm">
+              <div class="text-left px-8 py-4 flex">
+                <div>
+                  <h1 class="text-gray-800 font-semibold text-3xl tracking-tight"><%= mysqlUser.placed_blocks_amount %></h1>
+                  <h1 class="text-gray-600 font-semibold">Platzierte Blöcke</h1>
+                </div>
+                <div class="ml-auto text-5xl">
+                  <h1 class="text-green-500"><i class="fas fa-cube"></i></h1>
+                </div>
+              </div>
+              <div class="w-full bg-gray-300 bg-opacity-25 p-2">
+                <a href="" class="px-6 text-green-500 hover:text-green-600 font-semibold">Zeige Block Aktivitäten</a>
               </div>
             </div>
           </div>

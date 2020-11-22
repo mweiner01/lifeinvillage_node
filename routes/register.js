@@ -6,7 +6,6 @@ var mysql = require('mysql');
 var md5 = require('md5');
 
 var bodyParser = require('body-parser');
-var discordbot = require('./discord-bot')
 
 var urlencodedParser = bodyParser.urlencoded({extended: false})
 

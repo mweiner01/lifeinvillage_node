@@ -20,8 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82f9a658-b83a-4732-b3b1-211efb6936e9" name="Default Changelist" comment="added first things for router get dashboard">
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/api-v1/users/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/profile_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/show-comments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/javascripts/user-menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api-v1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/discord-bot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/posts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/profile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dashboard-page-home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dashboard-page-home.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layer.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login-success.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/posts.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page-achievements.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page-activity.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile-page.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register-success.ejs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +83,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.19.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -140,6 +164,9 @@
       <workItem from="1604696496061" duration="775000" />
       <workItem from="1604724880577" duration="128000" />
       <workItem from="1604846975396" duration="10000" />
+      <workItem from="1605908247612" duration="168000" />
+      <workItem from="1606052089889" duration="97000" />
+      <workItem from="1606056929088" duration="4980000" />
     </task>
     <task id="LOCAL-00001" summary="added login page design">
       <created>1603732614917</created>
@@ -429,28 +456,32 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1080" y="314" key="Github.UntrackedFilesDialog/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1603732123431" />
-    <state width="2517" height="143" key="GridCell.Tab.0.bottom" timestamp="1604725008482">
+    <state width="2517" height="255" key="GridCell.Tab.0.bottom" timestamp="1606059184389">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1234" height="180" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="2517" height="255" key="GridCell.Tab.0.bottom/0.0.2560.1410/-1360.235.1360.768/2560.99.1920.1080@0.0.2560.1410" timestamp="1606059184389" />
     <state width="2517" height="143" key="GridCell.Tab.0.bottom/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604725008482" />
     <state width="1877" height="183" key="GridCell.Tab.0.bottom/0.0.2560.1410/2560.0.1920.1080@2560.0.1920.1080" timestamp="1604240324196" />
-    <state width="2517" height="143" key="GridCell.Tab.0.center" timestamp="1604725008482">
+    <state width="2517" height="255" key="GridCell.Tab.0.center" timestamp="1606059184389">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1234" height="180" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="2517" height="255" key="GridCell.Tab.0.center/0.0.2560.1410/-1360.235.1360.768/2560.99.1920.1080@0.0.2560.1410" timestamp="1606059184389" />
     <state width="2517" height="143" key="GridCell.Tab.0.center/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604725008482" />
     <state width="1877" height="183" key="GridCell.Tab.0.center/0.0.2560.1410/2560.0.1920.1080@2560.0.1920.1080" timestamp="1604240324195" />
-    <state width="2517" height="143" key="GridCell.Tab.0.left" timestamp="1604725008482">
+    <state width="2517" height="255" key="GridCell.Tab.0.left" timestamp="1606059184388">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1234" height="180" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="2517" height="255" key="GridCell.Tab.0.left/0.0.2560.1410/-1360.235.1360.768/2560.99.1920.1080@0.0.2560.1410" timestamp="1606059184388" />
     <state width="2517" height="143" key="GridCell.Tab.0.left/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604725008482" />
     <state width="1877" height="183" key="GridCell.Tab.0.left/0.0.2560.1410/2560.0.1920.1080@2560.0.1920.1080" timestamp="1604240324195" />
-    <state width="2517" height="143" key="GridCell.Tab.0.right" timestamp="1604725008482">
+    <state width="2517" height="255" key="GridCell.Tab.0.right" timestamp="1606059184389">
       <screen x="0" y="0" width="2560" height="1410" />
     </state>
     <state width="1234" height="180" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.1920.1080@0.0.2560.1400" timestamp="1604113105334" />
+    <state width="2517" height="255" key="GridCell.Tab.0.right/0.0.2560.1410/-1360.235.1360.768/2560.99.1920.1080@0.0.2560.1410" timestamp="1606059184389" />
     <state width="2517" height="143" key="GridCell.Tab.0.right/0.0.2560.1410/2560.0.1920.1080@0.0.2560.1410" timestamp="1604725008482" />
     <state width="1877" height="183" key="GridCell.Tab.0.right/0.0.2560.1410/2560.0.1920.1080@2560.0.1920.1080" timestamp="1604240324195" />
     <state x="248" y="122" key="MergeDialog" timestamp="1604697239727">

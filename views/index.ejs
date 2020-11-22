@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
             integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
             crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/ui@latest/dist/tailwind-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/tailwind.css">
     <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 
@@ -26,204 +26,89 @@
     <title>Home - Life in Village</title>
 </head>
 <body>
-<!--
-  Tailwind UI components require Tailwind CSS v1.8 and the @tailwindcss/ui plugin.
-  Read the documentation to get started: https://tailwindui.com/documentation
--->
-    <section class="bg-cover bg-center" style="background-image: url(https://i.pinimg.com/originals/93/09/85/930985f5e449bdff00a607146a64c27d.jpg);">
-    <nav class="bg-transparent">
-        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <!-- Mobile menu button-->
-                    <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
-                            aria-label="Main menu" aria-expanded="false">
-                        <!-- Icon when menu is closed. -->
-                        <!--
-                          Heroicon name: menu
-
-                          Menu open: "hidden", Menu closed: "block"
-                        -->
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                        <!-- Icon when menu is open. -->
-                        <!--
-                          Heroicon name: x
-
-                          Menu open: "block", Menu closed: "hidden"
-                        -->
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M6 18L18 6M6 6l12 12"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="flex-shrink-0">
-                        <p class="block lg:hidden w-auto font-semibold text-white px-2 py-1 rounded text-2xl">Life in Village</p>
-                        <p class="hidden lg:block w-auto font-semibold text-white px-4 py-1 rounded text-2xl">Life in Village</p>
-                    </div>
-                    <div class="hidden sm:block sm:ml-6 py-1">
-                        <div class="flex">
-                            <a href="/"
-                               class="px-3 py-2 rounded-md text-xl font-medium leading-5 text-white border-2 border-transparent hover:border-white focus:outline-none transition duration-150 ease-in-out">Home</a>
-                            <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-xl font-medium leading-5 text-white border-2 border-transparent hover:border-white focus:outline-none transition duration-150 ease-in-out">Lorem
-                                ipsum.</a>
-                            <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-xl font-medium leading-5 text-white border-2 border-transparent hover:border-white focus:outline-none transition duration-150 ease-in-out">Lorem.</a>
-                            <a href="#"
-                               class="ml-4 px-3 py-2 rounded-md text-xl font-medium leading-5 text-white border-2 border-transparent hover:border-white focus:outline-none transition duration-150 ease-in-out">Lorem
-                                ipsum.</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-                    <!-- Profile dropdown -->
-                    <div class="ml-3 relative">
-                        <div class="flex">
-                            <% if(data.loggedin && data.loggedin === true) { %>
-                                <p class="flex lg:block hidden mt-3 px-3 text-md text-white font-semibold mr-2"><%= data.minecraft_name %></p>
-                                <button class="flex px-3 py-2 text-md rounded-full transition delay-50 duration-300 ease-in-out transform hover:scale-110 focus:outline-none"
-                                        id="user-menu-button" aria-label="User menu" aria-haspopup="true">
-                                    <img class="h-8 w-8 rounded-full"
-                                         src="https://minotar.net/helm/<%= data.minecraft_name %>/100.png" alt="">
-                                </button>
-                            <% } else { %>
-                                <a href="/login"
-                                   class="lg:block hidden mr-4 text-md rounded text-white bg-transparent hover:text-green-400 hover:bg-white border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
-                                   aria-label="User menu" aria-haspopup="true">
-                                    Logge dich ein
-                                </a>
-                                <a href="/register"
-                                   class="lg:block hidden mr-4 text-md rounded text-white bg-transparent hover:bg-white hover:text-green-400 border-2 border-white font-semibold px-2 py-1 transition delay-50 duration-300 ease-in-out transform hover:scale-110"
-                                   aria-label="User menu" aria-haspopup="true">
-                                    Registriere dich
-                                </a>
-                            <% } %>
-                        </div>
-
-                        <% if(data.loggedin && data.loggedin === true) { %>
-                            <div class="origin-top-right absolute right-0 mt-4 w-48 shadow-lg rounded-md hidden"
-                            id="user-menu">
-                           <div class="rounded-md bg-white font-semibold" role="menu" aria-orientation="vertical"
-                                aria-labelledby="user-menu">
-                               <a href="/profiles/<%= data.username %>"
-                                  class="block px-4 py-2 rounded-t-md text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                  role="menuitem">Dein Profil</a>
-                               <a href="/dashboard/users/<%= mysql.username %>"
-                                  class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                  role="menuitem">Dashboard</a>
-                               <a href="/logout"
-                                  class="block rounded-b-md px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out"
-                                  role="menuitem">Ausloggen</a>
-                           </div>
-                        </div>
-                        <% } %>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--
-          Mobile menu, toggle classes based on menu state.
-
-          Menu open: "block", Menu closed: "hidden"
-        -->
-        <div class="hidden sm:hidden">
-            <div class="px-2 pt-2 pb-3">
-                <a href="#"
-                   class="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Dashboard</a>
-                <a href="#"
-                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Team</a>
-                <a href="#"
-                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Projects</a>
-                <a href="#"
-                   class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out">Calendar</a>
-            </div>
-        </div>
+<div class="bg-white">
+    <nav class="max-w-7xl mx-auto border-b">
+        <ul class="py-5 px-2 flex text-gray-500 font-medium">
+            <li class="mx-4 py-1 hover:text-gray-900">
+                <a href="">Handelsplatz</a>
+            </li>
+            <li class="mx-4 py-1 hover:text-gray-900">
+                <a href="">Ranglisten</a>
+            </li>
+            <li class="mx-4 py-1 hover:text-gray-900">
+                <a href="">Statistiken</a>
+            </li>
+            <li class="mx-4 py-1 hover:text-gray-900">
+                <a href="">Das Team</a>
+            </li>
+            <li class="ml-auto flex text-white">
+                <a href="" class="mx-2 py-1 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Einloggen</a>
+                <a href="" class="mx-2 py-1 px-4 rounded-md bg-emerald-500 hover:bg-emerald-600 font-medium">Registrieren</a>
+            </li>
+        </ul>
     </nav>
-        <section class="xl:py-64 md:py-48 py-32 px-2 bg-cover bg-center">
-            <div class="text-center">
-                <h1 class="uppercase md:text-6xl text-3xl font-bold text-white tracking-tight leading-none">Life in Village 7 -
-                    Minecraft</h1>
-                <h3 class="uppercase md:text-2xl text-md font-semibold text-white tracking-tight leading-none">Eine spannende
-                    Welt voller Abenteuer und vieles mehr!</h3>
-            </div>
-            <div class="justify-center flex mt-8">
-                <form method="post">
-                    <div class="flex justify-center items-center w-full">
-                        <div class="">
-                            <input type="text"
-                                   class="py-5 w-full rounded-l md:pr-32 pr-6 pl-4 font-semibold text-gray-400 placeholder-gray-400 bg-white focus:outline-none"
-                                   name="username" placeholder="Suche Spieler...">
-                        </div>
-                        <div class="py-3 px-2 bg-white rounded-r">
-                            <input type="submit"
-                                   class="text-green-400 py-2 cursor-pointer border-white border-l px-2 border-gray-300 bg-white font-semibold hover:text-green-600 focus:outline-none"
-                                   value="Suchen">
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </section>
-    <section class="bg-green-400 xl:px-64 md:px-48 px-6 py-32 mx-auto">
-        <div class="grid grid-flow-row justify-center gap-y-16 gap-x-8 xl:grid-row-1 xl:grid-cols-3 md:grid-row-2 md:grid-cols-2 grid-row-8 grid-cols-1">
-            <div class="xl:px-16">
-                <div class="text-center text-white">
-                    <div class="mb-4">
-                        <h1 class="text-white text-5xl text-white"><i class="lni lni-handshake"></i></h1>
-                    </div>
-                    <div>
-                        <h1 class="font-bold text-3xl tracking-tight">Eigenes Handelssystem</h1>
-                    </div>
-                    <div class="mt-2">
-                        <p class="text-white font-medium text-lg">Mit unserem eigenen Handels System könnt ihr einfach
-                            Geschäfte abwickeln ohne Sorgen zu haben.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="xl:px-16">
-                <div class="text-center text-white">
-                    <div class="mb-4">
-                        <h1 class="text-white text-5xl text-white"><i class="lni lni-leaf"></i></h1>
-                    </div>
-                    <div>
-                        <h1 class="font-bold text-3xl tracking-tight">Custom Items</h1>
-                    </div>
-                    <div class="mt-2">
-                        <p class="text-white font-medium text-lg">Life in Village bietet euch ebenfalls Custom Items, welche
-                            coole Funktionen beinhalten!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="xl:px-16">
-                <div class="text-center text-white">
-                    <div class="mb-4">
-                        <h1 class="text-white text-5xl text-white"><i class="lni lni-timer"></i></h1>
-                    </div>
-                    <div>
-                        <h1 class="font-bold text-3xl tracking-tight">24/7 Online</h1>
-                    </div>
-                    <div class="mt-2">
-                        <p class="text-white font-medium text-lg">Life in Village 7 wird 24/7 Online sein, damit ihr euch
-                            keine Sorgen machen müsst, wann ihr spielen könnt.</p>
-                    </div>
-                </div>
+</div>
+<div class="text-center max-w-7xl mx-auto py-24">
+    <h1 class="text-5xl font-extrabold text-gray-800">Minecraft Life in Village 7</h1>
+    <div class="mt-4 max-w-3xl mx-auto">
+        <h3 class="text-lg text-gray-500">Begebe dich in Minecraft Life in Village 7 in spannende Abenteuer, erkunde die Weltmeere oder baue dir dein Traumhaus!</h3>
+    </div>
+    <div class="mt-8">
+        <a href="" class="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-base py-1 px-4 rounded-md">Jetzt Abenteuer starten</a>
+    </div>
+</div>
+<!-- Team Section -->
+<div class="text-center max-w-7xl mx-auto py-24 bg-gray-100">
+    <h1 class="mt-1 font-extrabold text-bluegray-900 text-5xl">Das Team von Life in Village 7</h1>
+    <div class="mt-2 mx-auto max-w-xl">
+        <p class="text-lg font-semibold text-gray-400">Lerne das Team von Life in Village 7 kennen! :)</p>
+    </div>
+    <div class="mt-12 grid grid-flow-cols grid-cols-4 gap-y-12 justify-center max-w-7xl mx-auto">
+        <div class="">
+            <img src="https://minotar.net/helm/dermakku/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
+            <div class="mt-2">
+                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">yaMaxTV</a>
+                <h1 class="text-emerald-500 font-semibold text-lg">Founder, Web Entwickler</h1>
             </div>
         </div>
-    </section>
+        <div class="">
+            <img src="https://minotar.net/helm/RegenJacob/100.png" class="border-2 border-cyan-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
+            <div class="mt-2">
+                <a href="https://www.twitch.tv/RegenJacob" class="text-lg font-semibold text-gray-900">RegenJacob</a>
+                <h1 class="text-cyan-500 font-semibold text-lg">Java Entwickler</h1>
+            </div>
+        </div>
+        <div class="">
+            <img src="https://minotar.net/helm/Beatjx/100.png" class="border-2 border-cyan-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
+            <div class="mt-2">
+                <a href="https://www.twitch.tv/edgarogg" class="text-lg font-semibold text-gray-900">Beatjx</a>
+                <h1 class="text-cyan-500 font-semibold text-lg">Java Entwickler, Designer</h1>
+            </div>
+        </div>
+        <div class="">
+            <img src="https://minotar.net/helm/IridiumHD1/100.png" class="border-2 border-amber-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
+            <div class="mt-2">
+                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">IridiumHD1</a>
+                <h1 class="text-amber-500 font-semibold text-lg">Content</h1>
+            </div>
+        </div>
+        <div class="">
+            <img src="https://minotar.net/helm/SkyleYT/100.png" class="border-2 border-yellow-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
+            <div class="mt-2">
+                <a href="https://www.twitch.tv/SkyleYT" class="text-lg font-semibold text-gray-900">SkyleYT</a>
+                <h1 class="text-yellow-500 font-semibold text-lg">Builder</h1>
+            </div>
+        </div>
+        <div class="">
+            <img src="https://minotar.net/helm/Llulko/100.png" class="border-2 border-yellow-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
+            <div class="mt-2">
+                <a href="https://www.twitch.tv/Llulko" class="text-lg font-semibold text-gray-900">Llulko</a>
+                <h1 class="text-yellow-500 font-semibold text-lg">Builder</h1>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <section>
-        
-    </section>
 </body>
-<!-- Script to enable profile dropdown -->
-<script src="/javascripts/user-menu.js"></script>
+
 </html>
