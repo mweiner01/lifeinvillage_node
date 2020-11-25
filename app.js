@@ -10,7 +10,7 @@ var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
 var logoutRouter = require('./routes/logout');
 var dashboardRouter = require('./routes/dashboard');
-
+var apiUserRouter = require('./routes/api-v1/users/user')
 var app = express();
 
 // view engine setup
@@ -30,6 +30,7 @@ app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/logout', logoutRouter);
 app.use('/dashboard', dashboardRouter);
+app.use('/api/v1', apiUserRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

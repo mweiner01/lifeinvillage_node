@@ -53,22 +53,22 @@ router.get('/users/:username', (req, res, next) => {
                     } else {
                         // if there is no user found send json with error message and error id
                         res.send(JSON.stringify(error_1, null, 4));
-                        console.log(JSON.stringify(error, null, 4))
+                        console.log(JSON.stringify(error_1, null, 4))
                     }
                 } else {
                     // send error message if there is the wrong api key given
                     res.send(JSON.stringify(error_4, null, 4));
-                    console.log(JSON.stringify(error, null, 4))
+                    console.log(JSON.stringify(error_4, null, 4))
                 }
             } else {
                 // send error message if there is no api key given
                 res.send(JSON.stringify(error_3, null, 4));
-                console.log(JSON.stringify(error, null, 4))
+                console.log(JSON.stringify(error_3, null, 4))
             }
         } else {
             // if there is actually an error with the mysql query then send a error message with error id and error message
             res.send(JSON.stringify(error_2, null, 4));
-            console.log(JSON.stringify(error, null, 4))
+            console.log(JSON.stringify(error_2, null, 4))
         }
     });
 });
@@ -78,8 +78,7 @@ router.get('/users/:username', (req, res, next) => {
 router.get('/silver/by-username/:username', (req, res, next) => {
     param = req.params.username; // get username from param
     res.setHeader('Content-Type', 'application/json'); // set content to json
-
-    let sql = mysql.format("SELECT silver_amount FROM accounts WHERE username=?", [params]); // define sql
+    let sql = mysql.format("SELECT silver_amount FROM accounts WHERE username=?", [param]); // define sql
     con.query(sql, (error, result) => {
         if(!error) {
             if(req.header('Api-Key')) {
