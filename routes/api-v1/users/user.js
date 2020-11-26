@@ -27,8 +27,8 @@ let error_4 = {"error_id": 4, "error_message": "Wrong API key given."}
 
 
 // route to get information about the given user at "/:username". Just replace /:username with the username (not the minecraft name)
-// example: /api/v1/users/max -> that should send information about the user max
-router.get('/users/:username', (req, res, next) => {
+// example: /api/v1/users/d231234134213221321 -> that should send information about the user max
+router.get('/users/:uuid', (req, res, next) => {
     // get the username given in the url
     param = req.params.username;
 
@@ -36,7 +36,7 @@ router.get('/users/:username', (req, res, next) => {
     // set content to json to stringify and actually get values
     res.setHeader('Content-Type', 'application/json');
     // mysql query to get all information of the given user
-    let sql = mysql.format("SELECT id, username FROM accounts WHERE username=?", [param]);
+    let sql = mysql.format("SELECT id, username, account_created, discord_id, UUID, minecraft_name, playtime_seconds, playtime_minutes, playtime_hours, silver_amount, admin_level, kills_amount, placed_blocks_amount, destroyed_blocks_amount, deaths_amount FROM accounts WHERE UUID=?", [param]);
 
     // query to fetch those information
     con.query(sql, (err, rows) => {
