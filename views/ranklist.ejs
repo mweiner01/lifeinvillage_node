@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie-edge" http-equiv="X-UA-Comptatible">
+
+    <!-- Linking Fontawesome -->
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/4d53e5f024.js"></script>
+
+    <!-- Linking CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheets/tailwind.css">
+    <link href="https://rsms.me/inter/inter.css" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+
+
+    <style>
+        ::selection {
+            color: white;
+            background: #0E9F6E;
+        }
+    </style>
+
+    <title>Ranglisten - Life in Village</title>
+</head>
+<body class="md:p-0 p-4">
+    <%- include ('components/navbar.ejs') %>
+
+    <div class="text-left max-w-7xl mx-auto py-24">
+        <h1 class="text-7xl max-w-5xl font-extrabold text-gray-800">Rangklisten in Life in Village sind <span class="text-gray-900">sehr wichtig!</span></h1>
+        <div class="mt-6 max-w-5xl">
+            <h3 class="text-2xl font-semibold text-gray-500">Mit Ranklisten stellen wir euch ein System von Life in Village vor. Ranklisten ermöglichen es, euch mit anderen zu duelieren. Das aber natürlich nicht umsonst. Es gibt Premien, die unten aufgelistet sind.</h3>
+        </div>
+    </div>
+
+    <div class="py-24 bg-gray-100">
+        <div class="text-left  mx-auto">
+            <div class="grid grid-flow-cols xl:grid-cols-2 gap-x-12 gap-y-12 xl:mx-24 mx-12 grid-cols-1">
+                <div class="">
+                    <h1 class="text-gray-800 text-center font-semibold text-2xl">Die meisten abgebauten Blöcke</h1>
+                    <table class="w-full mt-6 mx-auto">
+                        <tr class="text-left">
+                            <th class="xl:pr-8 pr-2 py-2">Minecraft Skin</th>
+                            <th class="xl:pr-8 pr-2 py-2">Minecraft Name</th>
+                            <th class="xl:pr-8 pr-2 py-2">Abgebaute Blöcke</th>
+                            <th class="xl:pr-8 pr-2 py-2">Platzierung</th>
+                        </tr>
+                        <%
+
+                        i = 0;
+                        destroyed_blocks.forEach((player) => {
+                        i++; 
+                        
+                        %>
+                                <tr class="text-gray-800 font-light border-b">
+                                    <td class="py-2"><img src="https://minotar.net/helm/<%= player.username %>/100.png" class="h-8 w-8 rounded-full" alt=""></td>
+                                    <td class="py-2"><%= player.username %></td>
+                                    <td class="py-2"><%= player.destroyed_blocks_amount %></td>
+                                    <td class="py-2">#<%= i %></td>
+                                </tr>
+                            <% }); %>
+                    </table>
+                </div>
+                <div class="">
+                    <h1 class="text-gray-800 text-center font-semibold text-2xl">Die meisten platzierten Blöcke</h1>
+                    <table class="w-full mt-6 mx-auto">
+                        <tr class="text-left border-b-2">
+                            <th class="xl:pr-8 pr-2 py-2">Minecraft Skin</th>
+                            <th class="xl:pr-8 pr-2 py-2">Minecraft Name</th>
+                            <th class="xl:pr-8 pr-2 py-2">Platzierte Blöcke</th>
+                            <th class="xl:pr-8 pr-2 py-2">Platzierung</th>
+                        </tr>
+                        <%
+
+                        i = 0;
+                        placed_blocks.forEach((player) => {
+                        i++; 
+                        
+                        %>
+                                <tr class="text-gray-800 font-light border-b">
+                                    <td class="py-2"><img src="https://minotar.net/helm/<%= player.username %>/100.png" class="h-8 w-8 rounded-full" alt=""></td>
+                                    <td class="py-2"><%= player.username %></td>
+                                    <td class="py-2"><%= player.placed_blocks_amount %></td>
+                                    <td class="py-2">#<%= i %></td>
+                                </tr>
+                            <% }); %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-left max-w-7xl mx-auto py-24">
+        <h1 class="text-7xl max-w-5xl font-extrabold text-gray-800">Die Premien für die Toplisten</h1>
+        <div class="mt-12 grid grid-flow-cols xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-y-12 gap-x-12 justify-center max-w-5xl">
+            <div class="text-gray-800">
+                <h1 class="text-2xl font-semibold">Platz 1:</h1>
+                <ul class="text-lg font-light mt-4">
+                    <li>
+                        5000x <span class="text-gray-400">Silber Münzen</span>
+                    </li>
+                    <li>
+                        3x <span class="text-red-500">Fly Booster</span>
+                    </li>
+                    <li>
+                        1x <span class="text-green-500">Godmode Booster</span>
+                    </li>
+                    <li>
+                        32x <span class="text-purple-400">Diamanten</span> 
+                    </li>
+                </ul>
+            </div>
+            <div class="text-gray-800">
+                <h1 class="text-2xl font-semibold">Platz 2:</h1>
+                <ul class="text-lg font-light mt-4">
+                    <li>
+                        2500x <span class="text-gray-400">Silber Münzen</span>
+                    </li>
+                    <li>
+                        1x <span class="text-red-500">Fly Booster</span>
+                    </li>
+                    <li>
+                        24x <span class="text-purple-400">Diamanten</span> 
+                    </li>
+                </ul>
+            </div>
+            <div class="text-gray-800">
+                <h1 class="text-2xl font-semibold">Platz 3:</h1>
+                <ul class="text-lg font-light mt-4">
+                    <li>
+                        1000x <span class="text-gray-400">Silber Münzen</span>
+                    </li>
+                    <li>
+                       12x <span class="text-purple-400">Diamanten</span> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
