@@ -13,7 +13,7 @@ var urlencodedParser = bodyParser.urlencoded({extended: false})
 var con = mysql.createConnection({
     host: "localhost",
     user: "liv",
-    password: "x5Z%r3o%sT@T",
+    password: "PASS",
     database: "liv7"
 });
 
