@@ -90,117 +90,22 @@
 
 <div class="text-center py-24">
     <h1 class="mt-1 font-extrabold text-bluegray-900 text-5xl">Derzeit Online auf Life in Village 7</h1>
-    <div class="mt-2 mx-auto max-w-xl">
-        <p class="text-lg font-semibold text-gray-400">Derzeit Online auf Life in Village 7 sind:</p>
-    </div>
+    <% if(players.length > 0) { %>
     <div class="mt-12 grid grid-flow-cols md:grid-cols-4 grid-cols-2 gap-y-12 justify-center max-w-7xl mx-auto">
+        <% players.forEach((player) => { %>
         <div class="">
-            <img src="https://minotar.net/helm/dermakku/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
+            <img src="https://minotar.net/helm/<%= player.username %>/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
             <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">dermakku</a>
+                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900"><%= player.username %></a>
             </div>
         </div>
-        <div class="">
-            <img src="https://minotar.net/helm/Beatjx/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">Beatjx</a>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/SkyleYT/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">SkyleYT</a>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/llulko/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">llulko</a>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/Saserfras/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">Saserfras</a>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/JonnyHB/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">JonnyHB</a>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/RegenJacob/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">RegenJacob</a>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/ClaynDE/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">ClaynDE</a>
-            </div>
-        </div>
+        <% }); %>
     </div>
-</div>
-
-<div class="text-center py-24 bg-gray-100">
-    <h1 class="mt-1 font-extrabold text-bluegray-900 text-5xl">Das Team von Life in Village 7</h1>
-    <div class="mt-2 mx-auto max-w-xl">
-        <p class="text-lg font-semibold text-gray-400">Lerne das Team von Life in Village 7 kennen! :)</p>
-    </div>
-    <div class="mt-12 grid grid-flow-cols md:grid-cols-4 grid-cols-2 gap-y-12 justify-center max-w-7xl mx-auto">
-        <div class="">
-            <img src="https://minotar.net/helm/dermakku/100.png" class="border-2 border-emerald-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">yaMaxTV</a>
-                <h1 class="text-emerald-500 font-semibold text-lg">Founder, Web Entwickler</h1>
-            </div>
+    <% } else { %>
+        <div class="mt-8 max-w-7xl mx-auto text-center">
+            <h1 class="text-2xl font-light text-gray-800">Sieht hier ziemlich leer aus :(</h1>
         </div>
-        <div class="">
-            <img src="https://minotar.net/helm/RegenJacob/100.png" class="border-2 border-red-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/RegenJacob" class="text-lg font-semibold text-gray-900">RegenJacob</a>
-                <h1 class="text-red-500 font-semibold text-lg">Administrator, Java Entwickler</h1>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/OfficialArdx/100.png" class="border-2 border-red-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">longchickenclassic</a>
-                <h1 class="text-red-500 font-semibold text-lg">Administrator</h1>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/SkyleYT/100.png" class="border-2 border-red-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/SkyleYT" class="text-lg font-semibold text-gray-900">SkyleYT</a>
-                <h1 class="text-red-500 font-semibold text-lg">Administrator, Builder</h1>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/Beatjx/100.png" class="border-2 border-cyan-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/edgarogg" class="text-lg font-semibold text-gray-900">Beatjx</a>
-                <h1 class="text-cyan-500 font-semibold text-lg">Java Entwickler, Designer</h1>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/IridiumHD1/100.png" class="border-2 border-amber-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/yaMaxTV" class="text-lg font-semibold text-gray-900">IridiumHD1</a>
-                <h1 class="text-amber-500 font-semibold text-lg">Content</h1>
-            </div>
-        </div>
-        <div class="">
-            <img src="https://minotar.net/helm/Llulko/100.png" class="border-2 border-yellow-500 border-dashed p-1 rounded-full mx-auto h-16 w-16" alt="">
-            <div class="mt-2">
-                <a href="https://www.twitch.tv/Llulko" class="text-lg font-semibold text-gray-900">Llulko</a>
-                <h1 class="text-yellow-500 font-semibold text-lg">Builder</h1>
-            </div>
-        </div>
-    </div>
+    <% } %>
 </div>
 
 </body>

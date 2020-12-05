@@ -6,8 +6,8 @@ var mysql = require('mysql');
 
 var con = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "",
+    user: "liv",
+    password: "PASS",
     database: "liv7"
 });
 
@@ -30,13 +30,13 @@ let error_4 = {"error_id": 4, "error_message": "Wrong API key given."}
 // example: /api/v1/users/d231234134213221321 -> that should send information about the user max
 router.get('/users/:uuid', (req, res, next) => {
     // get the username given in the url
-    param = req.params.username;
+    param = req.params.uuid;
 
 
     // set content to json to stringify and actually get values
     res.setHeader('Content-Type', 'application/json');
     // mysql query to get all information of the given user
-    let sql = mysql.format("SELECT id, username, account_created, discord_id, UUID, minecraft_name, playtime_seconds, playtime_minutes, playtime_hours, silver_amount, admin_level, kills_amount, placed_blocks_amount, destroyed_blocks_amount, deaths_amount FROM accounts WHERE UUID=?", [param]);
+    let sql = mysql.format("SELECT id, username, uuid, playtime_seconds, playtime_minutes playtime_hours, destroyed_blocks_amount, placed_blocks_amount, death_count FROM accounts WHERE uuid=?", [param]);
 
     // query to fetch those information
     con.query(sql, (err, rows) => {
