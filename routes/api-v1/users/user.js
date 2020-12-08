@@ -28,7 +28,7 @@ let error_4 = {"error_id": 4, "error_message": "Wrong API key given."}
 
 // route to get information about the given user at "/:username". Just replace /:username with the username (not the minecraft name)
 // example: /api/v1/users/d231234134213221321 -> that should send information about the user max
-router.get('/users/:uuid', (req, res, next) => {
+router.get('/users/by-uuid/:uuid', (req, res, next) => {
     // get the username given in the url
     param = req.params.uuid;
 
@@ -37,6 +37,51 @@ router.get('/users/:uuid', (req, res, next) => {
     res.setHeader('Content-Type', 'application/json');
     // mysql query to get all information of the given user
     let sql = mysql.format("SELECT id, username, uuid, playtime_seconds, playtime_minutes playtime_hours, destroyed_blocks_amount, placed_blocks_amount, death_count FROM accounts WHERE uuid=?", [param]);
+
+    // query to fetch those information
+    con.query(sql, (err, rows) => {
+        // if there is no error continue
+        if(!err) {
+            // check if there is api key given
+            if(req.header('Api-key')) {
+                // check if there is the right api key given
+                if(req.header('Api-key') === api_key) {
+                    // if there is one or more user found with given username continue
+                    if (rows.length > 0) {
+                        // send json
+                        res.send(JSON.stringify(rows, null, 4));
+                    } else {
+                        // if there is no user found send json with error message and error id
+                        res.send(JSON.stringify(error_1, null, 4));
+                        console.log(JSON.stringify(error_1, null, 4))
+                    }
+                } else {
+                    // send error message if there is the wrong api key given
+                    res.send(JSON.stringify(error_4, null, 4));
+                    console.log(JSON.stringify(error_4, null, 4))
+                }
+            } else {
+                // send error message if there is no api key given
+                res.send(JSON.stringify(error_3, null, 4));
+                console.log(JSON.stringify(error_3, null, 4))
+            }
+        } else {
+            // if there is actually an error with the mysql query then send a error message with error id and error message
+            res.send(JSON.stringify(error_2, null, 4));
+            console.log(JSON.stringify(error_2, null, 4))
+        }
+    });
+});
+
+router.get('/users/by-discord_id/:discord_id', (req, res, next) => {
+    // get the username given in the url
+    param = req.params.discord_id;
+
+
+    // set content to json to stringify and actually get values
+    res.setHeader('Content-Type', 'application/json');
+    // mysql query to get all information of the given user
+    let sql = mysql.format("SELECT id, username, uuid, playtime_seconds, playtime_minutes playtime_hours, destroyed_blocks_amount, placed_blocks_amount, death_count FROM accounts WHERE discord_id=?", [param]);
 
     // query to fetch those information
     con.query(sql, (err, rows) => {
